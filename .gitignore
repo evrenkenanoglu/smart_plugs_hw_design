@@ -1,0 +1,52 @@
+# --- Altium Designer Gitignore ---
+
+# 1. Automatic History & Backups (Crucial to ignore - these are huge)
+History/
+__Previews/
+*.SchDocPreview
+*.PcbDocPreview
+*.HarnessPreview
+
+# 2. Temporary & Lock Files
+*.bck
+*.lck
+*.lock
+*.drc
+*.log
+*.LOG
+*.tlog
+*.SchDoc.Lock
+*.PcbDoc.Lock
+
+# 3. Project Structure & Cache
+*.PrjPcbStructure
+*.PrjPCBStructure
+*.UniqueIdCache
+
+# 4. Compilation & Reports (Auto-generated junk)
+Project Logs for */
+*.htm
+*.html
+*.xml
+*.rep
+*.txt
+*.apr
+*.apr_lib
+*.EXTREP
+*.REP
+
+# 5. Output Files (Optional - See Note Below)
+# Usually, you don't commit generated Gerbers/BOMs unless they are a specific "Release" zip.
+# Altium auto-generates these folders every time you output job files.
+Project Outputs for */
+Status Report.Txt
+
+# 6. Simulation & Signal Integrity
+*.nsx
+*.sim
+*.sdf
+*.cir
+
+# 7. OS Specific
+.DS_Store
+Thumbs.db
