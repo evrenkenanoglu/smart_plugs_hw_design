@@ -320,6 +320,23 @@ GenerateClassCluster=0
 DocumentUniqueId=SXMLTAFN
 
 [Document17]
+DocumentPath=LIBRARY\BJT_TRANSISTOR\S8050_C83271_S8050_C8327.SCHLIB
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=JEFGMZQN
+
+[Document18]
 DocumentPath=LIBRARY\RES-1K\MFR-25FBF52-1K1_MFR-25FBF52-1K.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -336,7 +353,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=BNPYTGDH
 
-[Document18]
+[Document19]
 DocumentPath=LIBRARY\CAP_100nF\FG28X7R1H104KNT061_FG28X7R1H104KNT06.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -353,7 +370,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QKFGPXRU
 
-[Document19]
+[Document20]
 DocumentPath=LIBRARY\LED-5mm\333-2SURD_S530-A31_333-2SURD_S530-A3.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -370,7 +387,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=ZOUHJUIZ
 
-[Document20]
+[Document21]
 DocumentPath=LIBRARY\CAP_22uF\50YXJ22M5X111_50YXJ22M5X11.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -387,7 +404,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=GSEFBWEY
 
-[Document21]
+[Document22]
 DocumentPath=LIBRARY\CAP_10uF\50YXJ10M5X111_50YXJ10M5X11.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -404,7 +421,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=TEICQMOS
 
-[Document22]
+[Document23]
 DocumentPath=SLA-05VDC-SL-A.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -421,7 +438,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=PMHTWFJN
 
-[Document23]
+[Document24]
 DocumentPath=LIBRARY\RELAY_TH_HF105F\HF105F-1_005D-1HST1_Updated.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -438,7 +455,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=ZNRNBWPI
 
-[Document24]
+[Document25]
 DocumentPath=SLA-05VDC-SL-A.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
