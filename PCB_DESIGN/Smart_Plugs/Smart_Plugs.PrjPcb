@@ -472,95 +472,292 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=PHTAGRNY
 
+[Document26]
+DocumentPath=Jobs\Manufacturing.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [GeneratedDocument1]
-DocumentPath=Project Outputs for Smart_Plugs\Design Rule Check - Smart_Plug_PCB.html
+DocumentPath=Project Outputs for Smart_Plugs\BOM\Bill of Materials-Smart_Plug_PCB.csv
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for Smart_Plugs\Pick Place for Smart_Plug_PCB.csv
+DocumentPath=Project Outputs for Smart_Plugs\Design Rule Check - Smart_Plug_PCB.html
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.DRR
+DocumentPath=Project Outputs for Smart_Plugs\Pick Place\Pick Place for Smart_Plug_PCB.csv
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.EXTREP
+DocumentPath=Project Outputs for Smart_Plugs\Pick Place for Smart_Plug_PCB.csv
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GBL
+DocumentPath=Project Outputs for Smart_Plugs\Pick Place\Pick Place for Smart_Plug_PCB.txt
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GBS
+DocumentPath=Project Outputs for Free Documents\NC Drill\Smart_Plug_PCB.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM1
+DocumentPath=Project Outputs for Smart_Plugs\NC Drill\Smart_Plug_PCB.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM5
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM6
+DocumentPath=Project Outputs for Free Documents\Gerber\Smart_Plug_PCB.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM11
+DocumentPath=Project Outputs for Smart_Plugs\Gerber\Smart_Plug_PCB.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM13
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM15
+DocumentPath=Project Outputs for Free Documents\Gerber\Smart_Plug_PCB.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM16
+DocumentPath=Project Outputs for Smart_Plugs\Gerber\Smart_Plug_PCB.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GPB
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GPT
+DocumentPath=Project Outputs for Free Documents\Gerber\Smart_Plug_PCB.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument16]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GTL
+DocumentPath=Project Outputs for Smart_Plugs\Gerber\Smart_Plug_PCB.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument17]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GTO
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument18]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GTP
+DocumentPath=Project Outputs for Free Documents\Gerber\Smart_Plug_PCB.GM1
 DItemRevisionGUID=
 
 [GeneratedDocument19]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GTS
+DocumentPath=Project Outputs for Smart_Plugs\Gerber\Smart_Plug_PCB.GM1
 DItemRevisionGUID=
 
 [GeneratedDocument20]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.LDP
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM1
 DItemRevisionGUID=
 
 [GeneratedDocument21]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.REP
+DocumentPath=Project Outputs for Free Documents\Gerber\Smart_Plug_PCB.GM5
 DItemRevisionGUID=
 
 [GeneratedDocument22]
-DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.RUL
+DocumentPath=Project Outputs for Smart_Plugs\Gerber\Smart_Plug_PCB.GM5
 DItemRevisionGUID=
 
 [GeneratedDocument23]
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM5
+DItemRevisionGUID=
+
+[GeneratedDocument24]
+DocumentPath=Project Outputs for Free Documents\Gerber\Smart_Plug_PCB.GM6
+DItemRevisionGUID=
+
+[GeneratedDocument25]
+DocumentPath=Project Outputs for Smart_Plugs\Gerber\Smart_Plug_PCB.GM6
+DItemRevisionGUID=
+
+[GeneratedDocument26]
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM6
+DItemRevisionGUID=
+
+[GeneratedDocument27]
+DocumentPath=Project Outputs for Free Documents\Gerber\Smart_Plug_PCB.GM11
+DItemRevisionGUID=
+
+[GeneratedDocument28]
+DocumentPath=Project Outputs for Smart_Plugs\Gerber\Smart_Plug_PCB.GM11
+DItemRevisionGUID=
+
+[GeneratedDocument29]
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM11
+DItemRevisionGUID=
+
+[GeneratedDocument30]
+DocumentPath=Project Outputs for Free Documents\Gerber\Smart_Plug_PCB.GM13
+DItemRevisionGUID=
+
+[GeneratedDocument31]
+DocumentPath=Project Outputs for Smart_Plugs\Gerber\Smart_Plug_PCB.GM13
+DItemRevisionGUID=
+
+[GeneratedDocument32]
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM13
+DItemRevisionGUID=
+
+[GeneratedDocument33]
+DocumentPath=Project Outputs for Free Documents\Gerber\Smart_Plug_PCB.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument34]
+DocumentPath=Project Outputs for Smart_Plugs\Gerber\Smart_Plug_PCB.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument35]
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument36]
+DocumentPath=Project Outputs for Free Documents\Gerber\Smart_Plug_PCB.GM16
+DItemRevisionGUID=
+
+[GeneratedDocument37]
+DocumentPath=Project Outputs for Smart_Plugs\Gerber\Smart_Plug_PCB.GM16
+DItemRevisionGUID=
+
+[GeneratedDocument38]
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM16
+DItemRevisionGUID=
+
+[GeneratedDocument39]
+DocumentPath=Project Outputs for Free Documents\Gerber\Smart_Plug_PCB.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument40]
+DocumentPath=Project Outputs for Smart_Plugs\Gerber\Smart_Plug_PCB.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument41]
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument42]
+DocumentPath=Project Outputs for Free Documents\Gerber\Smart_Plug_PCB.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument43]
+DocumentPath=Project Outputs for Smart_Plugs\Gerber\Smart_Plug_PCB.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument44]
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument45]
+DocumentPath=Project Outputs for Free Documents\Gerber\Smart_Plug_PCB.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument46]
+DocumentPath=Project Outputs for Smart_Plugs\Gerber\Smart_Plug_PCB.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument47]
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument48]
+DocumentPath=Project Outputs for Free Documents\Gerber\Smart_Plug_PCB.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument49]
+DocumentPath=Project Outputs for Smart_Plugs\Gerber\Smart_Plug_PCB.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument50]
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument51]
+DocumentPath=Project Outputs for Free Documents\Gerber\Smart_Plug_PCB.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument52]
+DocumentPath=Project Outputs for Smart_Plugs\Gerber\Smart_Plug_PCB.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument53]
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument54]
+DocumentPath=Project Outputs for Free Documents\Gerber\Smart_Plug_PCB.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument55]
+DocumentPath=Project Outputs for Smart_Plugs\Gerber\Smart_Plug_PCB.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument56]
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument57]
+DocumentPath=Project Outputs for Free Documents\NC Drill\Smart_Plug_PCB.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument58]
+DocumentPath=Project Outputs for Smart_Plugs\NC Drill\Smart_Plug_PCB.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument59]
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument60]
+DocumentPath=Project Outputs for Free Documents\Gerber\Smart_Plug_PCB.REP
+DItemRevisionGUID=
+
+[GeneratedDocument61]
+DocumentPath=Project Outputs for Smart_Plugs\Gerber\Smart_Plug_PCB.REP
+DItemRevisionGUID=
+
+[GeneratedDocument62]
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.REP
+DItemRevisionGUID=
+
+[GeneratedDocument63]
+DocumentPath=Project Outputs for Free Documents\Gerber\Smart_Plug_PCB.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument64]
+DocumentPath=Project Outputs for Smart_Plugs\Gerber\Smart_Plug_PCB.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument65]
+DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument66]
+DocumentPath=Project Outputs for Free Documents\NC Drill\Smart_Plug_PCB.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument67]
+DocumentPath=Project Outputs for Smart_Plugs\NC Drill\Smart_Plug_PCB.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument68]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.TXT
 DItemRevisionGUID=
 

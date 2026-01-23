@@ -8,8 +8,7 @@ from datetime import datetime
 # ⚙️ CONFIGURATION
 # ==========================================
 
-# The folder where Altium dumps the files (Check your Altium Project Options)
-# Usually: "Project Outputs for <ProjectName>"
+# The folder where Altium dumps the files
 SOURCE_DIR = "Project Outputs for Smart_Plugs"
 
 # Where you want the clean files to go
@@ -19,48 +18,32 @@ OUTPUT_DIR = "Release_Package"
 ZIP_NAME = f"Smart_Plug_Pro_V1_Gerbers_{datetime.now().strftime('%Y-%m-%d')}"
 
 # List of extensions to include (Standard Altium Extensions)
-VALID_EXTENSIONS = {
+VALID_GERBER_EXTENSIONS = {
     # --- Copper Layers ---
-    '.GTL', # Top Layer
-    '.GBL', # Bottom Layer
-    
+    '.GTL', '.GBL', 
     # --- Solder Mask ---
-    '.GTS', # Top Solder
-    '.GBS', # Bottom Solder
-    
+    '.GTS', '.GBS',
     # --- Silkscreen ---
-    '.GTO', # Top Overlay
-    '.GBO', # Bottom Overlay
-    
+    '.GTO', '.GBO',
     # --- Mechanical / Outline ---
-    '.GKO', # Keep-Out
-    '.GM1', # Mechanical 1 (Often Outline)
-    '.GML', # Mechanical Layer (General)
-    '.GM13', # Mechanical 13 (3D Bodies sometimes)
-    
-    # --- Paste Mask (Optional - For Stencil) ---
-    '.GTP', # Top Paste
-    '.GBP', # Bottom Paste
-    
+    '.GKO', '.GM1', '.GML', '.GM13', '.GM15', # Added GM15 seen in your tree
+    # --- Paste Mask ---
+    '.GTP', '.GBP',
     # --- Drill Files ---
-    '.TXT', # ASCII Drill Data
-    '.DRL', # Binary Drill Data
-    '.LDP', # Layer Pair Drill
-    '.DRR', # Drill Report
+    '.TXT', '.DRL', '.LDP', '.DRR'
 }
 
 # ==========================================
 # 🚀 SCRIPT LOGIC
 # ==========================================
 
-def clean_and_copy():
+def collect_files():
     src_path = Path(SOURCE_DIR)
     dest_path = Path(OUTPUT_DIR)
     
     # 1. Check if source exists
     if not src_path.exists():
         print(f"❌ Error: Source folder '{SOURCE_DIR}' not found!")
-        print("   Make sure you ran 'Fabrication Outputs' in Altium first.")
         return False
 
     # 2. Clean/Create Destination
@@ -68,26 +51,40 @@ def clean_and_copy():
         shutil.rmtree(dest_path)
     dest_path.mkdir(parents=True)
     
-    print(f"📂 Scanning: {src_path}")
+    print(f"📂 Scanning recursively in: {src_path}")
     
     count = 0
     
-    # 3. Walk through folder and copy valid files
-    for file in src_path.iterdir():
+    # 3. Walk through ALL folders (Recursive search)
+    # rglob('*') looks inside BOM, Gerber, NC Drill, etc.
+    for file in src_path.rglob('*'):
         if file.is_file():
-            # Check extension (case insensitive)
-            if file.suffix.upper() in VALID_EXTENSIONS:
+            
+            filename_upper = file.name.upper()
+            suffix_upper = file.suffix.upper()
+            
+            # --- Logic A: Standard Gerber & Drill Files ---
+            if suffix_upper in VALID_GERBER_EXTENSIONS:
                 shutil.copy2(file, dest_path / file.name)
-                print(f"   ✅ Copied: {file.name}")
+                print(f"   ✅ Copied Gerber/Drill: {file.name}")
                 count += 1
-            # Special logic for "NC Drill" files if Altium didn't name them .TXT
-            elif "Drill" in file.name and file.suffix.upper() in ['.GBR', '.TXT']:
-                 shutil.copy2(file, dest_path / file.name)
-                 print(f"   ✅ Copied Drill: {file.name}")
-                 count += 1
+                
+            # --- Logic B: Bill of Materials (CSV) ---
+            # Looks for 'Bill of Materials' in the name and ensures it is a CSV
+            elif suffix_upper == '.CSV' and "BILL OF MATERIALS" in filename_upper:
+                shutil.copy2(file, dest_path / file.name)
+                print(f"   📋 Copied BOM:          {file.name}")
+                count += 1
+                
+            # --- Logic C: Pick and Place (CSV) ---
+            # Looks for 'Pick Place' in the name and ensures it is a CSV
+            elif suffix_upper == '.CSV' and "PICK PLACE" in filename_upper:
+                shutil.copy2(file, dest_path / file.name)
+                print(f"   📍 Copied Pick & Place: {file.name}")
+                count += 1
 
     if count == 0:
-        print("⚠️  Warning: No Gerber files found. Did you generate them?")
+        print("⚠️  Warning: No valid files found. Check your Output Job settings.")
         return False
         
     print(f"🎉 Successfully gathered {count} files into '{OUTPUT_DIR}'")
@@ -108,35 +105,12 @@ def create_zip():
             
     print(f"🚀 DONE! Ready to upload to PCBWay: {zip_file_path}")
 
-def copy_bom_file():
-    src_path = Path(SOURCE_DIR)
-    src_bom = src_path / "Smart_Plugs_BOM.csv"
-    dest_path = Path(OUTPUT_DIR)
-    
-    if src_bom.exists():
-        shutil.copy2(src_bom, dest_path / src_bom.name)
-        print(f"📋 BOM file copied: {src_bom.name}")
-    else:
-        print("⚠️  Warning: BOM file not found!")
-
-def copy_pick_and_place_file():
-    src_path = Path(SOURCE_DIR)
-    src_pnp = src_path / "Pick Place for Smart_Plug_PCB.csv"
-    dest_path = Path(OUTPUT_DIR)
-    
-    if src_pnp.exists():
-        shutil.copy2(src_pnp, dest_path / src_pnp.name)
-        print(f"📍 Pick and Place file copied: {src_pnp.name}")
-    else:
-        print("⚠️  Warning: Pick and Place file not found!")
-
 if __name__ == "__main__":
-    print("--- 🦅 Altium Gerber Packager ---")
-    if clean_and_copy():
+    print("--- 🦅 Altium Gerber Packager (Recursive) ---")
+    
+    # 1. Collect ALL files (Gerbers, Drill, BOM, PnP) first
+    if collect_files():
+        # 2. THEN Zip them all together
         create_zip()
-    
-        copy_bom_file()
-        copy_pick_and_place_file()
-    
-
-    print("---------------------------------")
+        
+    print("---------------------------------------------")
