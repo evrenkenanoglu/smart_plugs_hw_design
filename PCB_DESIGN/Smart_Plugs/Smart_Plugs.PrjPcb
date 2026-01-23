@@ -286,6 +286,40 @@ GenerateClassCluster=0
 DocumentUniqueId=EDSWNSYR
 
 [Document15]
+DocumentPath=LIBRARY\TERMINAL_BLOCK_3P\KF7.62-3P1_KF7.62-3P.SCHLIB
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=OBQDOFLF
+
+[Document16]
+DocumentPath=LIBRARY\TERMINAL_BLOCK_2P\KF7.62-2P1_KF7.62-2P.SCHLIB
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=SXMLTAFN
+
+[Document17]
 DocumentPath=LIBRARY\RES-1K\MFR-25FBF52-1K1_MFR-25FBF52-1K.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -302,7 +336,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=BNPYTGDH
 
-[Document16]
+[Document18]
 DocumentPath=LIBRARY\CAP_100nF\FG28X7R1H104KNT061_FG28X7R1H104KNT06.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -319,7 +353,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QKFGPXRU
 
-[Document17]
+[Document19]
 DocumentPath=LIBRARY\LED-5mm\333-2SURD_S530-A31_333-2SURD_S530-A3.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -336,7 +370,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=ZOUHJUIZ
 
-[Document18]
+[Document20]
 DocumentPath=LIBRARY\CAP_22uF\50YXJ22M5X111_50YXJ22M5X11.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -353,7 +387,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=GSEFBWEY
 
-[Document19]
+[Document21]
 DocumentPath=LIBRARY\CAP_10uF\50YXJ10M5X111_50YXJ10M5X11.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -370,7 +404,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=TEICQMOS
 
-[Document20]
+[Document22]
 DocumentPath=SLA-05VDC-SL-A.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -387,7 +421,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=PMHTWFJN
 
-[Document21]
+[Document23]
 DocumentPath=LIBRARY\RELAY_TH_HF105F\HF105F-1_005D-1HST1_Updated.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -404,7 +438,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=ZNRNBWPI
 
-[Document22]
+[Document24]
 DocumentPath=SLA-05VDC-SL-A.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -421,40 +455,6 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=PHTAGRNY
 
-[Document23]
-DocumentPath=Project Outputs for Smart_Plugs\CAMtastic1.Cam
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document24]
-DocumentPath=Project Outputs for Smart_Plugs\CAMtastic2.Cam
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Smart_Plugs\Design Rule Check - Smart_Plug_PCB.html
 DItemRevisionGUID=
@@ -464,90 +464,86 @@ DocumentPath=Project Outputs for Smart_Plugs\Pick Place for Smart_Plug_PCB.csv
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for Smart_Plugs\Pick Place for Smart_Plug_PCB.txt
-DItemRevisionGUID=
-
-[GeneratedDocument4]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.DRR
 DItemRevisionGUID=
 
-[GeneratedDocument5]
+[GeneratedDocument4]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.EXTREP
 DItemRevisionGUID=
 
-[GeneratedDocument6]
+[GeneratedDocument5]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GBL
 DItemRevisionGUID=
 
-[GeneratedDocument7]
+[GeneratedDocument6]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GBS
 DItemRevisionGUID=
 
-[GeneratedDocument8]
+[GeneratedDocument7]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM1
 DItemRevisionGUID=
 
-[GeneratedDocument9]
+[GeneratedDocument8]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM5
 DItemRevisionGUID=
 
-[GeneratedDocument10]
+[GeneratedDocument9]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM6
 DItemRevisionGUID=
 
-[GeneratedDocument11]
+[GeneratedDocument10]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM11
 DItemRevisionGUID=
 
-[GeneratedDocument12]
+[GeneratedDocument11]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM13
 DItemRevisionGUID=
 
-[GeneratedDocument13]
+[GeneratedDocument12]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM15
 DItemRevisionGUID=
 
-[GeneratedDocument14]
+[GeneratedDocument13]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GM16
 DItemRevisionGUID=
 
-[GeneratedDocument15]
+[GeneratedDocument14]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GPB
 DItemRevisionGUID=
 
-[GeneratedDocument16]
+[GeneratedDocument15]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GPT
 DItemRevisionGUID=
 
-[GeneratedDocument17]
+[GeneratedDocument16]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GTL
 DItemRevisionGUID=
 
-[GeneratedDocument18]
+[GeneratedDocument17]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GTO
 DItemRevisionGUID=
 
-[GeneratedDocument19]
+[GeneratedDocument18]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GTP
 DItemRevisionGUID=
 
-[GeneratedDocument20]
+[GeneratedDocument19]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.GTS
 DItemRevisionGUID=
 
-[GeneratedDocument21]
+[GeneratedDocument20]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.LDP
 DItemRevisionGUID=
 
-[GeneratedDocument22]
+[GeneratedDocument21]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.REP
 DItemRevisionGUID=
 
-[GeneratedDocument23]
+[GeneratedDocument22]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.RUL
 DItemRevisionGUID=
 
-[GeneratedDocument24]
+[GeneratedDocument23]
 DocumentPath=Project Outputs for Smart_Plugs\Smart_Plug_PCB.TXT
 DItemRevisionGUID=
 
