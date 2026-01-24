@@ -269,23 +269,6 @@ GenerateClassCluster=0
 DocumentUniqueId=QFLNYZWG
 
 [Document14]
-DocumentPath=LIBRARY\SW_6_6_7\6_6_71_6_6_7.SCHLIB
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=TSDRJLZH
-
-[Document15]
 DocumentPath=LIBRARY\RES-10k\MFR-25FBF52-10K1_MFR-25FBF52-10K.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -302,7 +285,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=EDSWNSYR
 
-[Document16]
+[Document15]
 DocumentPath=LIBRARY\TERMINAL_BLOCK_3P\KF7.62-3P1_KF7.62-3P.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -318,6 +301,23 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=OBQDOFLF
+
+[Document16]
+DocumentPath=LIBRARY\SW_6_6_7\TS_1002_070261_TS\TS-1002-070261_TS-1002-07026.SCHLIB
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=NNJZURMJ
 
 [Document17]
 DocumentPath=LIBRARY\TERMINAL_BLOCK_2P\KF7.62-2P1_KF7.62-2P.SCHLIB
@@ -470,7 +470,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=ZNRNBWPI
+DocumentUniqueId=RWGZABXT
 
 [Document26]
 DocumentPath=SLA-05VDC-SL-A.PcbLib
