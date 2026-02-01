@@ -24,8 +24,8 @@
 ## ⚡ PART 2: AC HIGH POWER ANALYSIS
 | LINE NAME | VOLTAGE | MAX AMPS | POWER (kW) |
 | :--- | :--- | :--- | :--- |
-| AC_LOAD_20A | 230V | 20.0 A | 4.6 kW |
-| AC_MAINS_INPUT (Calc) | 230.0V | 0.053 A | 0.012 kW |
+| AC_LOAD_20A | 230.0V | 20.000 A | 4.600 kW |
+| AC_MAINS_INPUT | 230.0V | 0.053 A | 0.012 kW |
 
 ---
 
@@ -35,11 +35,11 @@
 | NET FUNCTION | LOAD (A) | MIN WIDTH (Calc) | **ALTIUM RULE (Rec)** |
 | :--- | :--- | :--- | :--- |
 | AC_LOAD_20A | 20.000 | 9.412 mm | **POLYGON POUR** |
-| AC_MAINS_INPUT | 0.053 | 0.200 mm | **1.00 mm** |
+| AC_MAINS_INPUT | 0.053 | 0.250 mm | **1.00 mm** (Mech) |
 | DC_MAIN_5V | 1.691 | 0.312 mm | **0.80 mm** (SF=2.5) |
-| DC_3V3_RAIL | 0.624 | 0.200 mm | **0.50 mm** (SF=2.5) |
-| DC_RELAY_GND | 0.864 | 0.200 mm | **0.50 mm** (SF=2.5) |
-| DC_SIGNAL | 0.050 | 0.200 mm | **0.25 mm** |
+| DC_3V3_RAIL | 0.624 | 0.250 mm | **0.65 mm** (SF=2.5) |
+| DC_RELAY_GND | 0.864 | 0.250 mm | **0.65 mm** (SF=2.5) |
+| DC_SIGNAL | 0.050 | 0.250 mm | **0.25 mm** |
 
 > **⚠️ CRITICAL NOTE for AC_LOAD_20A:**  
 > Use a **Solid Polygon Pour** connecting the Relay Pin to the Faston Tab.

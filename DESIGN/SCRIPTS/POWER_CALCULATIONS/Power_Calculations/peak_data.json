@@ -13,30 +13,10 @@
     "efficiency": 0.70
   },
   "dc_components": [
-    { 
-      "name": "HF105F-1 Coils (Worst Case)", 
-      "quantity": 4, 
-      "peak_current_ma": 216.0, 
-      "voltage_v": 5.0 
-    },
-    { 
-      "name": "ESP32-WROOM-32UE", 
-      "quantity": 1, 
-      "peak_current_ma": 500.0, 
-      "voltage_v": 3.3 
-    },
-    { 
-      "name": "ULN2803 Driver + LEDs", 
-      "quantity": 1, 
-      "peak_current_ma": 25.0, 
-      "voltage_v": 5.0 
-    },
-    { 
-      "name": "Peripherals (I2C)", 
-      "quantity": 1, 
-      "peak_current_ma": 20.0, 
-      "voltage_v": 3.3 
-    }
+    { "name": "HF105F-1 Coils (Worst Case)", "quantity": 4, "peak_current_ma": 216.0, "voltage_v": 5.0 },
+    { "name": "ESP32-WROOM-32UE", "quantity": 1, "peak_current_ma": 500.0, "voltage_v": 3.3 },
+    { "name": "ULN2803 Driver + LEDs", "quantity": 1, "peak_current_ma": 25.0, "voltage_v": 5.0 },
+    { "name": "Peripherals (I2C)", "quantity": 1, "peak_current_ma": 20.0, "voltage_v": 3.3 }
   ],
   "ac_power_lines": [
     { "name": "AC_LOAD_20A", "voltage_v": 230, "max_current_a": 20.0 }

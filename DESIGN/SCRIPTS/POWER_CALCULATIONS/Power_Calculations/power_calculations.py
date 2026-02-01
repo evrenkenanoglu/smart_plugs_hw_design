@@ -2,166 +2,180 @@ import json
 import math
 import datetime
 
-# --- CONSTANTS ---
-K, B, C = 0.048, 0.44, 0.725  # IPC-2221 Constants for External Layers
-
-# --- CONFIGURATION ---
-SAFETY_FACTOR_POWER = 2.5  # Multiplier for DC Power Rails (Robustness)
-MIN_WIDTH_POWER = 0.40     # Minimum mm for any power rail
-MIN_WIDTH_SIGNAL = 0.25    # Minimum mm for signals
-MIN_WIDTH_AC_MECH = 1.00   # Minimum mm for AC Mains (Mechanical strength)
-
-# --- CORE CALCULATION FUNCTIONS ---
-
-def calc_ipc_width_2oz(amps):
-    """Calculates min trace width (mm) for 2oz copper per IPC-2221."""
-    if amps <= 0: return 0.2
-    # Width(mils) = [Amps / (k * dT^b)]^(1/c) / Thickness(mils)
-    # 2oz thickness approx 2.74 mils
-    width_mils = ((amps / (K * (10 ** B))) ** (1 / C)) / 2.74
-    return max(width_mils * 0.0254, 0.2)
-
-def get_trace_recommendation(name, load, calculated_width):
+class Config:
     """
-    Calculates the recommended rule PROPORTIONALLY based on load.
-    Formula: Recommended = Max(Calculated * SafetyFactor, Min_Floor)
+    CENTRAL CONFIGURATION & CONSTANTS
+    ---------------------------------
     """
+    # --- IPC-2221 STANDARDS (External Layers) ---
+    IPC_K = 0.048
+    IPC_B = 0.44
+    IPC_C = 0.725
+    IPC_TEMP_RISE_C = 10 
     
-    # 1. High Power AC (>15A) -> Physical Limit Reached
-    if load > 15:
+    # 1oz Copper = approx 1.37 mils (35um) thickness
+    IPC_THICKNESS_MILS_PER_OZ = 1.37 
+
+    # --- MANUFACTURING LIMITS (DfM) ---
+    # Note: For 1oz copper, you can technically go down to 0.15mm, 
+    # but 0.25mm is a safer default for all weights.
+    DFM_MIN_SIGNAL_WIDTH_MM = 0.25  
+    
+    # --- ENGINEERING SAFETY FACTORS ---
+    SAFETY_FACTOR_POWER_RAILS = 2.5  
+    
+    # --- MECHANICAL ROBUSTNESS ---
+    MIN_WIDTH_AC_MAINS_MM = 1.00     
+    MIN_WIDTH_POWER_RAIL_MM = 0.40   
+    
+    # --- LOGIC THRESHOLDS ---
+    THRESHOLD_POLYGON_AMPS = 15.0    
+    THRESHOLD_POWER_NET_AMPS = 0.1   
+    DEFAULT_SIGNAL_LOAD_AMPS = 0.05  
+
+# --- CORE CALCULATION ENGINE ---
+
+def calc_ipc_width_mm(amps, copper_weight_oz):
+    """
+    Calculates minimum trace width based on Load and Copper Weight.
+    Formula: Width[mils] = (Amps / (k * dT^b))^(1/c) / Thickness[mils]
+    """
+    if amps <= 0: return Config.DFM_MIN_SIGNAL_WIDTH_MM
+    
+    # Dynamic Thickness Calculation
+    thickness_mils = copper_weight_oz * Config.IPC_THICKNESS_MILS_PER_OZ
+    
+    # Denominator: k * dT^b
+    denom = Config.IPC_K * (Config.IPC_TEMP_RISE_C ** Config.IPC_B)
+    
+    # Calculate Area (mils^2) and Width (mils)
+    area_mils2 = (amps / denom) ** (1 / Config.IPC_C)
+    width_mils = area_mils2 / thickness_mils
+    
+    # Convert to mm
+    return max(width_mils * 0.0254, Config.DFM_MIN_SIGNAL_WIDTH_MM)
+
+def get_trace_recommendation(name, load_amps, calculated_width_mm):
+    """Applies Engineering Rules and Safety Factors."""
+    
+    # 1. High Current -> Polygon Pour
+    if load_amps > Config.THRESHOLD_POLYGON_AMPS:
         return "**POLYGON POUR**"
     
-    # 2. AC Mains Input (Low Current but High Voltage/Mech Stress)
-    # Enforce mechanical floor of 1.0mm, otherwise proportional
-    elif "AC_" in name:
-        rec = max(calculated_width, MIN_WIDTH_AC_MECH)
-        return f"**{rec:.2f} mm**"
+    # 2. AC Mains -> Mechanical Strength Rule
+    if "AC_" in name:
+        rec = max(calculated_width_mm, Config.MIN_WIDTH_AC_MAINS_MM)
+        return f"**{rec:.2f} mm** (Mech)"
     
-    # 3. DC Power Rails (> 100mA)
-    # Apply Safety Factor (2.5x) for voltage stability
-    elif load > 0.1:
-        # Proportional Calculation
-        target = calculated_width * SAFETY_FACTOR_POWER
+    # 3. DC Power Rails -> Safety Factor Rule
+    if load_amps > Config.THRESHOLD_POWER_NET_AMPS:
+        target = calculated_width_mm * Config.SAFETY_FACTOR_POWER_RAILS
+        rec = max(target, Config.MIN_WIDTH_POWER_RAIL_MM)
+        rec = math.ceil(rec * 20) / 20.0 # Round to 0.05mm
+        return f"**{rec:.2f} mm** (SF={Config.SAFETY_FACTOR_POWER_RAILS})"
         
-        # Apply Floor
-        rec = max(target, MIN_WIDTH_POWER)
-        
-        # Round to nearest 0.05mm for neatness
-        rec = math.ceil(rec * 20) / 20.0
-        return f"**{rec:.2f} mm** (SF={SAFETY_FACTOR_POWER})"
-        
-    # 4. Low Power Signals
-    else:
-        return f"**{MIN_WIDTH_SIGNAL} mm**"
+    # 4. Standard Signals
+    return f"**{Config.DFM_MIN_SIGNAL_WIDTH_MM} mm**"
 
 def calculate_ac_input(dc_power_watts, efficiency, mains_voltage):
-    """Calculates required AC input based on DC power draw."""
     ac_input_watts = dc_power_watts / efficiency
     ac_input_amps = ac_input_watts / mains_voltage
     return ac_input_watts, ac_input_amps
 
-# --- REPORT GENERATION HELPERS ---
+# --- DATA PROCESSING HELPERS ---
 
-def generate_dc_report_data(components):
-    """Processes DC components."""
+def process_dc_components(components):
     rows = ""
     total_ma = 0
     rail_3v3_ma = 0
+    relay_coil_total_ma = 0
 
     for c in components:
         tot = c['peak_current_ma'] * c['quantity']
         volts = c.get('voltage_v', 5.0)
         
         total_ma += tot
+        
         if volts < 4.5:
             rail_3v3_ma += tot
             
+        if "Coil" in c['name'] or "Relay" in c['name']:
+            relay_coil_total_ma += tot
+            
         rows += f"| {c['name']} | {volts}V | {c['quantity']} | {c['peak_current_ma']} | {tot:.1f} |\n"
     
-    return rows, total_ma, rail_3v3_ma
+    return rows, total_ma, rail_3v3_ma, relay_coil_total_ma
 
-def generate_ac_report_data(ac_lines, calc_input_amps, calc_input_watts, sys_volts):
-    """Generates table rows for AC lines."""
-    rows = ""
-    width_targets = []
-
-    for line in ac_lines:
-        current = line['max_current_a']
-        pwr_kw = (line['voltage_v'] * current) / 1000
-        rows += f"| {line['name']} | {line['voltage_v']}V | {current} A | {pwr_kw:.1f} kW |\n"
-        width_targets.append((line['name'], current))
-
-    rows += f"| AC_MAINS_INPUT (Calc) | {sys_volts}V | {calc_input_amps:.3f} A | {calc_input_watts/1000:.3f} kW |\n"
-    width_targets.append(("AC_MAINS_INPUT", calc_input_amps))
-
-    return rows, width_targets
-
-def generate_trace_width_rows(ac_targets, dc_design_load, rail_3v3_load):
-    """Combines AC and DC targets."""
-    targets = ac_targets.copy()
+def build_width_targets(data, design_load_psu, rail_3v3_load, relay_gnd_load, ac_amps):
+    targets = []
     
-    # Add DC Targets
-    targets.append(("DC_MAIN_5V", dc_design_load / 1000))
-    targets.append(("DC_3V3_RAIL", rail_3v3_load / 1000))
-    targets.append(("DC_RELAY_GND", 0.216 * 4))
-    targets.append(("DC_SIGNAL", 0.05))
-
-    rows = ""
-    for name, load in targets:
-        calc_mm = calc_ipc_width_2oz(load)
-        rec_str = get_trace_recommendation(name, load, calc_mm)
-        rows += f"| {name} | {load:.3f} | {calc_mm:.3f} mm | {rec_str} |\n"
+    for line in data['ac_power_lines']:
+        targets.append((line['name'], line['max_current_a']))
+        
+    targets.append(("AC_MAINS_INPUT", ac_amps))
+    targets.append(("DC_MAIN_5V", design_load_psu / 1000.0))
+    targets.append(("DC_3V3_RAIL", rail_3v3_load / 1000.0))
+    targets.append(("DC_RELAY_GND", relay_gnd_load / 1000.0))
+    targets.append(("DC_SIGNAL", Config.DEFAULT_SIGNAL_LOAD_AMPS))
     
+    return targets
+
+def generate_ac_table_rows(targets, sys_volts):
+    rows = ""
+    for name, amps in targets:
+        if "AC_" in name: 
+            pwr_kw = (sys_volts * amps) / 1000.0
+            rows += f"| {name} | {sys_volts}V | {amps:.3f} A | {pwr_kw:.3f} kW |\n"
     return rows
 
-# --- FILE I/O ---
+def generate_width_table_rows(targets, copper_oz):
+    rows = ""
+    for name, amps in targets:
+        # PASS COPPER WEIGHT TO CALC FUNCTION
+        phys_min = calc_ipc_width_mm(amps, copper_oz)
+        rec_str = get_trace_recommendation(name, amps, phys_min)
+        rows += f"| {name} | {amps:.3f} | {phys_min:.3f} mm | {rec_str} |\n"
+    return rows
+
+# --- FILE OPERATIONS ---
 
 def load_json(path):
-    with open(path, 'r', encoding='utf-8') as f:
-        return json.load(f)
+    with open(path, 'r', encoding='utf-8') as f: return json.load(f)
 
-def write_report(content, template_path, output_path):
-    with open(template_path, 'r', encoding='utf-8') as t:
-        template = t.read()
-    
-    with open(output_path, 'w', encoding='utf-8') as f:
-        f.write(template.format(**content))
+def write_markdown(path, content):
+    with open('report_template.md', 'r', encoding='utf-8') as t: template = t.read()
+    with open(path, 'w', encoding='utf-8') as f: f.write(template.format(**content))
 
-# --- MAIN ORCHESTRATOR ---
+# --- MAIN EXECUTION ---
 
 def main():
+    # 1. Load Data
     data = load_json('peak_data.json')
     sys = data['system_info']
     psu = data['power_supply']
 
-    dc_rows, total_dc_ma, rail_3v3_ma = generate_dc_report_data(data['dc_components'])
+    # 2. Analyze DC Components
+    dc_rows, total_dc_ma, rail_3v3_ma, relay_gnd_ma = process_dc_components(data['dc_components'])
     
-    design_load_psu_ma = total_dc_ma * (1 + sys['safety_margin_percent']/100)
-    design_load_3v3_ma = rail_3v3_ma * (1 + sys['safety_margin_percent']/100)
+    # 3. Design Loads
+    design_load_psu = total_dc_ma * (1 + sys['safety_margin_percent']/100)
+    design_load_3v3 = rail_3v3_ma * (1 + sys['safety_margin_percent']/100)
     
-    psu_status = "✅ **PASS**" if design_load_psu_ma <= psu['max_output_current_ma'] else "❌ **FAIL**"
+    psu_status = "✅ **PASS**" if design_load_psu <= psu['max_output_current_ma'] else "❌ **FAIL**"
 
-    dc_power_watts = (design_load_psu_ma / 1000.0) * sys['main_voltage_rail_dc_v']
-    ac_in_watts, ac_in_amps = calculate_ac_input(
-        dc_power_watts, 
-        psu.get('efficiency', 0.7), 
-        sys['mains_voltage_ac_v']
-    )
+    # 4. Analyze AC Input
+    dc_watts = (design_load_psu / 1000.0) * sys['main_voltage_rail_dc_v']
+    ac_watts, ac_amps = calculate_ac_input(dc_watts, psu.get('efficiency', 0.7), sys['mains_voltage_ac_v'])
 
-    ac_rows, width_targets = generate_ac_report_data(
-        data['ac_power_lines'], 
-        ac_in_amps, 
-        ac_in_watts, 
-        sys['mains_voltage_ac_v']
-    )
+    # 5. Build Targets
+    width_targets = build_width_targets(data, design_load_psu, design_load_3v3, relay_gnd_ma, ac_amps)
 
-    trace_rows = generate_trace_width_rows(
-        width_targets, 
-        design_load_psu_ma, 
-        design_load_3v3_ma
-    )
+    # 6. Generate Tables (PASSING COPPER OZ)
+    ac_table_rows = generate_ac_table_rows(width_targets, sys['mains_voltage_ac_v'])
+    width_table_rows = generate_width_table_rows(width_targets, sys['copper_weight_oz'])
 
-    report_content = {
+    # 7. Compile Report
+    content = {
         "project_name": sys['project_name'],
         "date": datetime.date.today(),
         "copper_oz": sys['copper_weight_oz'],
@@ -172,14 +186,14 @@ def main():
         "dc_load_rows": dc_rows.strip(),
         "total_peak": total_dc_ma,
         "safety_margin": sys['safety_margin_percent'],
-        "design_load": design_load_psu_ma,
+        "design_load": design_load_psu,
         "psu_status": psu_status,
-        "ac_load_rows": ac_rows.strip(),
-        "trace_width_rows": trace_rows.strip()
+        "ac_load_rows": ac_table_rows.strip(),
+        "trace_width_rows": width_table_rows.strip()
     }
 
-    write_report(report_content, 'report_template.md', 'PCB_Engineering_Report.md')
-    print("✅ PCB_Engineering_Report.md generated successfully.")
+    write_markdown('PCB_Engineering_Report.md', content)
+    print(f"✅ Report generated using {sys['copper_weight_oz']}oz Copper logic.")
 
 if __name__ == "__main__":
     main()
