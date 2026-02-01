@@ -50,3 +50,9 @@ Status Report.Txt
 # 7. OS Specific
 .DS_Store
 Thumbs.db
+
+# 8. Python
+.pyc
+__pycache__/
+env/
+venv/
