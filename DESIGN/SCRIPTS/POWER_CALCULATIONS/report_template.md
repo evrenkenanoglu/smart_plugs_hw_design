@@ -43,7 +43,7 @@
 | ZONE A | ZONE B | STD CLEARANCE | STD CREEPAGE | **RECOMMENDED RULE** |
 | :--- | :--- | :--- | :--- | :--- |
 | AC Phase | AC Neutral | 1.5 mm | 2.5 mm | **3.0 mm** (Robust) |
-| AC Mains | DC Logic | 3.0 mm | 5.0 mm | **5.0 mm** (or Slot) |
+| AC Mains | DC Logic | 3.0 mm | 5.0 mm | **6.0 mm** (or Slot) |
 | AC Relay Pin | Faston Tab | N/A | N/A | **Connect w/ Polygon** |
 | DC 5V | DC GND | 0.15 mm | 0.15 mm | **0.25 mm** |
 

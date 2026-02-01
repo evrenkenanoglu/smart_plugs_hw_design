@@ -3,7 +3,13 @@ import math
 import datetime
 
 # --- CONSTANTS ---
-K, B, C = 0.048, 0.44, 0.725  # IPC-2221 Constants
+K, B, C = 0.048, 0.44, 0.725  # IPC-2221 Constants for External Layers
+
+# --- CONFIGURATION ---
+SAFETY_FACTOR_POWER = 2.5  # Multiplier for DC Power Rails (Robustness)
+MIN_WIDTH_POWER = 0.40     # Minimum mm for any power rail
+MIN_WIDTH_SIGNAL = 0.25    # Minimum mm for signals
+MIN_WIDTH_AC_MECH = 1.00   # Minimum mm for AC Mains (Mechanical strength)
 
 # --- CORE CALCULATION FUNCTIONS ---
 
@@ -16,17 +22,37 @@ def calc_ipc_width_2oz(amps):
     return max(width_mils * 0.0254, 0.2)
 
 def get_trace_recommendation(name, load, calculated_width):
-    """Determines the text for the 'Recommended Rule' column."""
+    """
+    Calculates the recommended rule PROPORTIONALLY based on load.
+    Formula: Recommended = Max(Calculated * SafetyFactor, Min_Floor)
+    """
+    
+    # 1. High Power AC (>15A) -> Physical Limit Reached
     if load > 15:
         return "**POLYGON POUR**"
-    elif "AC_MAINS" in name:
-        return "**1.00 mm** (Mech)"
+    
+    # 2. AC Mains Input (Low Current but High Voltage/Mech Stress)
+    # Enforce mechanical floor of 1.0mm, otherwise proportional
+    elif "AC_" in name:
+        rec = max(calculated_width, MIN_WIDTH_AC_MECH)
+        return f"**{rec:.2f} mm**"
+    
+    # 3. DC Power Rails (> 100mA)
+    # Apply Safety Factor (2.5x) for voltage stability
     elif load > 0.1:
-        # Round up to nearest 0.1mm, add safety
-        val = math.ceil(calculated_width * 10) / 10 + 0.1
-        return f"**{max(val, 0.254):.2f} mm**"
+        # Proportional Calculation
+        target = calculated_width * SAFETY_FACTOR_POWER
+        
+        # Apply Floor
+        rec = max(target, MIN_WIDTH_POWER)
+        
+        # Round to nearest 0.05mm for neatness
+        rec = math.ceil(rec * 20) / 20.0
+        return f"**{rec:.2f} mm** (SF={SAFETY_FACTOR_POWER})"
+        
+    # 4. Low Power Signals
     else:
-        return "**0.25 mm**"
+        return f"**{MIN_WIDTH_SIGNAL} mm**"
 
 def calculate_ac_input(dc_power_watts, efficiency, mains_voltage):
     """Calculates required AC input based on DC power draw."""
@@ -37,7 +63,7 @@ def calculate_ac_input(dc_power_watts, efficiency, mains_voltage):
 # --- REPORT GENERATION HELPERS ---
 
 def generate_dc_report_data(components):
-    """Processes DC components to generate table rows and load stats."""
+    """Processes DC components."""
     rows = ""
     total_ma = 0
     rail_3v3_ma = 0
@@ -55,25 +81,23 @@ def generate_dc_report_data(components):
     return rows, total_ma, rail_3v3_ma
 
 def generate_ac_report_data(ac_lines, calc_input_amps, calc_input_watts, sys_volts):
-    """Generates table rows for AC lines and builds list of width targets."""
+    """Generates table rows for AC lines."""
     rows = ""
     width_targets = []
 
-    # 1. Fixed AC Lines (Loads)
     for line in ac_lines:
         current = line['max_current_a']
         pwr_kw = (line['voltage_v'] * current) / 1000
         rows += f"| {line['name']} | {line['voltage_v']}V | {current} A | {pwr_kw:.1f} kW |\n"
         width_targets.append((line['name'], current))
 
-    # 2. Calculated Mains Input
     rows += f"| AC_MAINS_INPUT (Calc) | {sys_volts}V | {calc_input_amps:.3f} A | {calc_input_watts/1000:.3f} kW |\n"
     width_targets.append(("AC_MAINS_INPUT", calc_input_amps))
 
     return rows, width_targets
 
 def generate_trace_width_rows(ac_targets, dc_design_load, rail_3v3_load):
-    """Combines AC and DC targets to generate the Trace Width Rules table."""
+    """Combines AC and DC targets."""
     targets = ac_targets.copy()
     
     # Add DC Targets
@@ -106,21 +130,17 @@ def write_report(content, template_path, output_path):
 # --- MAIN ORCHESTRATOR ---
 
 def main():
-    # 1. Setup
     data = load_json('peak_data.json')
     sys = data['system_info']
     psu = data['power_supply']
 
-    # 2. Analyze DC Loads
     dc_rows, total_dc_ma, rail_3v3_ma = generate_dc_report_data(data['dc_components'])
     
-    # 3. Calculate PSU Design Requirements
     design_load_psu_ma = total_dc_ma * (1 + sys['safety_margin_percent']/100)
     design_load_3v3_ma = rail_3v3_ma * (1 + sys['safety_margin_percent']/100)
     
     psu_status = "✅ **PASS**" if design_load_psu_ma <= psu['max_output_current_ma'] else "❌ **FAIL**"
 
-    # 4. Calculate AC Input Requirements
     dc_power_watts = (design_load_psu_ma / 1000.0) * sys['main_voltage_rail_dc_v']
     ac_in_watts, ac_in_amps = calculate_ac_input(
         dc_power_watts, 
@@ -128,7 +148,6 @@ def main():
         sys['mains_voltage_ac_v']
     )
 
-    # 5. Analyze AC Lines & Prepare Width Targets
     ac_rows, width_targets = generate_ac_report_data(
         data['ac_power_lines'], 
         ac_in_amps, 
@@ -136,14 +155,12 @@ def main():
         sys['mains_voltage_ac_v']
     )
 
-    # 6. Generate Trace Width Rules
     trace_rows = generate_trace_width_rows(
         width_targets, 
         design_load_psu_ma, 
         design_load_3v3_ma
     )
 
-    # 7. Compile Data Dictionary
     report_content = {
         "project_name": sys['project_name'],
         "date": datetime.date.today(),
@@ -161,7 +178,6 @@ def main():
         "trace_width_rows": trace_rows.strip()
     }
 
-    # 8. Write Result
     write_report(report_content, 'report_template.md', 'PCB_Engineering_Report.md')
     print("✅ PCB_Engineering_Report.md generated successfully.")
 

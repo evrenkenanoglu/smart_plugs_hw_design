@@ -1,5 +1,5 @@
 # 🏗️ PCB ENGINEERING REPORT: Smart Plug 20A - Electrical Master
-**Date:** 2026-01-27  
+**Date:** 2026-02-01  
 **Spec:** 2.0oz Copper | 230.0V AC | 5.0V DC  
 **Standard:** IPC-2221 / IEC 60950-1  
 
@@ -24,7 +24,7 @@
 ## ⚡ PART 2: AC HIGH POWER ANALYSIS
 | LINE NAME | VOLTAGE | MAX AMPS | POWER (kW) |
 | :--- | :--- | :--- | :--- |
-| AC_LOAD_20A | 230V | 30.0 A | 6.9 kW |
+| AC_LOAD_20A | 230V | 20.0 A | 4.6 kW |
 | AC_MAINS_INPUT (Calc) | 230.0V | 0.053 A | 0.012 kW |
 
 ---
@@ -34,11 +34,11 @@
 
 | NET FUNCTION | LOAD (A) | MIN WIDTH (Calc) | **ALTIUM RULE (Rec)** |
 | :--- | :--- | :--- | :--- |
-| AC_LOAD_20A | 30.000 | 16.465 mm | **POLYGON POUR** |
-| AC_MAINS_INPUT | 0.053 | 0.200 mm | **1.00 mm** (Mech) |
-| DC_MAIN_5V | 1.691 | 0.312 mm | **0.50 mm** |
-| DC_3V3_RAIL | 0.624 | 0.200 mm | **0.30 mm** |
-| DC_RELAY_GND | 0.864 | 0.200 mm | **0.30 mm** |
+| AC_LOAD_20A | 20.000 | 9.412 mm | **POLYGON POUR** |
+| AC_MAINS_INPUT | 0.053 | 0.200 mm | **1.00 mm** |
+| DC_MAIN_5V | 1.691 | 0.312 mm | **0.80 mm** (SF=2.5) |
+| DC_3V3_RAIL | 0.624 | 0.200 mm | **0.50 mm** (SF=2.5) |
+| DC_RELAY_GND | 0.864 | 0.200 mm | **0.50 mm** (SF=2.5) |
 | DC_SIGNAL | 0.050 | 0.200 mm | **0.25 mm** |
 
 > **⚠️ CRITICAL NOTE for AC_LOAD_20A:**  
@@ -52,7 +52,7 @@
 | ZONE A | ZONE B | STD CLEARANCE | STD CREEPAGE | **RECOMMENDED RULE** |
 | :--- | :--- | :--- | :--- | :--- |
 | AC Phase | AC Neutral | 1.5 mm | 2.5 mm | **3.0 mm** (Robust) |
-| AC Mains | DC Logic | 3.0 mm | 5.0 mm | **5.0 mm** (or Slot) |
+| AC Mains | DC Logic | 3.0 mm | 5.0 mm | **6.0 mm** (or Slot) |
 | AC Relay Pin | Faston Tab | N/A | N/A | **Connect w/ Polygon** |
 | DC 5V | DC GND | 0.15 mm | 0.15 mm | **0.25 mm** |
 

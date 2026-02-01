@@ -39,6 +39,6 @@
     }
   ],
   "ac_power_lines": [
-    { "name": "AC_LOAD_20A", "voltage_v": 230, "max_current_a": 30.0 }
+    { "name": "AC_LOAD_20A", "voltage_v": 230, "max_current_a": 20.0 }
   ]
 }
