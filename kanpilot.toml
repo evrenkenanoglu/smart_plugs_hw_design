@@ -7,6 +7,47 @@ id = "process1"
 name = "To Do"
 
   [[processes.tasks]]
+  id = "ziliq9s7fb693p4d9ymfh061"
+  title = "Connect MCP23017 Interrupt pins to ESP32"
+  description = "<p></p>"
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+[[processes]]
+id = "process2"
+name = "In Progress"
+
+  [[processes.tasks]]
+  id = "d9jkxwinllcg5ir3u9svvaw0"
+  title = "Update MCP23017 Schematic and PCB"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+[[processes]]
+id = "process3"
+name = "Done"
+
+  [[processes.tasks]]
+  id = "x4xf6t1vricxw7m5fsxj4skm"
+  title = "Update AC-DC power converter from HLK-5M05 to HLK-10M05"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
   id = "qlhevbsdgvl9bljje2pqf8xp"
   title = "Check Relay Block For Electrical Calculations"
   description = ""
@@ -28,25 +69,10 @@ name = "To Do"
   priority = ""
   linkCommits = [ ]
 
-[[processes]]
-id = "process2"
-name = "In Progress"
-
-  [[processes.tasks]]
-  id = "x4xf6t1vricxw7m5fsxj4skm"
-  title = "Update AC-DC power converter from HLK-5M05 to HLK-10M05"
-  description = ""
-  tag = "backlog"
-  linkFiles = [ ]
-  dueDate = ""
-  checkList = [ ]
-  priority = ""
-  linkCommits = [ ]
-
   [[processes.tasks]]
   id = "e4oavvytd2m2sc28cxaon4es"
-  title = "Use ULN2803 for Relay Driving"
-  description = ""
+  title = "Use SS8050 for Relay Driving"
+  description = "<p></p>"
   tag = "backlog"
   linkFiles = [ ]
   dueDate = ""
@@ -56,8 +82,8 @@ name = "In Progress"
 
   [[processes.tasks]]
   id = "p17vwkorl0ajn806b73jpdsv"
-  title = "Fix MCP23017 input voltage as 5V"
-  description = ""
+  title = "Fix MCP23017 input voltage as 3V3"
+  description = "<p></p>"
   tag = "backlog"
   linkFiles = [ ]
   dueDate = ""
@@ -75,8 +101,3 @@ name = "In Progress"
   checkList = [ ]
   priority = ""
   linkCommits = [ ]
-
-[[processes]]
-id = "process3"
-name = "Done"
-tasks = [ ]
