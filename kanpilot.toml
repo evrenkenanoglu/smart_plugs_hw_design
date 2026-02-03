@@ -5,26 +5,16 @@ skipFiles = [ ".gitignore", "package.json" ]
 [[processes]]
 id = "process1"
 name = "To Do"
-
-  [[processes.tasks]]
-  id = "ziliq9s7fb693p4d9ymfh061"
-  title = "Connect MCP23017 Interrupt pins to ESP32"
-  description = "<p></p>"
-  tag = "backlog"
-  linkFiles = [ ]
-  dueDate = ""
-  checkList = [ ]
-  priority = ""
-  linkCommits = [ ]
+tasks = [ ]
 
 [[processes]]
 id = "process2"
 name = "In Progress"
 
   [[processes.tasks]]
-  id = "d9jkxwinllcg5ir3u9svvaw0"
-  title = "Update MCP23017 Schematic and PCB"
-  description = ""
+  id = "ziliq9s7fb693p4d9ymfh061"
+  title = "Connect MCP23017 Interrupt pins to ESP32"
+  description = "<p></p>"
   tag = "backlog"
   linkFiles = [ ]
   dueDate = ""
@@ -94,6 +84,17 @@ name = "Done"
   [[processes.tasks]]
   id = "wca0ospr94ti4q6vchyc75vr"
   title = "Use Faston Tabs for the production"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "d9jkxwinllcg5ir3u9svvaw0"
+  title = "Update MCP23017 Schematic and PCB"
   description = ""
   tag = "backlog"
   linkFiles = [ ]
