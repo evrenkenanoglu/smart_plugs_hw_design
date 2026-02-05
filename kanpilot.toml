@@ -10,32 +10,11 @@ tasks = [ ]
 [[processes]]
 id = "process2"
 name = "In Progress"
-
-  [[processes.tasks]]
-  id = "ziliq9s7fb693p4d9ymfh061"
-  title = "Connect MCP23017 Interrupt pins to ESP32"
-  description = "<p></p>"
-  tag = "backlog"
-  linkFiles = [ ]
-  dueDate = ""
-  checkList = [ ]
-  priority = ""
-  linkCommits = [ ]
+tasks = [ ]
 
 [[processes]]
 id = "process3"
 name = "Done"
-
-  [[processes.tasks]]
-  id = "x4xf6t1vricxw7m5fsxj4skm"
-  title = "Update AC-DC power converter from HLK-5M05 to HLK-10M05"
-  description = ""
-  tag = "backlog"
-  linkFiles = [ ]
-  dueDate = ""
-  checkList = [ ]
-  priority = ""
-  linkCommits = [ ]
 
   [[processes.tasks]]
   id = "qlhevbsdgvl9bljje2pqf8xp"
@@ -95,6 +74,28 @@ name = "Done"
   [[processes.tasks]]
   id = "d9jkxwinllcg5ir3u9svvaw0"
   title = "Update MCP23017 Schematic and PCB"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "ziliq9s7fb693p4d9ymfh061"
+  title = "Connect MCP23017 Interrupt pins to ESP32"
+  description = "<p></p>"
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "x4xf6t1vricxw7m5fsxj4skm"
+  title = "Update AC-DC power converter from HLK-5M05 to HLK-10M05"
   description = ""
   tag = "backlog"
   linkFiles = [ ]

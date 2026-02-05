@@ -184,6 +184,23 @@ GenerateClassCluster=0
 DocumentUniqueId=VBQIEPIA
 
 [Document9]
+DocumentPath=IO_Expander_Interrupt_Block.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=9
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=BCERSNYJ
+
+[Document10]
 DocumentPath=Reset_Block.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -200,7 +217,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=ZZMOKQWE
 
-[Document10]
+[Document11]
 DocumentPath=Smart_Plug_PCB.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -217,7 +234,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=CYJIDKAR
 
-[Document11]
+[Document12]
 DocumentPath=Smart_Plugs.Annotation
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -234,7 +251,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document12]
+[Document13]
 DocumentPath=LIBRARY\D-1N4007TP\1N4007-TP1_1N4007-TP.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -251,7 +268,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=JEBUSUVU
 
-[Document13]
+[Document14]
 DocumentPath=LIBRARY\TERMINAL_BLOCK_3P\KF7.62-3P1_KF7.62-3P.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -268,7 +285,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=OBQDOFLF
 
-[Document14]
+[Document15]
 DocumentPath=LIBRARY\TERMINAL_BLOCK_2P\KF7.62-2P1_KF7.62-2P.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -285,7 +302,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=SXMLTAFN
 
-[Document15]
+[Document16]
 DocumentPath=LIBRARY\BJT_TRANSISTOR\S8050_C83271_S8050_C8327.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -302,7 +319,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=JEFGMZQN
 
-[Document16]
+[Document17]
 DocumentPath=LIBRARY\CAP_100nF\FG28X7R1H104KNT061_FG28X7R1H104KNT06.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -319,7 +336,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QKFGPXRU
 
-[Document17]
+[Document18]
 DocumentPath=LIBRARY\LED-5mm\333-2SURD_S530-A31_333-2SURD_S530-A3.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -336,7 +353,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=ZOUHJUIZ
 
-[Document18]
+[Document19]
 DocumentPath=LIBRARY\CAP_22uF\50YXJ22M5X111_50YXJ22M5X11.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -353,7 +370,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=GSEFBWEY
 
-[Document19]
+[Document20]
 DocumentPath=LIBRARY\CAP_10uF\50YXJ10M5X111_50YXJ10M5X11.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -370,7 +387,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=TEICQMOS
 
-[Document20]
+[Document21]
 DocumentPath=SLA-05VDC-SL-A.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -387,7 +404,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=PMHTWFJN
 
-[Document21]
+[Document22]
 DocumentPath=LIBRARY\RELAY_TH_HF105F\HF105F-1_005D-1HST1_Updated.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -404,7 +421,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=RWGZABXT
 
-[Document22]
+[Document23]
 DocumentPath=SLA-05VDC-SL-A.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -421,7 +438,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=PHTAGRNY
 
-[Document23]
+[Document24]
 DocumentPath=Jobs\Manufacturing.OutJob
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -438,7 +455,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document24]
+[Document25]
 DocumentPath=Smart_Plugs.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
