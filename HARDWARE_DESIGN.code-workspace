@@ -1,0 +1,46 @@
+{
+    "folders": [
+        {
+            "path": "../"
+        }
+    ],
+    "settings": {
+        "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false,
+        // Change the color theme to your preference
+        "workbench.colorCustomizations": {
+            "activityBar.background": "#6c6415",
+            "titleBar.activeBackground": "#6c6415",
+            "titleBar.activeForeground": "#f5ffde"
+        },
+        "python.terminal.activateEnvironment": true
+    },
+    "extensions": {
+        "recommendations": [
+            "ms-vscode.cpptools",
+            "ms-vscode.cmake-tools",
+            "espressif.esp-idf-extension"
+        ]
+    },
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "HW: Run Power Calculations",
+                "type": "shell",
+                "windows": {
+                    "command": "cd ${workspaceFolder}/HW/DESIGN/SCRIPTS/POWER_CALCULATIONS/Power_Calculations && python main.py"
+                },
+            },
+            {
+                "label": "HW: Run Relay Transistor Calculations",
+                "type": "shell",
+                "windows": {
+                    "command": "cd ${workspaceFolder}/HW/DESIGN/SCRIPTS/POWER_CALCULATIONS/Relay_Transistor_Calculation && python relay_transistor_report.py"
+                },
+            },
+        ]
+    }
+}
