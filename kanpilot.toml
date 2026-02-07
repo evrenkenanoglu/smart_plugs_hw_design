@@ -5,7 +5,17 @@ skipFiles = [ ".gitignore", "package.json" ]
 [[processes]]
 id = "process1"
 name = "To Do"
-tasks = [ ]
+
+  [[processes.tasks]]
+  id = "oa14v3fvcwou9ilobju80nz6"
+  title = "Find an ESP32 which fits to the project "
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
 
 [[processes]]
 id = "process2"
