@@ -40,6 +40,7 @@ Project Logs for */
 # Altium auto-generates these folders every time you output job files.
 Project Outputs for */
 Status Report.Txt
+Release*
 
 # 6. Simulation & Signal Integrity
 *.nsx
