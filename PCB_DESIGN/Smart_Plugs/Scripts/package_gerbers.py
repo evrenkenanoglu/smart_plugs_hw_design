@@ -9,10 +9,10 @@ from datetime import datetime
 # ==========================================
 
 # The folder where Altium dumps the files
-SOURCE_DIR = "Project Outputs for Smart_Plugs"
+SOURCE_DIR = "../Project Outputs for Smart_Plugs"
 
 # Where you want the clean files to go
-OUTPUT_DIR = "Release_Package"
+OUTPUT_DIR = "../Release_Package"
 
 # The name of the zip file to create
 ZIP_NAME = f"Smart_Plug_Pro_V1_Gerbers_{datetime.now().strftime('%Y-%m-%d')}"
