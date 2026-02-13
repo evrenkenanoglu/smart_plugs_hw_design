@@ -1,0 +1,798 @@
+{
+    "Spacing": {
+        "Safe Spacing": {
+            "Clearance": {
+                "editName": "Clearance",
+                "unit": "mm",
+                "isSetDefault": true,
+                "column": [
+                    "Track",
+                    "SMD Pad",
+                    "TH Pad",
+                    "Via",
+                    "Fill Region/Teardrop",
+                    "Slot Region",
+                    "Line",
+                    "Text/Image",
+                    "Board Outline"
+                ],
+                "row": [
+                    "Track",
+                    "SMD Pad",
+                    "TH Pad",
+                    "Via",
+                    "Fill Region/Teardrop",
+                    "Slot Region",
+                    "Line",
+                    "Text/Image",
+                    "Board Outline",
+                    "Hole"
+                ],
+                "table": [
+                    [
+                        0.39999919999999994
+                    ],
+                    [
+                        0.39999919999999994,
+                        0.39999919999999994
+                    ],
+                    [
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994
+                    ],
+                    [
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994
+                    ],
+                    [
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994
+                    ],
+                    [
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994
+                    ],
+                    [
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994
+                    ],
+                    [
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994
+                    ],
+                    [
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994
+                    ],
+                    [
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994,
+                        0.39999919999999994
+                    ]
+                ],
+                "isRule": true,
+                "categorayKey": "Safe Spacing",
+                "redStar": false
+            },
+            "Clearance_Exception": {
+                "editName": "Clearance_Exception",
+                "unit": "mm",
+                "isSetDefault": false,
+                "column": [
+                    "Track",
+                    "SMD Pad",
+                    "TH Pad",
+                    "Via",
+                    "Fill Region/Teardrop",
+                    "Slot Region",
+                    "Line",
+                    "Text/Image",
+                    "Board Outline"
+                ],
+                "row": [
+                    "Track",
+                    "SMD Pad",
+                    "TH Pad",
+                    "Via",
+                    "Fill Region/Teardrop",
+                    "Slot Region",
+                    "Line",
+                    "Text/Image",
+                    "Board Outline",
+                    "Hole"
+                ],
+                "table": [
+                    [
+                        0.19999959999999997
+                    ],
+                    [
+                        0.19999959999999997,
+                        0.19999959999999997
+                    ],
+                    [
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997
+                    ],
+                    [
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997
+                    ],
+                    [
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997
+                    ],
+                    [
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997
+                    ],
+                    [
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997
+                    ],
+                    [
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997
+                    ],
+                    [
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997
+                    ],
+                    [
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997,
+                        0.19999959999999997
+                    ]
+                ],
+                "isRule": true,
+                "categorayKey": "Safe Spacing",
+                "redStar": false
+            },
+            "Clearance_HV_Internal": {
+                "editName": "Clearance_HV_Internal",
+                "unit": "mm",
+                "isSetDefault": false,
+                "column": [
+                    "Track",
+                    "SMD Pad",
+                    "TH Pad",
+                    "Via",
+                    "Fill Region/Teardrop",
+                    "Slot Region",
+                    "Line",
+                    "Text/Image",
+                    "Board Outline"
+                ],
+                "row": [
+                    "Track",
+                    "SMD Pad",
+                    "TH Pad",
+                    "Via",
+                    "Fill Region/Teardrop",
+                    "Slot Region",
+                    "Line",
+                    "Text/Image",
+                    "Board Outline",
+                    "Hole"
+                ],
+                "table": [
+                    [
+                        2.99999908
+                    ],
+                    [
+                        2.99999908,
+                        2.99999908
+                    ],
+                    [
+                        2.99999908,
+                        2.99999908,
+                        2.99999908
+                    ],
+                    [
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908
+                    ],
+                    [
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908
+                    ],
+                    [
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908
+                    ],
+                    [
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908
+                    ],
+                    [
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908
+                    ],
+                    [
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908
+                    ],
+                    [
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908,
+                        2.99999908
+                    ]
+                ],
+                "isRule": true,
+                "categorayKey": "Safe Spacing",
+                "redStar": false
+            },
+            "Clearance_HV_Isolation": {
+                "editName": "Clearance_HV_Isolation",
+                "unit": "mm",
+                "isSetDefault": false,
+                "column": [
+                    "Track",
+                    "SMD Pad",
+                    "TH Pad",
+                    "Via",
+                    "Fill Region/Teardrop",
+                    "Slot Region",
+                    "Line",
+                    "Text/Image",
+                    "Board Outline"
+                ],
+                "row": [
+                    "Track",
+                    "SMD Pad",
+                    "TH Pad",
+                    "Via",
+                    "Fill Region/Teardrop",
+                    "Slot Region",
+                    "Line",
+                    "Text/Image",
+                    "Board Outline",
+                    "Hole"
+                ],
+                "table": [
+                    [
+                        6.0000007
+                    ],
+                    [
+                        6.0000007,
+                        6.0000007
+                    ],
+                    [
+                        6.0000007,
+                        6.0000007,
+                        6.0000007
+                    ],
+                    [
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007
+                    ],
+                    [
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007
+                    ],
+                    [
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007
+                    ],
+                    [
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007
+                    ],
+                    [
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007
+                    ],
+                    [
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007
+                    ],
+                    [
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007,
+                        6.0000007
+                    ]
+                ],
+                "isRule": true,
+                "categorayKey": "Safe Spacing",
+                "redStar": false
+            },
+            "Clearance_SSOP": {
+                "editName": "Clearance_SSOP",
+                "unit": "mm",
+                "isSetDefault": false,
+                "column": [
+                    "Track",
+                    "SMD Pad",
+                    "TH Pad",
+                    "Via",
+                    "Fill Region/Teardrop",
+                    "Slot Region",
+                    "Line",
+                    "Text/Image",
+                    "Board Outline"
+                ],
+                "row": [
+                    "Track",
+                    "SMD Pad",
+                    "TH Pad",
+                    "Via",
+                    "Fill Region/Teardrop",
+                    "Slot Region",
+                    "Line",
+                    "Text/Image",
+                    "Board Outline",
+                    "Hole"
+                ],
+                "table": [
+                    [
+                        0.17999964
+                    ],
+                    [
+                        0.17999964,
+                        0.17999964
+                    ],
+                    [
+                        0.17999964,
+                        0.17999964,
+                        0.17999964
+                    ],
+                    [
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964
+                    ],
+                    [
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964
+                    ],
+                    [
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964
+                    ],
+                    [
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964
+                    ],
+                    [
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964
+                    ],
+                    [
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964
+                    ],
+                    [
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964,
+                        0.17999964
+                    ]
+                ],
+                "isRule": true,
+                "categorayKey": "Safe Spacing",
+                "redStar": false
+            }
+        },
+        "Other Spacing": {
+            "otherClearance": {
+                "editName": "otherClearance",
+                "unit": "mm",
+                "isSetDefault": true,
+                "form": {
+                    "device2device": 0,
+                    "thru2Smd": 0,
+                    "hole2Hole": 0.29999939999999997
+                },
+                "isRule": true,
+                "categorayKey": "Other Spacing",
+                "redStar": false
+            }
+        }
+    },
+    "Physics": {
+        "Track": {
+            "Width_LV": {
+                "editName": "Width_LV",
+                "unit": "mm",
+                "isSetDefault": true,
+                "form": {
+                    "strokeWidthMin": 0.127,
+                    "strokeWidthDefault": 0.254,
+                    "strokeWidthMax": 2.54
+                },
+                "isRule": true,
+                "categorayKey": "Track",
+                "redStar": false
+            },
+            "Width_DC_MAIN_3V3": {
+                "editName": "Width_DC_MAIN_3V3",
+                "unit": "mm",
+                "isSetDefault": false,
+                "form": {
+                    "strokeWidthMin": 0.254,
+                    "strokeWidthDefault": 0.65000124,
+                    "strokeWidthMax": 1.00000054
+                },
+                "isRule": true,
+                "categorayKey": "Track",
+                "redStar": false
+            },
+            "Width_DC_MAIN_5V": {
+                "editName": "Width_DC_MAIN_5V",
+                "unit": "mm",
+                "isSetDefault": false,
+                "form": {
+                    "strokeWidthMin": 0.8000009399999999,
+                    "strokeWidthDefault": 0.8000009399999999,
+                    "strokeWidthMax": 1.00000054
+                },
+                "isRule": true,
+                "categorayKey": "Track",
+                "redStar": false
+            },
+            "Width_HV_0.3A": {
+                "editName": "Width_HV_0.3A",
+                "unit": "mm",
+                "isSetDefault": false,
+                "form": {
+                    "strokeWidthMin": 1.00000054,
+                    "strokeWidthDefault": 1.00000054,
+                    "strokeWidthMax": 1.00000054
+                },
+                "isRule": true,
+                "categorayKey": "Track",
+                "redStar": false
+            },
+            "Width_HV_20A": {
+                "editName": "Width_HV_20A",
+                "unit": "mm",
+                "isSetDefault": false,
+                "form": {
+                    "strokeWidthMin": 3.9999996199999996,
+                    "strokeWidthDefault": 6.0000007,
+                    "strokeWidthMax": 10.00000032
+                },
+                "isRule": true,
+                "categorayKey": "Track",
+                "redStar": false
+            },
+            "Width_PE": {
+                "editName": "Width_PE",
+                "unit": "mm",
+                "isSetDefault": false,
+                "form": {
+                    "strokeWidthMin": 2.99999908,
+                    "strokeWidthDefault": 2.99999908,
+                    "strokeWidthMax": 2.99999908
+                },
+                "isRule": true,
+                "categorayKey": "Track",
+                "redStar": false
+            }
+        },
+        "Net Length": {
+            "netLength": {
+                "editName": "netLength",
+                "unit": "mm",
+                "isSetDefault": true,
+                "form": {
+                    "netLengthMin": 0,
+                    "netLengthMax": 0
+                },
+                "isRule": true,
+                "categorayKey": "Net Length",
+                "redStar": false
+            }
+        },
+        "Differential Pair": {
+            "differentialPair": {
+                "editName": "differentialPair",
+                "unit": "mm",
+                "isSetDefault": true,
+                "form": {
+                    "strokeWidthMin": 0.127,
+                    "strokeWidthDefault": 0.254,
+                    "strokeWidthMax": 2.54,
+                    "differentailPairSpacingMin": 0.15239999999999998,
+                    "differentailPairSpacingMax": 0,
+                    "differentailPairSpacingDefault": 0.15239999999999998,
+                    "differentailPairLenTolerMax": 0.254
+                },
+                "isRule": true,
+                "categorayKey": "Differential Pair",
+                "redStar": false
+            }
+        },
+        "Blind/Buried Via": {
+            "blindVia": {
+                "editName": "blindVia",
+                "isSetDefault": true,
+                "table": [],
+                "isRule": true,
+                "categorayKey": "Blind/Buried Via",
+                "redStar": false
+            }
+        },
+        "Via Size": {
+            "viaSize": {
+                "editName": "viaSize",
+                "unit": "mm",
+                "isSetDefault": true,
+                "form": {
+                    "viaOuterdiameterMin": 0.49999899999999997,
+                    "viaOuterdiameterMax": 10.00000032,
+                    "viaOuterdiameterDefault": 0.61000132,
+                    "viaInnerdiameterMin": 0.29999939999999997,
+                    "viaInnerdiameterMax": 6.2999975599999996,
+                    "viaInnerdiameterDefault": 0.30499812
+                },
+                "isRule": true,
+                "categorayKey": "Via Size",
+                "redStar": false
+            }
+        }
+    },
+    "Plane": {
+        "Plane Zone": {
+            "innerPlane": {
+                "editName": "innerPlane",
+                "unit": "mm",
+                "isSetDefault": true,
+                "form": {
+                    "networkSpacing": 0.254,
+                    "distance2Border": 0.254,
+                    "padConnectionMode": 0,
+                    "padDivergenceStrokeWidth": 0.254,
+                    "padDivergenceSpacing": 0.254,
+                    "padSpokeAngle": 90,
+                    "multiLayerPadConnectionMode": "0",
+                    "multiLayerPadDivergenceStrokeWidth": 0.254,
+                    "multiLayerPadDivergenceSpacing": 0.254,
+                    "multiLayerPadSpokeAngle": 90
+                },
+                "isRule": true,
+                "categorayKey": "Plane Zone",
+                "redStar": false
+            }
+        },
+        "Copper Zone": {
+            "copperRegion": {
+                "editName": "copperRegion",
+                "unit": "mm",
+                "isSetDefault": true,
+                "form": {
+                    "networkSpacing": 0.254,
+                    "distance2Border": 0.254,
+                    "padConnectionMode": "0",
+                    "padDivergenceStrokeWidth": 0.254,
+                    "padDivergenceSpacing": 0.254,
+                    "padSpokeAngle": 90,
+                    "multiLayerPadConnectionMode": "0",
+                    "multiLayerPadDivergenceStrokeWidth": 0.254,
+                    "multiLayerPadDivergenceSpacing": 0.254,
+                    "multiLayerPadSpokeAngle": 90,
+                    "trackConnectionMode": 0
+                },
+                "isRule": true,
+                "categorayKey": "Copper Zone",
+                "redStar": false
+            },
+            "Connect_HV_Solid": {
+                "editName": "Connect_HV_Solid",
+                "unit": "mm",
+                "isSetDefault": false,
+                "form": {
+                    "networkSpacing": 0.254,
+                    "distance2Border": 0.254,
+                    "padConnectionMode": "1",
+                    "padDivergenceStrokeWidth": 0.254,
+                    "padDivergenceSpacing": 0.254,
+                    "padSpokeAngle": 90,
+                    "multiLayerPadConnectionMode": "1",
+                    "multiLayerPadDivergenceStrokeWidth": 0.254,
+                    "multiLayerPadDivergenceSpacing": 0.254,
+                    "multiLayerPadSpokeAngle": 90,
+                    "trackConnectionMode": 0
+                },
+                "isRule": true,
+                "categorayKey": "Copper Zone",
+                "redStar": false
+            }
+        }
+    },
+    "Expansion": {
+        "Paste Mask Expansion": {
+            "pasteMaskExpansion": {
+                "editName": "pasteMaskExpansion",
+                "unit": "mm",
+                "isSetDefault": true,
+                "form": {
+                    "padToplayerExpansion": 0,
+                    "padBottomlayerExpansion": 0,
+                    "testPointToplayerExpansion": -25.4,
+                    "testPointBottomlayerExpansion": -25.4
+                },
+                "isRule": true,
+                "categorayKey": "Paste Mask Expansion",
+                "redStar": false
+            }
+        },
+        "Solder Mask Expansion": {
+            "solderMaskExpansion": {
+                "editName": "solderMaskExpansion",
+                "unit": "mm",
+                "isSetDefault": true,
+                "form": {
+                    "padToplayerExpansion": 0.0508,
+                    "padBottomlayerExpansion": 0.0508,
+                    "viaToplayerExpansion": -25.4,
+                    "viaBottomlayerExpansion": -25.4,
+                    "testPointToplayerExpansion": 0.0508,
+                    "testPointBottomlayerExpansion": 0.0508
+                },
+                "isRule": true,
+                "categorayKey": "Solder Mask Expansion",
+                "redStar": false
+            }
+        }
+    }
+}
