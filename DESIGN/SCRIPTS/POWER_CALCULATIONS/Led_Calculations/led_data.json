@@ -1,0 +1,18 @@
+{
+    "leds": [
+        {
+            "source_voltage": 3.3,
+            "name": "System Status (White)",
+            "forward_voltage_min": 2.6,
+            "forward_voltage_max": 3.2,
+            "target_current_ma": 12
+        },
+        {
+            "source_voltage": 5.0,
+            "name": "System Status (White)",
+            "forward_voltage_min": 2.6,
+            "forward_voltage_max": 3.2,
+            "target_current_ma": 11
+        }
+    ]
+}
