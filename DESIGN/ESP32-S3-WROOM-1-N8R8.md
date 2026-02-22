@@ -113,7 +113,7 @@ These pins are sampled at the moment of Reset (Latch). Incorrect connections her
 | Module Pin | Function | Schematic Action | Why? |
 | :--- | :--- | :--- | :--- |
 | **GPIO 0** (Pin 27) | Boot Mode | **10kΩ Pull-Up** | Must be HIGH to run code. External tool pulls LOW to flash. |
-| **GPIO 46** (Pin 4) | ROM Log / Voltage | **FLOAT** (Do not connect) | Default is Pull-Down (0). Pulling HIGH can disable ROM messages or change boot voltage. |
+| **GPIO 46** (Pin ?) | ROM Log / Voltage | **FLOAT** (Do not connect) | Default is Pull-Down (0). Pulling HIGH can disable ROM messages or change boot voltage. |
 | **GPIO 45** (Pin 26) | VDD_SPI Voltage | **FLOAT** (Do not connect) | Default is Pull-Down (0) for 3.3V Flash. Pulling HIGH forces 1.8V, which kills communication with N8R8 Flash. |
 | **GPIO 3** (Pin 18) | JTAG | **FLOAT** (Do not connect) | Default is Floating. No action needed unless using JTAG. |
 
