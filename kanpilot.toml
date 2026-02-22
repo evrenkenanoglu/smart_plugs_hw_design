@@ -3,12 +3,67 @@ skipFolders = [ "node_modules", ".vscode", "out", "dist", ".vscode-test" ]
 skipFiles = [ ".gitignore", "package.json" ]
 
 [[processes]]
-id = "process1"
-name = "To Do"
+id = "vzr1r1f65ute4mo8buqqs8jq"
+name = "Ready"
 
   [[processes.tasks]]
-  id = "oa14v3fvcwou9ilobju80nz6"
-  title = "Find an ESP32 which fits to the project "
+  id = "qj5m5bbkwjv4bn45l32w4zdg"
+  title = "EMC and EMI Improvement"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "iyiyxyx4bhnv03vv91mpk374"
+  title = "Finalize the UI board design decision"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "b4dt00e0shxkkk6olwoqukq2"
+  title = "Check Socket to be bougth or to be design"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "je6ctrmdgghoz975rbslq7l0"
+  title = "Manage the net classes and design rules "
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "bmucv228iqkb5kouwqpfxse2"
+  title = "Place the Polygon Pours"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "omgy6vl7ehqh598ss3a70qz6"
+  title = "Create Slots between 20A and rest"
   description = ""
   tag = "backlog"
   linkFiles = [ ]
@@ -106,6 +161,17 @@ name = "Done"
   [[processes.tasks]]
   id = "x4xf6t1vricxw7m5fsxj4skm"
   title = "Update AC-DC power converter from HLK-5M05 to HLK-10M05"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "oa14v3fvcwou9ilobju80nz6"
+  title = "Find an ESP32 which fits to the project "
   description = ""
   tag = "backlog"
   linkFiles = [ ]
