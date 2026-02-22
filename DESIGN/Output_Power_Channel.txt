@@ -1,0 +1,27 @@
+[ LOW VOLTAGE / CONTROL SIDE ]            |       [ HIGH VOLTAGE / AC SIDE ]
+                                                 |
+   Net: +5V (Relay Power)                        |     Net: AC_L_FUSED (From Sheet 01)
+      |                                          |           |
+      +---------------+----------------+         |           |
+      |               |                |         |           |
+     [D] (Flyback)   [R] (470R)      [ K1 ]      |        [ K1 ] (Relay Switch)
+     [1] Diode       [2] Limit     (Relay Coil)  |       (Common)
+      |  (1N4007)     |                |         |           |
+      |               |                |         |      \    |
+      |             [LED] (Status)     |         |       \   | (Switch Closes)
+      |               |                |         |        \  |
+      +-------+-------+                |         |           |
+              | (Collector Node)       |         |       (NO - Normally Open)
+              |                        |         |           |
+          (C) |                        |         |           +-----> [ TERMINAL J_OUT1 ]
+        [ Q1 ] (NPN Transistor)        |         |                   (Pin 1: Live Out)
+    B /       (SS8050)                 |         |
+  ---|                                 |         |
+     \ E                               |         |           +-----> [ TERMINAL J_OUT1 ]
+      |                                |         |           |       (Pin 2: Neutral)
+     GND                               |         |           |
+                                       |         |    Net: AC_N (From Sheet 01)
+  
+  Signal Input:
+  [ Port: DRV_SIG_1 ] --[ R ]-- (Base Q1)
+                        1k

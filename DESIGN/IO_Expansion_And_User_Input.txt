@@ -1,0 +1,35 @@
+[ I2C PULL-UPS ]             [ IO EXPANDER U3 ]                [ OUTPUTS TO RELAYS ]
+                                   (MCP23017 / Header 28)
+     Net: SDA                       1           28
+        |   +3V3                  --|GPB0   GPA7|-- (NC)
+        |     |                   --|GPB1   GPA6|-- (NC)
+       [R]   [R]                  --|GPB2   GPA5|-- (NC)
+  +3V3--+-----+                   --|GPB3   GPA4|-- (NC)            Net: DRV_SIG_1
+        |     |                   --|GPB4   GPA3|--------------------->
+        |     |                   --|GPB5   GPA2|---------------------> Net: DRV_SIG_2
+      (SDA) (SCL)                 --|GPB6   GPA1|---------------------> Net: DRV_SIG_3
+        |     |                   --|GPB7   GPA0|---------------------> Net: DRV_SIG_4
+        |     |    +3V3  +3V3     --|VDD    INTA|--
+        +-----|------|-----|--------|9      INTB|--
+              +------|-----|--------|10(GND)  NC|--
+                     |     |      --|NC      RST|-------+----[ R ]-----+3V3 
+                   [C7]    |      --|SCL      A2|--+    |  (10k Pullup)
+                     |     |      --|SDA      A1|--|    |
+                    GND    |      --|NC       A0|--+    +-----> Net: MCP_RST
+                           |        |______________|            (To ESP32 IO4)
+                           +----------------------------(GND) 
+                                                        (Address = 0x20)
+
+      [ USER BUTTONS ] (Repeat x4)
+ 
+    Net: +3V3
+       |
+      [R] (10k Pull-Up)
+       |
+       +---------> To GPB0 (Pin 1)
+       |
+    [ SW ] (Button)
+       |
+       +---------- [ C ] (100nF)
+       |             |
+      GND           GND

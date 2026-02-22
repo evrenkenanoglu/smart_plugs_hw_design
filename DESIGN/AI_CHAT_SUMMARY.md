@@ -1,12 +1,10 @@
-This is the **Final Project Archive**. It contains every decision, specification, component choice, layout rule, and code snippet we developed.
-
-You should save this content into a folder structure on your computer (e.g., `/Docs`, `/Scripts`, `/BOM`) to preserve the engineering history.
+Here is the updated **Final Project Archive** with the `MCP23017` removed and the digital logic section updated to reflect direct ESP32 GPIO control. I have also removed the IO Expander from the Bill of Materials table.
 
 ---
 
 # 📂 PROJECT ARCHIVE: 4-Channel 20A Smart Plug System
-**Version:** 1.0 (Ready for Manufacturing)
-**Date:** February 18, 2026
+**Version:** 1.1 (Ready for Manufacturing)
+**Date:** February 22, 2026
 **Fabrication Target:** JLCPCB / PCBWay
 
 ---
@@ -50,8 +48,7 @@ You should save this content into a folder structure on your computer (e.g., `/D
 *   **Relay:** Hongfa **HF105F-1/005D-1HST** (30A rating, High Power).
 
 ### D. Digital Logic
-*   **IO Expander:** `MCP23017` (I2C) controls Relays and reads Buttons.
-*   **Interrupts:** `INTA` + `INTB` shorted (Wired-OR) $\to$ 10k Pull-up $\to$ ESP32 GPIO.
+*   **Control Logic:** ESP32 GPIO pins directly drive the relay transistor bases and read any physical button inputs.
 *   **ESP32:** Mounted via **Female Headers** (Not soldered directly).
 
 ---
@@ -86,7 +83,6 @@ You should save this content into a folder structure on your computer (e.g., `/D
 | **FT_xx** | Faston Tab | **726386-2** (6.35mm) | THT | 8 |
 | **Q11-Q14** | Transistor | **SS8050** | SOT-23 | 4 |
 | **U1** | LDO | **AMS1117-3.3** | SOT-223 | 1 |
-| **U2** | IO Expander | **MCP23017-E/SS** | SSOP-28 | 1 |
 | **J2** | Socket | **Female Header 1x19** | 2.54mm | 2 |
 | **CX1** | Safety Cap | **100nF 275V X2** | P=10mm | 1 |
 | **CY1** | Safety Cap | **2.2nF 400V Y1** | P=10mm | 1 |
@@ -107,5 +103,3 @@ You should save this content into a folder structure on your computer (e.g., `/D
 *   **Earth (PE):** Connect Wall Earth $\to$ Wago Block $\to$ Output Socket Earths. **Do not run the 20A fault current through the PCB.** Connect a single thin wire from the Wago to the PCB `J1-PE` for shielding.
 *   **Neutral (N):** Wall Neutral $\to$ Wago Block $\to$ Output Sockets. Branch a wire to PCB `J1-N`.
 *   **Live (L):** Wall Live $\to$ Wago Block $\to$ PCB `FT_IN` Tabs.
-
----

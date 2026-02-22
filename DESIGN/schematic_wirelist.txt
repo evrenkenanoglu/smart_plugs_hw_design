@@ -1,0 +1,99 @@
+========================================================================
+PROJECT: Smart Power Bar (4-Channel)
+FILE:    HW/DESIGN/schematic_wirelist.txt
+DATE:    2025
+NOTES:   Professional Grade - Isolated Logic - Shared LED/Relay Drive
+========================================================================
+
+[1] POWER SUPPLY SECTION
+------------------------------------------------------------------------
+COMPONENT       PIN/TERMINAL    CONNECTED TO           NOTE
+AC_Input        Live (L)        Fuse (F1) Input        Mains Line
+Fuse (F1)       Output          MOV1 Pin 1             10A Slow Blow
+AC_Input        Neutral (N)     MOV1 Pin 2             Mains Neutral
+MOV1            Pin 1, 2        AC-DC PSU Inputs       Surge Protection
+AC-DC PSU       +V_OUT          NET_5V                 Main 5V Rail
+AC-DC PSU       -V_OUT          GND                    Common Ground
+LDO (AMS1117)   VIN             NET_5V                 Input
+LDO (AMS1117)   VOUT            NET_3V3                Logic Power
+C1 (10uF)       Positive        NET_5V                 Input Decoupling
+C2 (22uF)       Positive        NET_3V3                Output Bulk
+C3 (100nF)      Positive        NET_3V3                HF Noise Filter
+
+[2] CONTROLLER (ESP32-WROOM-32E)
+------------------------------------------------------------------------
+PIN             FUNCTION        CONNECTED TO           NOTE
+3V3             Power           NET_3V3
+GND             Ground          GND
+EN              Reset           RC_RST_NET             (10k Pullup + 1uF to GND)
+IO0             Boot            Button_Boot -> GND     Hold to Flash
+IO21            I2C_SDA         MCP23017 Pin 13        Requires 4.7k Pullup to 3V3
+IO22            I2C_SCL         MCP23017 Pin 12        Requires 4.7k Pullup to 3V3
+TXD0            UART_TX         Prog Header            Debug/Flash
+RXD0            UART_RX         Prog Header            Debug/Flash
+
+[3] IO EXPANDER (MCP23017)
+------------------------------------------------------------------------
+PIN             NAME            CONNECTED TO           NOTE
+9               VDD             NET_3V3
+10              VSS             GND
+12              SCL             ESP32 IO22
+13              SDA             ESP32 IO21
+18              RESET           NET_3V3 (via 10k R)    Active Low
+15, 16, 17      A0, A1, A2      GND                    I2C Address = 0x20
+21              GPA0            Base Q1 (via 1k R)     Output Ch 1
+22              GPA1            Base Q2 (via 1k R)     Output Ch 2
+23              GPA2            Base Q3 (via 1k R)     Output Ch 3
+24              GPA3            Base Q4 (via 1k R)     Output Ch 4
+1               GPB0            Button 1               Input Ch 1
+2               GPB1            Button 2               Input Ch 2
+3               GPB2            Button 3               Input Ch 3
+4               GPB3            Button 4               Input Ch 4
+
+[4] OUTPUT STAGE (x4 Channels) - SHARED RELAY & LED
+------------------------------------------------------------------------
+* LOGIC REPEATS FOR CHANNELS 1 TO 4 *
+
+COMPONENTS PER CHANNEL:
+Qx      = NPN Transistor (SS8050 or BC337)
+Dx      = Flyback Diode (1N4007)
+Kx      = Relay (5V Coil, SPDT)
+Rx_Base = 1k Ohm (Logic Limit)
+Rx_LED  = 470 Ohm (Current Limit for LED)
+
+WIRING CONNECTIONS (Example for Channel 1):
+1. POWER RAIL:
+   NET_5V  ----> Relay Coil Pin (+)
+   NET_5V  ----> Dx Cathode (Striped side)
+   NET_5V  ----> Rx_LED ----> LED Anode (+)
+
+2. CONTROL SIGNAL:
+   MCP_GPA0 ----> Rx_Base ----> Q1 Base
+
+3. SWITCHING NODE (The Merge Point at Q1 Collector):
+   Q1 Collector connects to:
+     -> Relay Coil Pin (-)
+     -> Dx Anode
+     -> LED Cathode (-)
+
+4. GROUND RETURN:
+   Q1 Emitter ----> GND
+
+[5] INPUT STAGE (x4 Channels) - DEBOUNCED
+------------------------------------------------------------------------
+* LOGIC REPEATS FOR CHANNELS 1 TO 4 *
+
+COMPONENTS PER CHANNEL:
+Bx      = Tactile Switch (Momentary)
+Rx_Pull = 10k Ohm
+Cx_Deb  = 100nF (Ceramic)
+
+WIRING CONNECTIONS (Example for Channel 1):
+1. NET_3V3  ----> Rx_Pull ----> MCP_GPB0
+2. MCP_GPB0 ----> Button Pin A
+3. MCP_GPB0 ----> Cx_Deb ----> GND
+4. Button Pin B ----> GND
+
+========================================================================
+END OF WIRELIST
+========================================================================
