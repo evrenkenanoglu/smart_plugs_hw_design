@@ -1,6 +1,6 @@
-# 🏗️ PCB ENGINEERING REPORT: Smart Plug 20A - Electrical Master
-**Date:** 2026-02-22  
-**Spec:** 1.0oz Copper | 230.0V AC | 5.0V DC  
+# 🏗️ PCB ENGINEERING REPORT: Smart Plug System v2 - Main_Power_Board
+**Date:** 2026-03-01  
+**Spec:** 2.0oz Copper | 230.0V AC | 5.0V DC  
 **Standard:** IPC-2221 / IEC 60950-1  
 
 ---
@@ -8,15 +8,14 @@
 ## 🔋 PART 1: POWER SUPPLY LOAD ANALYSIS
 **Objective:** Verify if `HLK-10M05` (2000.0 mA) can handle the Worst-Case Peak loads.
 
-| COMPONENT | QTY | PEAK (mA) | TOTAL (mA) |
+| COMPONENT | PEAK (mA)| QTY | TOTAL (mA) |
 | :--- | :--- | :--- | :--- |
-| HF105F-1 Coils (Worst Case) | 5.0V | 4 | 216.0 | 864.0 |
+| HF115F Relay Coils | 5.0V | 4 | 80.0 | 320.0 |
 | ESP32-WROOM-32UE | 3.3V | 1 | 500.0 | 500.0 |
-| ULN2803 Driver + LEDs | 5.0V | 1 | 25.0 | 25.0 |
-| Peripherals (I2C) | 3.3V | 1 | 20.0 | 20.0 |
+| UI Board Feed (LEDs) | 5.0V | 1 | 50.0 | 50.0 |
 
-* **TOTAL PEAK:** `1409.0 mA`
-* **DESIGN LOAD (+20%):** `1690.8 mA`
+* **TOTAL PEAK:** `870.0 mA`
+* **DESIGN LOAD (+20%):** `1044.0 mA`
 * **STATUS:** ✅ **PASS**
 
 ---
@@ -24,21 +23,23 @@
 ## ⚡ PART 2: AC HIGH POWER ANALYSIS
 | LINE NAME | VOLTAGE | MAX AMPS | POWER (kW) |
 | :--- | :--- | :--- | :--- |
-| AC_LOAD_20A | 230.0V | 20.000 A | 4.600 kW |
-| AC_MAINS_INPUT | 230.0V | 0.053 A | 0.012 kW |
+| AC_LOAD_16A | 230.0V | 16.000 A | 3.680 kW |
+| AC_MAINS_INPUT_LOGIC | 230.0V | 0.200 A | 0.046 kW |
+| AC_MAINS_INPUT | 230.0V | 0.032 A | 0.007 kW |
 
 ---
 
 ## 📏 PART 3: TRACE WIDTH RULES
-**Parameters:** 1.0oz Copper, +10°C Rise.
+**Parameters:** 2.0oz Copper, +10°C Rise.
 
 | NET FUNCTION | LOAD (A) | MIN WIDTH (Calc) | **ALTIUM RULE (Rec)** |
 | :--- | :--- | :--- | :--- |
-| AC_LOAD_20A | 20.000 | 18.824 mm | **POLYGON POUR** |
-| AC_MAINS_INPUT | 0.053 | 0.250 mm | **1.00 mm** (Mech) |
-| DC_MAIN_5V | 1.691 | 0.623 mm | **1.60 mm** (SF=2.5) |
-| DC_3V3_RAIL | 0.624 | 0.250 mm | **0.65 mm** (SF=2.5) |
-| DC_RELAY_GND | 0.864 | 0.250 mm | **0.65 mm** (SF=2.5) |
+| AC_LOAD_16A | 16.000 | 6.919 mm | **POLYGON POUR** |
+| AC_MAINS_INPUT_LOGIC | 0.200 | 0.250 mm | **1.00 mm** (Mech) |
+| AC_MAINS_INPUT | 0.032 | 0.250 mm | **1.00 mm** (Mech) |
+| DC_IN_5.0V | 1.044 | 0.250 mm | **0.65 mm** (SF=2.5) |
+| DC_3V3_RAIL | 0.500 | 0.250 mm | **0.65 mm** (SF=2.5) |
+| DC_RELAY_GND | 0.320 | 0.250 mm | **0.65 mm** (SF=2.5) |
 | DC_SIGNAL | 0.050 | 0.250 mm | **0.25 mm** |
 
 > **⚠️ CRITICAL NOTE for AC_LOAD_20A:**  

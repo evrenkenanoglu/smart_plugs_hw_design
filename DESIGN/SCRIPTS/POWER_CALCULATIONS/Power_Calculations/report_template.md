@@ -8,7 +8,7 @@
 ## 🔋 PART 1: POWER SUPPLY LOAD ANALYSIS
 **Objective:** Verify if `{psu_name}` ({psu_limit} mA) can handle the Worst-Case Peak loads.
 
-| COMPONENT | QTY | PEAK (mA) | TOTAL (mA) |
+| COMPONENT | PEAK (mA)| QTY | TOTAL (mA) |
 | :--- | :--- | :--- | :--- |
 {dc_load_rows}
 

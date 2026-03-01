@@ -1,48 +1,69 @@
 {
-    "system_info": {
-        "project_name": "Smart Plug 20A - Electrical Master",
-        "safety_margin_percent": 20,
-        "main_voltage_rail_dc_v": 5.0,
-        "mains_voltage_ac_v": 230.0,
-        "copper_weight_oz": 2.0
-    },
+    "project_name": "Smart Plug System v2",
     "power_supply": {
         "name": "HLK-10M05",
         "max_output_current_ma": 2000.0,
-        "max_output_power_w": 10.0,
         "efficiency": 0.70
     },
-    "dc_components": [
+    "boards": [
         {
-            "name": "HF105F-1 Coils (Worst Case)",
-            "quantity": 4,
-            "peak_current_ma": 216.0,
-            "voltage_v": 5.0
+            "board_name": "Main_Power_Board",
+            "copper_weight_oz": 2.0,
+            "mains_voltage_ac_v": 230.0,
+            "safety_margin_percent": 20,
+            "main_voltage_rail_dc_v": 5.0,
+            "dc_components": [
+                {
+                    "name": "HF115F Relay Coils",
+                    "quantity": 4,
+                    "peak_current_ma": 80.0,
+                    "voltage_v": 5.0
+                },
+                {
+                    "name": "ESP32-WROOM-32UE",
+                    "quantity": 1,
+                    "peak_current_ma": 500.0,
+                    "voltage_v": 3.3
+                },
+                {
+                    "name": "UI Board Feed (LEDs)",
+                    "quantity": 1,
+                    "peak_current_ma": 50.0,
+                    "voltage_v": 5.0
+                }
+            ],
+            "ac_power_lines": [
+                {
+                    "name": "AC_LOAD_16A",
+                    "max_current_a": 16.0
+                },
+                {
+                    "name": "AC_MAINS_INPUT_LOGIC",
+                    "max_current_a": 0.2
+                }
+            ]
         },
         {
-            "name": "ESP32-WROOM-32UE",
-            "quantity": 1,
-            "peak_current_ma": 500.0,
-            "voltage_v": 3.3
-        },
-        {
-            "name": "ULN2803 Driver + LEDs",
-            "quantity": 1,
-            "peak_current_ma": 25.0,
-            "voltage_v": 5.0
-        },
-        {
-            "name": "Peripherals (I2C)",
-            "quantity": 1,
-            "peak_current_ma": 20.0,
-            "voltage_v": 3.3
-        }
-    ],
-    "ac_power_lines": [
-        {
-            "name": "AC_LOAD_20A",
-            "voltage_v": 230,
-            "max_current_a": 20.0
+            "board_name": "UI_Control_Board",
+            "copper_weight_oz": 1.0,
+            "mains_voltage_ac_v": 0.0,
+            "safety_margin_percent": 15,
+            "main_voltage_rail_dc_v": 5.0,
+            "dc_components": [
+                {
+                    "name": "Status LEDs",
+                    "quantity": 4,
+                    "peak_current_ma": 10.0,
+                    "voltage_v": 5.0
+                },
+                {
+                    "name": "Tactile Buttons",
+                    "quantity": 4,
+                    "peak_current_ma": 1.0,
+                    "voltage_v": 0.0
+                }
+            ],
+            "ac_power_lines": []
         }
     ]
 }
