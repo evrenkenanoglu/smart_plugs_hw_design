@@ -1,5 +1,5 @@
 # 🏗️ PCB ENGINEERING REPORT: Smart Plug System v2 - UI_Control_Board
-**Date:** 2026-03-01  
+**Date:** 2026-03-03  
 **Spec:** 1.0oz Copper | 0.0V AC | 5.0V DC  
 **Standard:** IPC-2221 / IEC 60950-1  
 
@@ -8,13 +8,13 @@
 ## 🔋 PART 1: POWER SUPPLY LOAD ANALYSIS
 **Objective:** Verify if `HLK-10M05` (2000.0 mA) can handle the Worst-Case Peak loads.
 
-| COMPONENT | PEAK (mA)| QTY | TOTAL (mA) |
-| :--- | :--- | :--- | :--- |
-| Status LEDs | 5.0V | 4 | 10.0 | 40.0 |
+| COMPONENT | PEAK (mA)| QTY | CURRENT (mA) | TOTAL (mA) |
+| :--- | :--- | :--- | :--- | :--- |
+| Status LEDs | 5.0V | 4 | 12.0 | 48.0 |
 | Tactile Buttons | 0.0V | 4 | 1.0 | 4.0 |
 
-* **TOTAL PEAK:** `44.0 mA`
-* **DESIGN LOAD (+15%):** `50.6 mA`
+* **TOTAL PEAK:** `52.0 mA`
+* **DESIGN LOAD (+15%):** `59.8 mA`
 * **STATUS:** ✅ **PASS**
 
 ---
@@ -31,7 +31,7 @@
 
 | NET FUNCTION | LOAD (A) | MIN WIDTH (Calc) | **ALTIUM RULE (Rec)** |
 | :--- | :--- | :--- | :--- |
-| DC_IN_5.0V | 0.051 | 0.250 mm | **0.25 mm** |
+| DC_IN_5.0V | 0.060 | 0.250 mm | **0.25 mm** |
 | DC_3V3_RAIL | 0.004 | 0.250 mm | **0.25 mm** |
 | DC_SIGNAL | 0.050 | 0.250 mm | **0.25 mm** |
 

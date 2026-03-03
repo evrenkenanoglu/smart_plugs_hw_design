@@ -1,6 +1,6 @@
 # 🏗️ PCB ENGINEERING REPORT: Smart Plug System v2 - Main_Power_Board
-**Date:** 2026-03-01  
-**Spec:** 2.0oz Copper | 230.0V AC | 5.0V DC  
+**Date:** 2026-03-03  
+**Spec:** 1.0oz Copper | 230.0V AC | 5.0V DC  
 **Standard:** IPC-2221 / IEC 60950-1  
 
 ---
@@ -8,14 +8,14 @@
 ## 🔋 PART 1: POWER SUPPLY LOAD ANALYSIS
 **Objective:** Verify if `HLK-10M05` (2000.0 mA) can handle the Worst-Case Peak loads.
 
-| COMPONENT | PEAK (mA)| QTY | TOTAL (mA) |
-| :--- | :--- | :--- | :--- |
+| COMPONENT | PEAK (mA)| QTY | CURRENT (mA) | TOTAL (mA) |
+| :--- | :--- | :--- | :--- | :--- |
 | HF115F Relay Coils | 5.0V | 4 | 80.0 | 320.0 |
-| ESP32-WROOM-32UE | 3.3V | 1 | 500.0 | 500.0 |
-| UI Board Feed (LEDs) | 5.0V | 1 | 50.0 | 50.0 |
+| ESP32-WROOM-32UE | 3.3V | 1 | 700.0 | 700.0 |
+| UI Board Feed (LEDs) | 5.0V | 4 | 12.0 | 48.0 |
 
-* **TOTAL PEAK:** `870.0 mA`
-* **DESIGN LOAD (+20%):** `1044.0 mA`
+* **TOTAL PEAK:** `1068.0 mA`
+* **DESIGN LOAD (+20%):** `1281.6 mA`
 * **STATUS:** ✅ **PASS**
 
 ---
@@ -25,20 +25,20 @@
 | :--- | :--- | :--- | :--- |
 | AC_LOAD_16A | 230.0V | 16.000 A | 3.680 kW |
 | AC_MAINS_INPUT_LOGIC | 230.0V | 0.200 A | 0.046 kW |
-| AC_MAINS_INPUT | 230.0V | 0.032 A | 0.007 kW |
+| AC_MAINS_INPUT | 230.0V | 0.040 A | 0.009 kW |
 
 ---
 
 ## 📏 PART 3: TRACE WIDTH RULES
-**Parameters:** 2.0oz Copper, +10°C Rise.
+**Parameters:** 1.0oz Copper, +10°C Rise.
 
 | NET FUNCTION | LOAD (A) | MIN WIDTH (Calc) | **ALTIUM RULE (Rec)** |
 | :--- | :--- | :--- | :--- |
-| AC_LOAD_16A | 16.000 | 6.919 mm | **POLYGON POUR** |
+| AC_LOAD_16A | 16.000 | 13.837 mm | **POLYGON POUR** |
 | AC_MAINS_INPUT_LOGIC | 0.200 | 0.250 mm | **1.00 mm** (Mech) |
-| AC_MAINS_INPUT | 0.032 | 0.250 mm | **1.00 mm** (Mech) |
-| DC_IN_5.0V | 1.044 | 0.250 mm | **0.65 mm** (SF=2.5) |
-| DC_3V3_RAIL | 0.500 | 0.250 mm | **0.65 mm** (SF=2.5) |
+| AC_MAINS_INPUT | 0.040 | 0.250 mm | **1.00 mm** (Mech) |
+| DC_IN_5.0V | 1.282 | 0.425 mm | **1.10 mm** (SF=2.5) |
+| DC_3V3_RAIL | 0.700 | 0.250 mm | **0.65 mm** (SF=2.5) |
 | DC_RELAY_GND | 0.320 | 0.250 mm | **0.65 mm** (SF=2.5) |
 | DC_SIGNAL | 0.050 | 0.250 mm | **0.25 mm** |
 

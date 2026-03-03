@@ -51,19 +51,8 @@ name = "Ready"
   linkCommits = [ ]
 
   [[processes.tasks]]
-  id = "bmucv228iqkb5kouwqpfxse2"
-  title = "Place the Polygon Pours"
-  description = ""
-  tag = "backlog"
-  linkFiles = [ ]
-  dueDate = ""
-  checkList = [ ]
-  priority = ""
-  linkCommits = [ ]
-
-  [[processes.tasks]]
-  id = "omgy6vl7ehqh598ss3a70qz6"
-  title = "Create Slots between 20A and rest"
+  id = "uwzkgjzuw23d3r8n5411wmu2"
+  title = "Change Power HLK Module with Flyback Converter 10W 2A 5V "
   description = ""
   tag = "backlog"
   linkFiles = [ ]
@@ -75,7 +64,28 @@ name = "Ready"
 [[processes]]
 id = "process2"
 name = "In Progress"
-tasks = [ ]
+
+  [[processes.tasks]]
+  id = "cvi0nyq37sb9j6gbbg1qp06e"
+  title = "Check RELAY_GND Track Width"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "bmucv228iqkb5kouwqpfxse2"
+  title = "Place the Polygon Pours"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
 
 [[processes]]
 id = "process3"
@@ -172,6 +182,17 @@ name = "Done"
   [[processes.tasks]]
   id = "oa14v3fvcwou9ilobju80nz6"
   title = "Find an ESP32 which fits to the project "
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "omgy6vl7ehqh598ss3a70qz6"
+  title = "Create Slots between 20A and rest"
   description = ""
   tag = "backlog"
   linkFiles = [ ]
