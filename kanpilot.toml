@@ -87,6 +87,28 @@ name = "In Progress"
   priority = ""
   linkCommits = [ ]
 
+  [[processes.tasks]]
+  id = "gq2rpn67suidpvhs9xx7swv9"
+  title = "Update UI Board completely "
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "bkkwehziwljv1d03yw9deix9"
+  title = "Add a reset button"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
 [[processes]]
 id = "process3"
 name = "Done"
