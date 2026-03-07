@@ -45,7 +45,7 @@ OutputEnabled1_OutputMedium1=0
 OutputEnabled1_OutputMedium2=0
 OutputEnabled1_OutputMedium3=0
 OutputEnabled1_OutputMedium4=0
-OutputEnabled1_OutputMedium5=1
+OutputEnabled1_OutputMedium5=11
 OutputDefault1=0
 Configuration1_Name1=OutputConfigurationParameter1
 Configuration1_Item1=DocumentPath=C:\WORKSPACE_PERSONAL\PROJECTS\SMART_PLUGS\HW\PCB_DESIGN\Smart_Plugs\PSU.SchDoc|Format=Advanced Schematic ascii (*.SchDoc)|Record=UniExporterView
@@ -59,7 +59,7 @@ OutputEnabled2_OutputMedium1=0
 OutputEnabled2_OutputMedium2=0
 OutputEnabled2_OutputMedium3=0
 OutputEnabled2_OutputMedium4=0
-OutputEnabled2_OutputMedium5=2
+OutputEnabled2_OutputMedium5=1
 OutputDefault2=0
 Configuration2_Name1=OutputConfigurationParameter1
 Configuration2_Item1=Format=Advanced Schematic ascii (*.SchDoc)|Record=UniExporterView|DocumentPath=C:\WORKSPACE_PERSONAL\PROJECTS\SMART_PLUGS\HW\PCB_DESIGN\Smart_Plugs\Sources\Button_Input_Block.SchDoc
@@ -73,7 +73,7 @@ OutputEnabled3_OutputMedium1=0
 OutputEnabled3_OutputMedium2=0
 OutputEnabled3_OutputMedium3=0
 OutputEnabled3_OutputMedium4=0
-OutputEnabled3_OutputMedium5=3
+OutputEnabled3_OutputMedium5=2
 OutputDefault3=0
 Configuration3_Name1=OutputConfigurationParameter1
 Configuration3_Item1=DocumentPath=C:\WORKSPACE_PERSONAL\PROJECTS\SMART_PLUGS\HW\PCB_DESIGN\Smart_Plugs\Earth_Connectors.SchDoc|Format=Advanced Schematic ascii (*.SchDoc)|Record=UniExporterView
@@ -87,7 +87,7 @@ OutputEnabled4_OutputMedium1=0
 OutputEnabled4_OutputMedium2=0
 OutputEnabled4_OutputMedium3=0
 OutputEnabled4_OutputMedium4=0
-OutputEnabled4_OutputMedium5=4
+OutputEnabled4_OutputMedium5=3
 OutputDefault4=0
 Configuration4_Name1=OutputConfigurationParameter1
 Configuration4_Item1=DocumentPath=C:\WORKSPACE_PERSONAL\PROJECTS\SMART_PLUGS\HW\PCB_DESIGN\Smart_Plugs\Earth_Connectors.SchDoc|Format=Advanced Schematic ascii (*.SchDoc)|Record=UniExporterView
@@ -101,7 +101,7 @@ OutputEnabled5_OutputMedium1=0
 OutputEnabled5_OutputMedium2=0
 OutputEnabled5_OutputMedium3=0
 OutputEnabled5_OutputMedium4=0
-OutputEnabled5_OutputMedium5=5
+OutputEnabled5_OutputMedium5=4
 OutputDefault5=0
 Configuration5_Name1=OutputConfigurationParameter1
 Configuration5_Item1=DocumentPath=C:\WORKSPACE_PERSONAL\PROJECTS\SMART_PLUGS\HW\PCB_DESIGN\Smart_Plugs\Earth_Connectors.SchDoc|Format=Advanced Schematic ascii (*.SchDoc)|Record=UniExporterView
@@ -115,7 +115,7 @@ OutputEnabled6_OutputMedium1=0
 OutputEnabled6_OutputMedium2=0
 OutputEnabled6_OutputMedium3=0
 OutputEnabled6_OutputMedium4=0
-OutputEnabled6_OutputMedium5=6
+OutputEnabled6_OutputMedium5=5
 OutputDefault6=0
 Configuration6_Name1=OutputConfigurationParameter1
 Configuration6_Item1=DocumentPath=C:\WORKSPACE_PERSONAL\PROJECTS\SMART_PLUGS\HW\PCB_DESIGN\Smart_Plugs\Earth_Connectors.SchDoc|Format=Advanced Schematic ascii (*.SchDoc)|Record=UniExporterView
@@ -129,7 +129,7 @@ OutputEnabled7_OutputMedium1=0
 OutputEnabled7_OutputMedium2=0
 OutputEnabled7_OutputMedium3=0
 OutputEnabled7_OutputMedium4=0
-OutputEnabled7_OutputMedium5=7
+OutputEnabled7_OutputMedium5=6
 OutputDefault7=0
 Configuration7_Name1=OutputConfigurationParameter1
 Configuration7_Item1=DocumentPath=C:\WORKSPACE_PERSONAL\PROJECTS\SMART_PLUGS\HW\PCB_DESIGN\Smart_Plugs\Earth_Connectors.SchDoc|Format=Advanced Schematic ascii (*.SchDoc)|Record=UniExporterView
@@ -143,7 +143,7 @@ OutputEnabled8_OutputMedium1=0
 OutputEnabled8_OutputMedium2=0
 OutputEnabled8_OutputMedium3=0
 OutputEnabled8_OutputMedium4=0
-OutputEnabled8_OutputMedium5=8
+OutputEnabled8_OutputMedium5=7
 OutputDefault8=0
 Configuration8_Name1=OutputConfigurationParameter1
 Configuration8_Item1=DocumentPath=C:\WORKSPACE_PERSONAL\PROJECTS\SMART_PLUGS\HW\PCB_DESIGN\Smart_Plugs\Earth_Connectors.SchDoc|Format=Advanced Schematic ascii (*.SchDoc)|Record=UniExporterView
@@ -157,7 +157,7 @@ OutputEnabled9_OutputMedium1=0
 OutputEnabled9_OutputMedium2=0
 OutputEnabled9_OutputMedium3=0
 OutputEnabled9_OutputMedium4=0
-OutputEnabled9_OutputMedium5=9
+OutputEnabled9_OutputMedium5=8
 OutputDefault9=0
 Configuration9_Name1=OutputConfigurationParameter1
 Configuration9_Item1=DocumentPath=C:\WORKSPACE_PERSONAL\PROJECTS\SMART_PLUGS\HW\PCB_DESIGN\Smart_Plugs\Earth_Connectors.SchDoc|Format=Advanced Schematic ascii (*.SchDoc)|Record=UniExporterView
@@ -171,7 +171,7 @@ OutputEnabled10_OutputMedium1=0
 OutputEnabled10_OutputMedium2=0
 OutputEnabled10_OutputMedium3=0
 OutputEnabled10_OutputMedium4=0
-OutputEnabled10_OutputMedium5=10
+OutputEnabled10_OutputMedium5=9
 OutputDefault10=0
 Configuration10_Name1=OutputConfigurationParameter1
 Configuration10_Item1=DocumentPath=C:\WORKSPACE_PERSONAL\PROJECTS\SMART_PLUGS\HW\PCB_DESIGN\Smart_Plugs\Earth_Connectors.SchDoc|Format=Advanced Schematic ascii (*.SchDoc)|Record=UniExporterView
@@ -185,7 +185,7 @@ OutputEnabled11_OutputMedium1=0
 OutputEnabled11_OutputMedium2=0
 OutputEnabled11_OutputMedium3=0
 OutputEnabled11_OutputMedium4=0
-OutputEnabled11_OutputMedium5=11
+OutputEnabled11_OutputMedium5=10
 OutputDefault11=0
 Configuration11_Name1=OutputConfigurationParameter1
 Configuration11_Item1=DocumentPath=C:\WORKSPACE_PERSONAL\PROJECTS\SMART_PLUGS\HW\PCB_DESIGN\Smart_Plugs\Smart_Plug_PCB.PcbDoc|Format=PCB ASCII File (*.PcbDoc)|Record=UniExporterView
