@@ -1,0 +1,12 @@
+{
+    "vac_min": 220,
+    "vac_max": 250,
+    "v_out": 5.0,
+    "i_out": 2.0,
+    "efficiency": 0.82,
+    "f_sw": 65000,
+    "v_ro": 110,
+    "k_rf": 1.0,
+    "v_f_diode": 0.45,
+    "v_ripple_out": 0.05
+}
