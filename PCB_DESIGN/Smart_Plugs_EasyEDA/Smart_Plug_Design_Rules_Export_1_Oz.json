@@ -646,7 +646,7 @@
         "form": {
           "device2device": 0.49999899999999997,
           "thru2Smd": 0,
-          "hole2Hole": 0.29999939999999997
+          "hole2Hole": 0.49999899999999997
         },
         "isRule": true,
         "categorayKey": "Other Spacing",
@@ -839,13 +839,34 @@
         "unit": "mm",
         "isSetDefault": true,
         "form": {
-          "networkSpacing": 0.39999919999999994,
+          "networkSpacing": 0.49999899999999997,
           "distance2Border": 0.49999899999999997,
           "padConnectionMode": "0",
           "padDivergenceStrokeWidth": 0.254,
           "padDivergenceSpacing": 0.254,
           "padSpokeAngle": 90,
           "multiLayerPadConnectionMode": "0",
+          "multiLayerPadDivergenceStrokeWidth": 0.254,
+          "multiLayerPadDivergenceSpacing": 0.254,
+          "multiLayerPadSpokeAngle": 90,
+          "trackConnectionMode": 0
+        },
+        "isRule": true,
+        "categorayKey": "Copper Zone",
+        "redStar": false
+      },
+      "copperRegionDirectConnect": {
+        "editName": "copperRegionDirectConnect",
+        "unit": "mm",
+        "isSetDefault": false,
+        "form": {
+          "networkSpacing": 0.49999899999999997,
+          "distance2Border": 0.49999899999999997,
+          "padConnectionMode": "1",
+          "padDivergenceStrokeWidth": 0.254,
+          "padDivergenceSpacing": 0.254,
+          "padSpokeAngle": 90,
+          "multiLayerPadConnectionMode": "1",
           "multiLayerPadDivergenceStrokeWidth": 0.254,
           "multiLayerPadDivergenceSpacing": 0.254,
           "multiLayerPadSpokeAngle": 90,
