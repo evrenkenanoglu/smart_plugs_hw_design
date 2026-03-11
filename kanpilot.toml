@@ -18,17 +18,6 @@ name = "Ready"
   linkCommits = [ ]
 
   [[processes.tasks]]
-  id = "iyiyxyx4bhnv03vv91mpk374"
-  title = "Finalize the UI board design decision"
-  description = ""
-  tag = "backlog"
-  linkFiles = [ ]
-  dueDate = ""
-  checkList = [ ]
-  priority = ""
-  linkCommits = [ ]
-
-  [[processes.tasks]]
   id = "b4dt00e0shxkkk6olwoqukq2"
   title = "Check Socket to be bougth or to be design"
   description = ""
@@ -40,8 +29,19 @@ name = "Ready"
   linkCommits = [ ]
 
   [[processes.tasks]]
-  id = "je6ctrmdgghoz975rbslq7l0"
-  title = "Manage the net classes and design rules "
+  id = "prxycbehd3mhh3m64rvlayf4"
+  title = "Order Components "
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "kr67nq6ynyqzeom10zau0qpq"
+  title = "Order PCB parts"
   description = ""
   tag = "backlog"
   linkFiles = [ ]
@@ -53,6 +53,50 @@ name = "Ready"
   [[processes.tasks]]
   id = "uwzkgjzuw23d3r8n5411wmu2"
   title = "Change Power HLK Module with Flyback Converter 10W 2A 5V "
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "nvi9iimo9wce5eczugkn64qd"
+  title = "Check socket terminal brass clamping "
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "zp2qedazihwmmsjvdgyp9dk5"
+  title = "Cable orders "
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "fsdznsfhmn37kc6mky62d2c0"
+  title = "Crimping Tools "
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "crju0vdojsl06i2ftzjizdb8"
+  title = "UI Cover Design"
   description = ""
   tag = "backlog"
   linkFiles = [ ]
@@ -77,30 +121,8 @@ name = "In Progress"
   linkCommits = [ ]
 
   [[processes.tasks]]
-  id = "bmucv228iqkb5kouwqpfxse2"
-  title = "Place the Polygon Pours"
-  description = ""
-  tag = "backlog"
-  linkFiles = [ ]
-  dueDate = ""
-  checkList = [ ]
-  priority = ""
-  linkCommits = [ ]
-
-  [[processes.tasks]]
-  id = "gq2rpn67suidpvhs9xx7swv9"
-  title = "Update UI Board completely "
-  description = ""
-  tag = "backlog"
-  linkFiles = [ ]
-  dueDate = ""
-  checkList = [ ]
-  priority = ""
-  linkCommits = [ ]
-
-  [[processes.tasks]]
-  id = "bkkwehziwljv1d03yw9deix9"
-  title = "Add a reset button"
+  id = "sox3s07uf2dsw7doz5efimkt"
+  title = "Components Review"
   description = ""
   tag = "backlog"
   linkFiles = [ ]
@@ -215,6 +237,61 @@ name = "Done"
   [[processes.tasks]]
   id = "omgy6vl7ehqh598ss3a70qz6"
   title = "Create Slots between 20A and rest"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "bmucv228iqkb5kouwqpfxse2"
+  title = "Place the Polygon Pours"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "gq2rpn67suidpvhs9xx7swv9"
+  title = "Update UI Board completely "
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "udij9ucliudez8mag0o50743"
+  title = "ESP32-C6-WROOM-N8"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "iyiyxyx4bhnv03vv91mpk374"
+  title = "Finalize the UI board design decision"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "je6ctrmdgghoz975rbslq7l0"
+  title = "Manage the net classes and design rules "
   description = ""
   tag = "backlog"
   linkFiles = [ ]
