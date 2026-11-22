@@ -68,7 +68,7 @@ physical relevance
 
 ## Existing run
 
-`emc/openems/experiments/runs/l1_route_20261117_180814` reached the solver's
+`EMC/openems/experiments/runs/l1_route_20261117_180814` reached the solver's
 time-domain energy stop after 132,608 timesteps, but its metadata explicitly
 marks the 0.5 mm mesh unconverged. It uses a straightened route, anisotropic
 serialized material values, PEC copper, and an ideal bottom PEC boundary.

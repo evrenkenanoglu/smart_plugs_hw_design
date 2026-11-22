@@ -16,6 +16,6 @@ This repository contains a 230 V AC, high-current smart-plug design. Treat all m
 - Clearly identify which EasyEDA project, board, and candidate/locked export set was used for every analysis.
 - Do not overwrite native CAD projects, released manufacturing files, or user changes unless explicitly asked.
 - Exploratory and pre-design simulations (`ngspice`, `openEMS`, Gerber geometry checks) ARE explicitly permitted on user-selected candidate exports (even when manifests are unlocked or exports come from different dates), provided all date differences, assumed stackups, synthetic sources, and gaps are explicitly documented under **Assumptions** and stamped **`CANDIDATE / EXPLORATORY SIMULATION — NOT COMPLIANCE OR SAFETY PROOF`**. Reserve strict single-revision locking (`locked: true`) for final release sign-off.
-- For EMC work, follow `emc/README.md` (and update `emc/input-checklist.md` / `emc/risk-register.md` as findings emerge without blocking exploratory simulations).
+- For EMC work, follow `EMC/README.md` (and update `EMC/input-checklist.md` / `EMC/risk-register.md` as findings emerge without blocking exploratory simulations).
 - Use specialized skills in `.agents/skills/` when relevant. MCP servers are not pre-approved; review their publisher, permissions, and commands before enabling them.
 - When adding a recurring project workflow, create or update its relevant skill. Keep an `Error registry` in each relevant skill with verified pitfalls and mitigations; label unverified concerns as assumptions, not past errors.

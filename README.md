@@ -6,16 +6,16 @@ This repository contains the smart-plug ECAD inputs, manufacturing handoffs, eng
 
 | Path | Contents |
 | --- | --- |
-| `pcb/libraries/` | Altium component libraries |
+| `PCB/libraries/` | Altium component libraries |
+| `PCB/_archive/` | Legacy Altium boards |
 | `ECAD/Smart_Plugs_EasyEDA/` | Current EasyEDA project and its coupled outputs |
-| `pcb/_archive/` | Target location for legacy Altium boards |
-| `releases/main_pcb/`, `releases/ui_pcb/` | Revision-tagged, board-specific release packages |
-| `docs/design_notes/` | PSU, ESP32, UI, and general design notes |
-| `docs/datasheets/` | Datasheets |
-| `docs/reviews/` | Review records and generated calculation index |
-| `analysis/power_calculations/` | Calculation scripts, inputs, and reports organized by module |
-| `emc/` | EMC simulation package, tests, inputs, and evidence |
-| `_scratch/` | Unclassified or temporary material retained for review |
+| `RELEASES/main_pcb/`, `RELEASES/ui_pcb/` | Revision-tagged, board-specific release packages |
+| `DOCS/design_notes/` | PSU, ESP32, UI, and general design notes |
+| `DOCS/datasheets/` | Datasheets |
+| `DOCS/reviews/` | Review records and generated calculation index |
+| `ANALYSIS/power_calculations/` | Calculation scripts, inputs, and reports organized by module |
+| `EMC/` | EMC simulation package, tests, inputs, and evidence |
+| `_SCRATCH/` | Unclassified or temporary material retained for review |
 
 ### Migration hold
 
@@ -37,6 +37,8 @@ uv pip compile requirements.in -o requirements.txt --annotation-style line
 
 `requirements.in` declares Invoke, pytest, and the EMC package editable with its `all` extras. `inv compile` updates the pinned `requirements.txt`; `inv install` synchronizes the HW virtual environment from that file. `uv` must be available on PATH. openEMS is an external solver, not a Python dependency; the openEMS executable was not found during this audit. ngspice is available on the current system PATH.
 
+Workspace MCP servers are registered in `.mcp.json`; see `DOCS/MCP_SERVERS.md` for tool restrictions and local catalog database setup.
+
 Common tasks:
 
 ```powershell
@@ -53,14 +55,14 @@ Common tasks:
 
 `release` fails closed when any board-specific Gerber, drill, BOM, CPL, schematic PDF, or 3D STEP category is missing. A dry run never writes packages or manifests. Historical or combined exports are not reclassified as current releases.
 
-## Known source conflicts
+## Current design decisions and legacy references
 
-- `docs/design_notes/GENERAL_DESIGN_NOTES/HLK_10M05_5V_LOGIC_POWER_DESIGN_RATIONALE.md`, `docs/design_notes/GENERAL_DESIGN_NOTES/FOUR_CHANNEL_20A_SMART_PLUG_CONTROLLER_TECHNICAL_SPECIFICATION.md`, and `peak_data.json` identify HLK-10M05; `docs/design_notes/POWER_SUPPLY/HLK_5LS05_AC_TO_DC_CONVERSION_AND_FILTER_DESIGN.md` and design-chat notes identify HLK-5LS05.
-- The calculation input/report identifies ESP32-WROOM-32UE, while design notes identify ESP32-C6. The current fitted/active board configuration has not been resolved.
-- These values are preserved as found. No electrical design inputs or calculations were silently changed by the folder migration.
+- The latest design decision is **HLK-5LS05** for AC/DC and **ESP32-C6**. Older references in `DOCS/design_notes/GENERAL_DESIGN_NOTES/HLK_10M05_5V_LOGIC_POWER_DESIGN_RATIONALE.md`, `DOCS/design_notes/GENERAL_DESIGN_NOTES/FOUR_CHANNEL_20A_SMART_PLUG_CONTROLLER_TECHNICAL_SPECIFICATION.md`, and `ANALYSIS/power_calculations/POWER_CALCULATIONS/data/peak_data.json` identify HLK-10M05; treat those as superseded.
+- The power calculation inputs/reports also retain ESP32-WROOM-32UE. Treat that as a legacy reference, not the current decision.
+- The older design notes and calculation inputs remain unchanged pending an explicitly requested technical update; do not use them to override the current design decisions.
 
 ## Scratch items retained for review
 
-- `_scratch/DESIGN_AI/` — AI-generated design notes and image.
-- `_scratch/TEMP_PLUG_RELATED/` — teardown notes and images.
-- `_scratch/UTILITY_Additional_Components/` and `_scratch/UTILITY_JLCPCB_useful_component_list.md` — utility notes not identified as reusable CAD library assets.
+- `_SCRATCH/DESIGN_AI/` — AI-generated design notes and image.
+- `_SCRATCH/TEMP_PLUG_RELATED/` — teardown notes and images.
+- `_SCRATCH/UTILITY_Additional_Components/` and `_SCRATCH/UTILITY_JLCPCB_useful_component_list.md` — utility notes not identified as reusable CAD library assets.

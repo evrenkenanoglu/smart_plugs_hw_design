@@ -11,8 +11,8 @@ design evidence, not proof of safety, compliance, or certification readiness.
 
 ## Pre-flight
 
-1. Read `AGENTS.md`, `emc/README.md`, `emc/input-checklist.md`, and
-   `emc/risk-register.md`. Confirm the exact project, board, and revision before
+1. Read `AGENTS.md`, `EMC/README.md`, `EMC/input-checklist.md`, and
+   `EMC/risk-register.md`. Confirm the exact project, board, and revision before
    creating project-specific analysis inputs.
 2. Verify the local `easyeda-mcp-pro` registration with `copilot mcp list`.
    The supported setup used here is package v1.16.0 with Node.js 24.x. The
@@ -96,7 +96,7 @@ design evidence, not proof of safety, compliance, or certification readiness.
     project/board revision and relative paths. Set `locked: true` only after
     all required files are matched to the same board revision and the designer
     has confirmed that board as authoritative. Update
-    `emc/docs/STAGE0_REVISION_LOCK.md` with evidence and unresolved items.
+    `EMC/docs/STAGE0_REVISION_LOCK.md` with evidence and unresolved items.
 
 ## Verified MAIN_OMRON live trial — 2026-11-19
 
@@ -113,7 +113,7 @@ design evidence, not proof of safety, compliance, or certification readiness.
   MAIN_OMRON PCB (`e05c8329c9f84495a1131d747d50aaf9`). Keep the project-list
   mismatch visible and Stage 0 unlocked.
 - Live files staged under
-  `emc/smart_power_strip/inputs/locked_rev/MAIN_OMRON/`:
+  `EMC/smart_power_strip/inputs/locked_rev/MAIN_OMRON/`:
   Gerber/Excellon ZIP, 45-reference PnP CSV with `mm` coordinates, PCB PADS
   netlist, and `MCP_LIVE_20261119_203444_LayerStackup.json`. The ZIP contains
   top/bottom copper and two PTH drill files, but no NPTH drill file.
@@ -153,8 +153,8 @@ design evidence, not proof of safety, compliance, or certification readiness.
   active ID `887b44b44d5f8223bb08fd9db9aeef7f7255beccd56f645b2117cc3651d8d255`
   and contains no `Smart_Plugs` entry. Therefore no fresh export was run and
   the Stage 0 manifest remains unlocked.
-- The new `emc/tools/export_easyeda_board.mjs` supports
-  `node emc\tools\export_easyeda_board.mjs --board MAIN_OMRON` or `--board UI`.
+- The new `EMC/tools/export_easyeda_board.mjs` supports
+  `node EMC\tools\export_easyeda_board.mjs --board MAIN_OMRON` or `--board UI`.
   It starts a local stdio MCP server, requires a complete active-project
   listing and matching focused PCB identity/component signature, and
   rechecks project and focus immediately before each export. It writes into a
@@ -177,7 +177,7 @@ design evidence, not proof of safety, compliance, or certification readiness.
   focused-PCB field compatibility and end-to-end export remain unverified.
   Run it only when the intended PCB is focused and bridge ownership is resolved.
 - A candidate-only crop,
-  `emc\smart_power_strip\inputs\locked_rev\MAIN_OMRON\Candidate_CopperCrop_2026-11-19_L1_U1.png`,
+  `EMC\smart_power_strip\inputs\locked_rev\MAIN_OMRON\Candidate_CopperCrop_2026-11-19_L1_U1.png`,
   was generated from the Nov 19 top/bottom Gerbers and PnP centers. The
   Gerbers have no net attributes, so the image does not identify the exact
   `$L1_3` route or prove GND coverage.

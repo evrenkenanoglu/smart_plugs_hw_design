@@ -264,7 +264,7 @@ The exported PCB netlist shows P1 pin 2 through FH1 and R6 to `C2_1`, P1 pin 3
 on `C2_2`, C2 and RV1 across those rails, and L1 between those rails and U1
 pins 1/2. This is PCB connectivity only; the matching schematic PDF is absent.
 The BOM also lists C1 as 100 nF and C4 as 10 uF. This conflicts with
-`docs\design_notes\POWER_SUPPLY\HLK_5LS05_AC_TO_DC_CONVERSION_AND_FILTER_DESIGN.md`, which calls C1 a 10 uF / 450 V primary-bulk
+`DOCS\design_notes\POWER_SUPPLY\HLK_5LS05_AC_TO_DC_CONVERSION_AND_FILTER_DESIGN.md`, which calls C1 a 10 uF / 450 V primary-bulk
 capacitor and describes a different L1/output-filter arrangement. Do not use
 that note as a schematic or component source of truth.
 

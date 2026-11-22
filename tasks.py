@@ -23,8 +23,8 @@ for _stream in (sys.stdout, sys.stderr):
 
 
 ROOT = Path(__file__).resolve().parent
-ANALYSIS_DIR = ROOT / "analysis" / "power_calculations"
-NEW_PCB_SOURCE = ROOT / "pcb" / "smart_plug_v3_easyeda"
+ANALYSIS_DIR = ROOT / "ANALYSIS" / "power_calculations"
+NEW_PCB_SOURCE = ROOT / "PCB" / "smart_plug_v3_easyeda"
 LEGACY_PCB_SOURCE = ROOT / "ECAD" / "Smart_Plugs_EasyEDA"
 MECHANICAL_DIR = ROOT.parent / "MECHANICAL"
 GERBER_SUFFIXES = {".gbr", ".ger", ".gtl", ".gbl", ".gts", ".gbs", ".gto", ".gbo", ".gtp", ".gbp", ".gm1", ".gm2"}
@@ -199,11 +199,11 @@ def info(_):
     print(f"HW root: {ROOT}")
     for path in (
         ROOT / ".venv",
-        ROOT / "pcb",
-        ROOT / "docs",
-        ROOT / "analysis",
-        ROOT / "emc",
-        ROOT / "releases",
+        ROOT / "PCB",
+        ROOT / "DOCS",
+        ROOT / "ANALYSIS",
+        ROOT / "EMC",
+        ROOT / "RELEASES",
     ):
         print(f"{'OK' if path.exists() else 'MISSING'} {path.relative_to(ROOT)}")
     try:
@@ -220,8 +220,9 @@ def info(_):
     for board, details in BOARD_INFO.items():
         steps = _find_artifacts(source, board)["3d"]
         print(f"{board.upper()} STEP candidates: {', '.join(path.name for path in steps) or 'none'}")
-    print("Flagged conflicts: HLK-10M05 vs HLK-5LS05; ESP32-WROOM-32UE vs ESP32-C6.")
-    print("These mismatches are unresolved; no electrical input was changed.")
+    print("Current design decisions: HLK-5LS05 and ESP32-C6.")
+    print("Legacy HLK-10M05 and ESP32-WROOM-32UE references remain in older notes/calculation inputs.")
+    print("No electrical input or calculation was changed by the folder rename.")
 
 
 @task
@@ -239,7 +240,7 @@ def calc(_):
 
 @task
 def reports(c):
-    """Run calculations and update the generated-report index in docs/reviews."""
+    """Run calculations and update the generated-report index in DOCS/reviews."""
     calc(c)
     report_files = sorted(
         path
@@ -259,7 +260,7 @@ def reports(c):
     for path in report_files:
         summary.append(f"| {path.parents[2].name} | `{path.relative_to(ROOT).as_posix()}` |")
     summary.extend(["", "Inputs are preserved separately under each module's `data/` directory."])
-    target = ROOT / "docs" / "reviews" / "POWER_SUMMARY.md"
+    target = ROOT / "DOCS" / "reviews" / "POWER_SUMMARY.md"
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text("\n".join(summary) + "\n", encoding="utf-8")
     print(f"Updated {target.relative_to(ROOT)} ({len(report_files)} reports)")
@@ -344,7 +345,7 @@ def release(_, board="all", version=None, dry_run=False, source_dir=None):
     for selected in boards:
         groups = _find_artifacts(source, selected)
         complete = _report_artifacts(source, selected, groups) and complete
-        destination = ROOT / "releases" / BOARD_INFO[selected]["release_dir"] / version
+        destination = ROOT / "RELEASES" / BOARD_INFO[selected]["release_dir"] / version
         if destination.exists():
             print(f"  BLOCKED: destination already exists: {destination.relative_to(ROOT)}")
             complete = False
@@ -393,7 +394,7 @@ def release(_, board="all", version=None, dry_run=False, source_dir=None):
 def emc_test(_):
     """Run the EMC simulation/support test suite with the active HW Python."""
     result = subprocess.run(
-        [sys.executable, "-m", "pytest", str(ROOT / "emc" / "tests")],
+        [sys.executable, "-m", "pytest", str(ROOT / "EMC" / "tests")],
         cwd=ROOT,
         check=False,
     )
@@ -447,7 +448,19 @@ def check(c):
 @task
 def clean(_):
     """Remove Python/test caches and build temp folders without touching PCB, releases, docs, or .venv."""
-    protected = {".git", ".venv", ".agents", "_scratch", "pcb", "releases", "docs"}
+    protected = {
+        ".git",
+        ".venv",
+        ".agents",
+        "_SCRATCH",
+        "ANALYSIS",
+        "DOCS",
+        "ECAD",
+        "EMC",
+        "PCB",
+        "PCB_DESIGN",
+        "RELEASES",
+    }
     removable = {"__pycache__", ".pytest_cache", "build", "dist"}
     removed = []
     for current, dirs, _files in os.walk(ROOT, topdown=True):

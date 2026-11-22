@@ -7,7 +7,7 @@ description: Plan or build a reproducible openEMS model for a PCB or EMC questio
 
 openEMS is a 3D FDTD field solver, not an automatic EMC certification tool. A detailed-looking result is not meaningful unless the geometry, excitation, material data, boundary conditions, and numerical convergence are justified.
 
-1. Read `AGENTS.md`, `emc/README.md`, `emc/input-checklist.md`, and the openEMS notes in `emc/openems/README.md`.
+1. Read `AGENTS.md`, `EMC/README.md`, `EMC/input-checklist.md`, and the openEMS notes in `EMC/openems/README.md`.
 2. Record which PCB export set was used. Strict single-revision locking (`locked: true`) is reserved for release sign-off; **exploratory candidate runs** may use user-selected candidate exports (`allow_candidate=True`) when any missing linkage or assumed stackup parameters are explicitly logged under **Assumptions**.
 3. State one bounded question for each model, such as relative field change or passive coupling from a filter-layout region. Do not begin with the entire assembled product.
 4. Record geometry units, copper and dielectric properties, loss assumptions, excitation waveform and source impedance, ports, enclosure/cable geometry, boundary conditions, mesh rules, and frequency/time range. Never invent a ground plane under a trace or filter if the real Gerber layers do not contain one.
@@ -35,7 +35,7 @@ openEMS is a 3D FDTD field solver, not an automatic EMC certification tool. A de
 - **Leaving abrupt mesh transitions beside a microstrip:** the generic coupon's fixed grid jumped from 0.2 mm substrate cells to a 2.857 mm first air cell, and from 0.125 mm trace-region cells to 1 mm lateral cells. The resulting stable but biased `MSLPort.Z_ref` failed analytical agreement. Explicitly grade upper-air and lateral cells (maximum 1.4 growth, 3 mm upper-air and 1 mm lateral cell caps), then inspect the serialized mesh and rerun analytical, refinement, and boundary gates. This correction was reproduced on the generic coupon; it does not establish product-model accuracy.
 - **Passing scalar material values when isotropy is intended:** in the preserved CSXCAD 0.7.0 pilot, scalar `epsilon=4.2` and scalar conductivity serialized as `epsilon=(4.2,1,1)` and `kappa=(kappa,0,0)`. Use explicit three-component vectors for isotropic materials and inspect the generated XML before trusting material assumptions.
 - **Treating a capped candidate run or midpoint screen as a valid network:** the
-  MAIN_OMRON diagnostic at `emc/smart_power_strip/runs/pcb_em/candidate_20261121T191908564280Z/`
+  MAIN_OMRON diagnostic at `EMC/smart_power_strip/runs/pcb_em/candidate_20261121T191908564280Z/`
   reached its 40,000-step cap without the energy stop and logged 6,365
   unused-polygon warnings. Its midpoint screen did not establish sub-cell
   copper fidelity or connectivity. Resolve those warnings and demonstrate
@@ -51,7 +51,7 @@ openEMS is a 3D FDTD field solver, not an automatic EMC certification tool. A de
   targeting MAIN_OMRON's small copper fragments removed their warnings in a
   short session-only diagnostic but reduced the timestep from 64.25 fs to
   5.892 fs and increased the mesh from 720,720 to 1,327,200 cells. The source
-  was truncated and no network was validated. See `emc/input-checklist.md`;
+  was truncated and no network was validated. See `EMC/input-checklist.md`;
   evaluate accuracy and computational cost rather than treating warning
   removal as solver convergence.
 - **Assuming a mesh adjustment that passes one grid works at every refinement:**

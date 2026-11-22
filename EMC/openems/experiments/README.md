@@ -28,7 +28,7 @@ python .\emc\openems\experiments\l1_route_pilot.py
 Append `--setup-only` to validate the geometry and ports without time-stepping.
 The maximum number of FDTD steps defaults to 250,000 and can be changed with
 `--max-timesteps`.
-Each run gets a new directory under `emc\openems\experiments\runs\` containing
+Each run gets a new directory under `EMC\openems\experiments\runs\` containing
 the source hash and model assumptions, solver geometry, S-parameter CSV, and
 plot. The CSV includes the frequency-dependent port reference impedance. The
 native EasyEDA source is read-only.

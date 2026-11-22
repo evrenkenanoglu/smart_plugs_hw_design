@@ -31,21 +31,21 @@
                 "label": "HW: Run Power Calculations",
                 "type": "shell",
                 "windows": {
-                    "command": "cd ${workspaceFolder}/DESIGN/SCRIPTS/POWER_CALCULATIONS/Power_Calculations && python main.py"
+                    "command": "Set-Location -LiteralPath \"${workspaceFolder}\\ANALYSIS\\power_calculations\\POWER_CALCULATIONS\\scripts\"; & \"${workspaceFolder}\\.venv\\Scripts\\python.exe\" main.py"
                 },
             },
             {
                 "label": "HW: Run Relay Transistor Calculations",
                 "type": "shell",
                 "windows": {
-                    "command": "cd ${workspaceFolder}/DESIGN/SCRIPTS/POWER_CALCULATIONS/Relay_Transistor_Calculation && python relay_transistor_report.py"
+                    "command": "Set-Location -LiteralPath \"${workspaceFolder}\\ANALYSIS\\power_calculations\\RELAY_TRANSISTOR_CALCULATION\\scripts\"; & \"${workspaceFolder}\\.venv\\Scripts\\python.exe\" relay_transistor_report.py"
                 },
             },
             {
                 "label": "HW: Create Release PCB Gerber Package",
                 "type": "shell",
                 "windows": {
-                    "command": "cd ${workspaceFolder}/PCB_DESIGN/Smart_Plugs && python package_gerbers.py"
+                    "command": "Set-Location -LiteralPath \"${workspaceFolder}\\ECAD\\Smart_Plugs\\Scripts\"; & \"${workspaceFolder}\\.venv\\Scripts\\python.exe\" package_gerbers.py"
                 },
             }
         ]

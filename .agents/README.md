@@ -20,7 +20,7 @@ This folder holds project-specific, portable Agent Skills and guidance for AI-as
       SKILL.md
     openems-modeling/
       SKILL.md
-emc/
+EMC/
   README.md
   input-checklist.md
   risk-register.md

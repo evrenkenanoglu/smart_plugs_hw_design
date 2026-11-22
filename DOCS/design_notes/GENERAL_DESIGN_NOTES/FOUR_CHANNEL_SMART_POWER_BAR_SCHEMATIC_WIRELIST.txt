@@ -1,6 +1,6 @@
 ========================================================================
 PROJECT: Smart Power Bar (4-Channel)
-FILE:    HW/docs/design_notes/GENERAL_DESIGN_NOTES/FOUR_CHANNEL_SMART_POWER_BAR_SCHEMATIC_WIRELIST.txt
+FILE:    HW/DOCS/design_notes/GENERAL_DESIGN_NOTES/FOUR_CHANNEL_SMART_POWER_BAR_SCHEMATIC_WIRELIST.txt
 DATE:    2025
 NOTES:   Professional Grade - Isolated Logic - Shared LED/Relay Drive
 ========================================================================

@@ -7,13 +7,13 @@ description: Review this smart-plug hardware design for EMC pre-compliance risks
 
 This is a risk-reduction review, not a compliance determination.
 
-Use the staged task list in `emc/TODOs/README.md` to track the broader review. Keep
+Use the staged task list in `EMC/TODOs/README.md` to track the broader review. Keep
 whole-board document review, conducted-noise circuit modeling, local
 full-wave modeling, and future laboratory testing as separate evidence tracks.
 There is no software-only workflow that can establish whole-product EMC or
 safety compliance.
 
-1. Read the root `AGENTS.md`, `emc/README.md`, `emc/input-checklist.md`, and `emc/risk-register.md`.
+1. Read the root `AGENTS.md`, `EMC/README.md`, `EMC/input-checklist.md`, and `EMC/risk-register.md`.
 2. Identify the source project, board, export dates, and file hashes. Unmatched
    inputs do not block candidate exploratory simulations; explicitly record
    their limitations and do not claim a verified product revision. Require

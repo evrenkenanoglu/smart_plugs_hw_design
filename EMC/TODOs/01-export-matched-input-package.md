@@ -24,7 +24,7 @@ this candidate set as a matched, locked revision.
 - [ ] Hash and inventory every file; record units, export dates, and revision
   linkage. Include enclosure/cable files when needed, explicitly identifying
   any unmatched candidate geometry.
-- [ ] Mark unavailable inputs as unknown in `emc/input-checklist.md`; any
+- [ ] Mark unavailable inputs as unknown in `EMC/input-checklist.md`; any
   exploratory assumptions must be explicit, not represented as verified.
 
 ## Done when

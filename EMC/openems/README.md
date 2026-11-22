@@ -24,7 +24,7 @@ linkage is unknown. Record the exact export, hashes, mismatched dates, material
 and geometry assumptions, and limitations; stamp every report and plot
 `CANDIDATE / EXPLORATORY SIMULATION — NOT COMPLIANCE OR SAFETY PROOF`.
 Single-revision SHA-256 locking is required only for final manufacturing
-release sign-off. See `AGENTS.md` and `emc/input-checklist.md`.
+release sign-off. See `AGENTS.md` and `EMC/input-checklist.md`.
 
 For each model:
 

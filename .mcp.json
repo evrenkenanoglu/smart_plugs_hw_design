@@ -1,0 +1,74 @@
+{
+  "mcpServers": {
+    "easyeda-mcp-pro": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "--yes",
+        "easyeda-mcp-pro@1.16.0"
+      ],
+      "env": {
+        "TOOL_PROFILE": "pro",
+        "TOOL_SCOPES": "project:read,schematic:read,pcb:read,bom:read,checks:read,diagnostics:read,export:write"
+      },
+      "tools": [
+        "easyeda_health_check",
+        "easyeda_project_list",
+        "easyeda_schematic_sheet_info",
+        "easyeda_board_design_rules",
+        "easyeda_board_dimensions",
+        "easyeda_board_features",
+        "easyeda_board_layers",
+        "easyeda_board_stackup",
+        "easyeda_drc_run",
+        "easyeda_erc_run",
+        "easyeda_pcb_constraint_check",
+        "easyeda_pcb_constraint_report",
+        "easyeda_bom_export",
+        "easyeda_export_gerbers",
+        "easyeda_export_netlist",
+        "easyeda_export_pdf",
+        "easyeda_export_pick_place",
+        "easyeda_engineering_review",
+        "easyeda_rule_check_summary",
+        "easyeda_pcb_production_review",
+        "easyeda_power_tree_analyze"
+      ]
+    },
+    "jlcpcb-search": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "--from",
+        "jlcpcb-search-mcp==1.2.1",
+        "jlcpcb-mcp"
+      ],
+      "tools": [
+        "search_components",
+        "get_component_details",
+        "database_status"
+      ]
+    },
+    "jlcparts": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/ititti-es/jlcparts-mcp.git@cc11adcfd8d39a53006318af19b0829dd2bdf352",
+        "jlcparts-mcp"
+      ],
+      "env": {
+        "JLCPARTS_MCP_LIVE": "0"
+      },
+      "tools": [
+        "search_parts",
+        "describe_category",
+        "list_categories",
+        "get_part",
+        "check_bom",
+        "find_alternatives",
+        "database_status"
+      ]
+    }
+  }
+}

@@ -16,9 +16,9 @@ dependencies = [
 packages = []
 
 [tool.pytest.ini_options]
-testpaths = ["emc/tests"]
+testpaths = ["EMC/tests"]
 addopts = "-ra"
 
 [tool.smart-plugs-hw]
-editable-emc-install = "python -m pip install -e ./emc[all]"
+editable-emc-install = "python -m pip install -e ./EMC[all]"
 task-runner = "invoke"

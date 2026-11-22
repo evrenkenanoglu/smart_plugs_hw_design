@@ -13,10 +13,10 @@ This repository contains a 230 V AC, high-current smart-plug design. Treat all m
 
 ## Working with design files
 
-- Exploratory and pre-design simulations (`ngspice`, `openEMS`, Gerber geometry checks) ARE explicitly authorized and MUST NOT be blocked on `locked: false`, missing Cloud project IDs, missing schematic PDFs, unverified `.epro2` archive linkage, mixed export dates, or mounting-hole MPNs. This rule takes precedence over any older Stage-0 lock requirement in `emc/input-checklist.md`, `emc/TODOs/`, or `.agents/skills/*/SKILL.md`.
+- Exploratory and pre-design simulations (`ngspice`, `openEMS`, Gerber geometry checks) ARE explicitly authorized and MUST NOT be blocked on `locked: false`, missing Cloud project IDs, missing schematic PDFs, unverified `.epro2` archive linkage, mixed export dates, or mounting-hole MPNs. This rule takes precedence over any older Stage-0 lock requirement in `EMC/input-checklist.md`, `EMC/TODOs/`, or `.agents/skills/*/SKILL.md`.
 - For exploratory runs, clearly identify which candidate export folder was used, record all assumed stackup/parasitic/synthetic-source values under **Assumptions**, keep solver convergence/passivity checks and no-invented-ground-plane rules active, and stamp outputs **`CANDIDATE / EXPLORATORY SIMULATION — NOT COMPLIANCE OR SAFETY PROOF`**.
 - Reserve strict single-revision SHA-256 locking (`locked: true`) solely for final manufacturing release sign-off.
 - Do not overwrite native CAD projects, released manufacturing files, or user changes unless explicitly asked.
-- For EMC work, follow `emc/README.md`, and update `emc/input-checklist.md` / `emc/risk-register.md` with findings as work proceeds without blocking exploratory simulations.
+- For EMC work, follow `EMC/README.md`, and update `EMC/input-checklist.md` / `EMC/risk-register.md` with findings as work proceeds without blocking exploratory simulations.
 - Use specialized skills in `.agents/skills/` when relevant. MCP servers are not pre-approved; review their publisher, permissions, and commands before enabling them.
 - Keep an `Error registry` in relevant skills with verified pitfalls and mitigations; label unverified concerns as assumptions, not past errors.

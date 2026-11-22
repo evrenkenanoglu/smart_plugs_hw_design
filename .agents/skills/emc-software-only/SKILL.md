@@ -11,14 +11,14 @@ and prepare for a qualified lab. It cannot verify real-product emissions,
 immunity, electrical safety, or certification. Do not describe it as a complete
 software substitute for physical testing.
 
-Use `emc/TODOs/README.md` to track the staged work. Keep this workflow separate
+Use `EMC/TODOs/README.md` to track the staged work. Keep this workflow separate
 from physical prototype testing and formal compliance evaluation.
 
 ## Workflow
 
-1. **Read project gates.** Read `AGENTS.md`, `emc/README.md`,
-   `emc/input-checklist.md`, `emc/risk-register.md`, and
-   `emc/TODOs/README.md`.
+1. **Read project gates.** Read `AGENTS.md`, `EMC/README.md`,
+   `EMC/input-checklist.md`, `EMC/risk-register.md`, and
+   `EMC/TODOs/README.md`.
    Treat project notes as claims to verify.
 2. **Identify revision or candidate baseline.** Record the EasyEDA Pro
    project/board identity and hashes of staged exports. For **final release sign-off**,
@@ -30,7 +30,7 @@ from physical prototype testing and formal compliance evaluation.
    return paths, board geometry, radio if present, enclosure, PE, and cables.
    Cross-check safety-critical claims with component data and qualified
    product-standard review. Record evidence, priority, uncertainty, and next
-   action in `emc/risk-register.md`; a review priority is not a compliance
+   action in `EMC/risk-register.md`; a review priority is not a compliance
    finding.
 4. **Select bounded questions.** Choose mechanisms supported by the design or
    explicit candidate assumptions. Give each model its own quantity of interest,
@@ -75,16 +75,16 @@ from physical prototype testing and formal compliance evaluation.
 
 - **Mismatched design artifacts:** The repository records Gerbers and STEP
   files from different dates without confirmed revision linkage
-  (`emc/README.md`). Mitigation: log exact dates/hashes and separate
+  (`EMC/README.md`). Mitigation: log exact dates/hashes and separate
   exploratory candidate runs from locked release sign-off.
 - **Treating the L1 coupon as the actual filter or board:** The pilot
   straightens the route and assumes the substrate/return plane while omitting
   the filter components and surrounding layout
-  (`emc/openems/experiments/README.md`). Mitigation: keep it as a solver
+  (`EMC/openems/experiments/README.md`). Mitigation: keep it as a solver
   workflow demonstration; use real local Gerber geometry for board models.
 - **Treating the solver energy stop as mesh convergence:** The pilot reached
   its time-domain termination, while the mesh-convergence flag remains false
-  (`emc/openems/experiments/runs/l1_route_20261117_180814/run_metadata.json`).
+  (`EMC/openems/experiments/runs/l1_route_20261117_180814/run_metadata.json`).
   Mitigation: refine the mesh and show stability of the output quantity.
 - **Treating `MSLPort.Z_ref` as a scalar:** A direct scalar conversion raised a
   `TypeError`; openEMS returns frequency-dependent values matching the sweep
@@ -92,35 +92,35 @@ from physical prototype testing and formal compliance evaluation.
   against the frequency vector and preserve its frequency dependence.
 - **Treating the coupon excitation as a product noise source:** The pilot uses
   a Gaussian microstrip-port excitation and does not model the smart-plug
-  converter or relay/load noise (`emc/openems/experiments/l1_route_pilot.py`).
+  converter or relay/load noise (`EMC/openems/experiments/l1_route_pilot.py`).
   Mitigation: do not infer product emissions; use source data or explicitly
   bounded illustrative scenarios.
 - **Treating the pilot's MSL port reference impedance as a measured line
   impedance:** the archived value is a solver-derived, frequency-dependent
   port-reference quantity and differs materially from the simple analytical
-  estimate (`emc/TODOs/05-audit-pilot-and-calculate-baseline.md`). Mitigation:
+  estimate (`EMC/TODOs/05-audit-pilot-and-calculate-baseline.md`). Mitigation:
   label the quantities precisely and rely on the calibrated benchmark rules.
 - **Treating a 2D copper/drill import as complete 3D PCB geometry:** the
   importer subtracts explicitly configured Excellon hits and slots from named
   copper layers, but does not model via barrels or finite copper thickness
-  (`emc/emc_sim/gerber_import.py`). Mitigation: retain those limitations in
+  (`EMC/emc_sim/gerber_import.py`). Mitigation: retain those limitations in
   every model scope and do not treat the overlay as a complete EM model.
 - **Guessing Excellon coordinate or layer-span semantics:** the importer
   requires explicit coordinate settings and inclusive copper-layer spans and
   rejects ambiguous drill data rather than inferring blind/buried via spans
-  (`emc/emc_sim/gerber_import.py`). Mitigation: verify the export settings and
+  (`EMC/emc_sim/gerber_import.py`). Mitigation: verify the export settings and
   span against the stackup config before importing.
 - **Treating a successful openEMS energy stop as benchmark validation:** the
   earlier generic coarse/fine coupon reached its energy stop but failed its
   analytical agreement and refinement gates
-  (`emc/TODOs/06-calibrate-openems-and-check-convergence.md`). Mitigation:
+  (`EMC/TODOs/06-calibrate-openems-and-check-convergence.md`). Mitigation:
   apply the verified geometric mesh grading from the passing 45 mm benchmark.
 - **Approximating unsupported Gerber features:** non-circular trace apertures
   and negative-image polarity are rejected by the importer rather than
-  converted to guessed shapes (`emc/emc_sim/gerber_import.py`). Mitigation:
+  converted to guessed shapes (`EMC/emc_sim/gerber_import.py`). Mitigation:
   use supported exports or extend and test the parser before modeling.
 - **Rejecting EasyEDA's body `G90` as ambiguous:** the Nov 21 candidate drill
   files use absolute-mode `G90` after the header, which Gerbonara applies but
   warns about. The importer accepts only that specific warning and still
   rejects incremental mode and all other parser warnings
-  (`emc/emc_sim/gerber_import.py`, `emc/tests/test_gerber_import.py`).
+  (`EMC/emc_sim/gerber_import.py`, `EMC/tests/test_gerber_import.py`).
