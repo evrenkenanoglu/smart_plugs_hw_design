@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-plugs-hw-tools"
+version = "0.1.0"
+description = "Local task automation and validation tools for the smart-plug hardware workspace"
+requires-python = ">=3.10"
+dependencies = [
+    "invoke>=2.2",
+    "pytest>=8.0",
+]
+
+[tool.setuptools]
+packages = []
+
+[tool.pytest.ini_options]
+testpaths = ["emc/tests"]
+addopts = "-ra"
+
+[tool.smart-plugs-hw]
+editable-emc-install = "python -m pip install -e ./emc[all]"
+task-runner = "invoke"

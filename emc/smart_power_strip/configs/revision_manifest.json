@@ -1,0 +1,344 @@
+{
+  "schema_version": 1,
+  "project_id": "b0904c5e84060c537b3dc2b63eac7793f454a84d538ff657b90ce8a3616f8a5a",
+  "revision": "UNCONFIRMED",
+  "locked": false,
+  "files": [
+    {
+      "path": "inputs/locked_rev/BOM_MAIN_OMRON_PCB_MAIN_OMRON_2026-11-19.csv",
+      "sha256": "6b597bcd61c51aee7a37b805c451763693de5fcaa4eecbb87ff19bbc828099cc"
+    },
+    {
+      "path": "inputs/locked_rev/BOM_UI_PCB_UI_2026-11-19.csv",
+      "sha256": "226fa98f3dee8fc88c6b56b50e62f9c9314c876fc0c36e3848e3abc03a86f3fb"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_MAIN_OMRON_2026-11-19/Drill_PTH_Through.DRL",
+      "sha256": "5d7c40d636b82cbc5d8777787b9989a7bc1ec0b15901346226925d1a2f7070c0"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_MAIN_OMRON_2026-11-19/Drill_PTH_Through_Via.DRL",
+      "sha256": "de00d4a3e8a895c353adc162d77384926a82c38892992e8e9aa12698f8d68edf"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_MAIN_OMRON_2026-11-19/FlyingProbeTesting.json",
+      "sha256": "6072a7389d53116e9f84462b8dd5f91d3b9b0a02daef0674a171f6553c9cc1ac"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_MAIN_OMRON_2026-11-19/Gerber_BoardOutlineLayer.GKO",
+      "sha256": "33962a52cc5998e40b8339aa6e3cb38cfd397554ff19172e114c1323e79c01c7"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_MAIN_OMRON_2026-11-19/Gerber_BottomLayer.GBL",
+      "sha256": "d9ffaf575e0b70b8a7d9067a6d0dddabe6140abec494c7041c5f6412e94a4b98"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_MAIN_OMRON_2026-11-19/Gerber_BottomSilkscreenLayer.GBO",
+      "sha256": "d2d36e55f8f5b189d333ecd7d767455390473486091b8e2529e9c99dcd4fdd7b"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_MAIN_OMRON_2026-11-19/Gerber_BottomSolderMaskLayer.GBS",
+      "sha256": "163eff2d2e5bf20fc0252539f05d485b9261eaba2ee1a903c47466be721e9e07"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_MAIN_OMRON_2026-11-19/Gerber_DocumentLayer.GDL",
+      "sha256": "45a32fb23f52db0bbe56b666c9652f1181f3036d46ceca91a00a221bf9e425bd"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_MAIN_OMRON_2026-11-19/Gerber_DrillDrawingLayer.GDD",
+      "sha256": "d3d532796d8a4e38117180c85a7c609b44e8c9242d972fcfe92edca87bcb1548"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_MAIN_OMRON_2026-11-19/Gerber_TopLayer.GTL",
+      "sha256": "b9c514bd07f41eb7db0ccae3f061331e9ffc84d23ba4a7e6bb65b1a7fee81480"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_MAIN_OMRON_2026-11-19/Gerber_TopPasteMaskLayer.GTP",
+      "sha256": "6480943a54bbde03ea5758f9b07d0e271f13f4297916d66dfee0ef42a4725e39"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_MAIN_OMRON_2026-11-19/Gerber_TopSilkscreenLayer.GTO",
+      "sha256": "3870a2b5ceb09e3051719bf84da9362c15cf326b29abf19d289006e874c1cd65"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_MAIN_OMRON_2026-11-19/Gerber_TopSolderMaskLayer.GTS",
+      "sha256": "0e1b88098e9838ecd9b07828cde9380780c5172fc0f7c44f33ce83cc8fbd2b47"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_MAIN_OMRON_2026-11-19/How-to-order-PCB.txt",
+      "sha256": "047a8199f8f99f6493edae9d574d11c2e3d28e43ca20abc61c394e829668af28"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_MAIN_OMRON_2026-11-19.zip",
+      "sha256": "8879e01b99aa1656964d82a90f79a8ee9c2d8b7018204d87704a58dc02349c0a"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_UI_2026-11-19/Drill_NPTH_Through.DRL",
+      "sha256": "cd250e3d50823b378eaa820c33852a4d75f9e34145241540c80a0012472b4da0"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_UI_2026-11-19/Drill_PTH_Through.DRL",
+      "sha256": "d307f7068f412ae4b83bc403ab96bcca263e6daaa4b4b0db08bae4f50a1c6cd4"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_UI_2026-11-19/Drill_PTH_Through_Via.DRL",
+      "sha256": "243bea7f6f6fe15cde6bdd1e51c90763a18bbabe7f6c054cd8aff4d37546f612"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_UI_2026-11-19/FlyingProbeTesting.json",
+      "sha256": "41ae00eb21a251d63f1f9e298fbdafe21466aaf98f67ec8e7c8bdc60e67da102"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_UI_2026-11-19/Gerber_BoardOutlineLayer.GKO",
+      "sha256": "9f327fe49fb6645bec672d4cb2caecb4540be95b51a96b42cab070afea376175"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_UI_2026-11-19/Gerber_BottomLayer.GBL",
+      "sha256": "2fe34577f756559b966b4478a6e6f58181bff9c58ae00ad31d61f96c2f2306bf"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_UI_2026-11-19/Gerber_BottomPasteMaskLayer.GBP",
+      "sha256": "9882a1ef04a7cc4678a5cdc5565386f2cc049b33e4427049babcaabe65359c97"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_UI_2026-11-19/Gerber_BottomSilkscreenLayer.GBO",
+      "sha256": "dd6b6715c848b4dfc836db43df70ed3c4e53076724bccb295543100949a8969f"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_UI_2026-11-19/Gerber_BottomSolderMaskLayer.GBS",
+      "sha256": "048e130e4076b491cdea8048bc4bf331841891742e1c4a9061e0c7c2dbef0642"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_UI_2026-11-19/Gerber_DocumentLayer.GDL",
+      "sha256": "1f8fb64dfe2daffbe94d67afecf2a4ce34cdc6b80e37c1bd91dde3708dfd26ad"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_UI_2026-11-19/Gerber_DrillDrawingLayer.GDD",
+      "sha256": "8b978d08424f05298ac502b3d753bd39d0a041af23ff5f6edc1cfd10aeb4210c"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_UI_2026-11-19/Gerber_TopLayer.GTL",
+      "sha256": "a89b5eaaa8ce3b76a5ab29750b2033d472eb94e59fe8de0e64469952464195c4"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_UI_2026-11-19/Gerber_TopPasteMaskLayer.GTP",
+      "sha256": "20f2e3436e138e84dc6299339204321978a78629d95574d70ea36be49a0252b0"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_UI_2026-11-19/Gerber_TopSilkscreenLayer.GTO",
+      "sha256": "a54b82cd5fbc155f1b3dc66fd0b8cf69f3477353bd54a2c066568b5389f7b80a"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_UI_2026-11-19/Gerber_TopSolderMaskLayer.GTS",
+      "sha256": "d42548f84971aa71ed280d5ff5eda76238e71b742f0ce4d4562567c37df1e4e5"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_UI_2026-11-19/How-to-order-PCB.txt",
+      "sha256": "047a8199f8f99f6493edae9d574d11c2e3d28e43ca20abc61c394e829668af28"
+    },
+    {
+      "path": "inputs/locked_rev/Gerber_PCB_UI_2026-11-19.zip",
+      "sha256": "ce6c4ab4279f07d3e94c3f27b057e5a9443086eb14e252c388b47bc8946b4955"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/BOM.csv",
+      "sha256": "6b597bcd61c51aee7a37b805c451763693de5fcaa4eecbb87ff19bbc828099cc"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/gerbers/Drill_PTH_Through.DRL",
+      "sha256": "5d7c40d636b82cbc5d8777787b9989a7bc1ec0b15901346226925d1a2f7070c0"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/gerbers/Drill_PTH_Through_Via.DRL",
+      "sha256": "de00d4a3e8a895c353adc162d77384926a82c38892992e8e9aa12698f8d68edf"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/gerbers/FlyingProbeTesting.json",
+      "sha256": "6072a7389d53116e9f84462b8dd5f91d3b9b0a02daef0674a171f6553c9cc1ac"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/gerbers/Gerber_BoardOutlineLayer.GKO",
+      "sha256": "33962a52cc5998e40b8339aa6e3cb38cfd397554ff19172e114c1323e79c01c7"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/gerbers/Gerber_BottomLayer.GBL",
+      "sha256": "d9ffaf575e0b70b8a7d9067a6d0dddabe6140abec494c7041c5f6412e94a4b98"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/gerbers/Gerber_BottomSilkscreenLayer.GBO",
+      "sha256": "d2d36e55f8f5b189d333ecd7d767455390473486091b8e2529e9c99dcd4fdd7b"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/gerbers/Gerber_BottomSolderMaskLayer.GBS",
+      "sha256": "163eff2d2e5bf20fc0252539f05d485b9261eaba2ee1a903c47466be721e9e07"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/gerbers/Gerber_DocumentLayer.GDL",
+      "sha256": "45a32fb23f52db0bbe56b666c9652f1181f3036d46ceca91a00a221bf9e425bd"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/gerbers/Gerber_DrillDrawingLayer.GDD",
+      "sha256": "d3d532796d8a4e38117180c85a7c609b44e8c9242d972fcfe92edca87bcb1548"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/gerbers/Gerber_TopLayer.GTL",
+      "sha256": "b9c514bd07f41eb7db0ccae3f061331e9ffc84d23ba4a7e6bb65b1a7fee81480"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/gerbers/Gerber_TopPasteMaskLayer.GTP",
+      "sha256": "6480943a54bbde03ea5758f9b07d0e271f13f4297916d66dfee0ef42a4725e39"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/gerbers/Gerber_TopSilkscreenLayer.GTO",
+      "sha256": "3870a2b5ceb09e3051719bf84da9362c15cf326b29abf19d289006e874c1cd65"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/gerbers/Gerber_TopSolderMaskLayer.GTS",
+      "sha256": "0e1b88098e9838ecd9b07828cde9380780c5172fc0f7c44f33ce83cc8fbd2b47"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/gerbers/How-to-order-PCB.txt",
+      "sha256": "047a8199f8f99f6493edae9d574d11c2e3d28e43ca20abc61c394e829668af28"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/Netlist.tel",
+      "sha256": "06c1c8891be4a7aa9016a39517b7fe541a716cedd80f73e13bbbb9fcae2ce086"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/PCB_placement.pdf",
+      "sha256": "27a77493662992c0e1eda5360a3fb54bad8a188dacb1efffe7f2238e2e16fde5"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/PickAndPlace.csv",
+      "sha256": "cb0da97566e48634d5f77cf176da7fd85205b7a2f98fbcc5283b4693bb5888b6"
+    },
+    {
+      "path": "inputs/locked_rev/Netlist_PCB_MAIN_OMRON_2026-11-19.tel",
+      "sha256": "06c1c8891be4a7aa9016a39517b7fe541a716cedd80f73e13bbbb9fcae2ce086"
+    },
+    {
+      "path": "inputs/locked_rev/Netlist_PCB_UI_2026-11-19.tel",
+      "sha256": "152beec8c843536d8fd2e2fea30f41839393edf58111956357270aebc8b97795"
+    },
+    {
+      "path": "inputs/locked_rev/PCB_PCB_MAIN_OMRON_2026-11-19.pdf",
+      "sha256": "27a77493662992c0e1eda5360a3fb54bad8a188dacb1efffe7f2238e2e16fde5"
+    },
+    {
+      "path": "inputs/locked_rev/PCB_PCB_UI_2026-11-19.pdf",
+      "sha256": "c28496d0b030ccd6652eb4e301a9db6424435350d1981e332f436071ae283a54"
+    },
+    {
+      "path": "inputs/locked_rev/PickAndPlace_PCB_MAIN_OMRON_2026_11_19.csv",
+      "sha256": "cb0da97566e48634d5f77cf176da7fd85205b7a2f98fbcc5283b4693bb5888b6"
+    },
+    {
+      "path": "inputs/locked_rev/PickAndPlace_PCB_UI_2026_11_19.csv",
+      "sha256": "4bb33e546a3c2815a6359c352c9f98518604a7037bb24ed442ffb43828db05d5"
+    },
+    {
+      "path": "inputs/locked_rev/Smart_Plugs.eprj2",
+      "sha256": "3a8913444d4e201fae5bb706c050a8d4f8b01c31bd4b63a81cef301edf1c40f8"
+    },
+    {
+      "path": "inputs/locked_rev/UI/BOM.csv",
+      "sha256": "226fa98f3dee8fc88c6b56b50e62f9c9314c876fc0c36e3848e3abc03a86f3fb"
+    },
+    {
+      "path": "inputs/locked_rev/UI/gerbers/Drill_NPTH_Through.DRL",
+      "sha256": "cd250e3d50823b378eaa820c33852a4d75f9e34145241540c80a0012472b4da0"
+    },
+    {
+      "path": "inputs/locked_rev/UI/gerbers/Drill_PTH_Through.DRL",
+      "sha256": "d307f7068f412ae4b83bc403ab96bcca263e6daaa4b4b0db08bae4f50a1c6cd4"
+    },
+    {
+      "path": "inputs/locked_rev/UI/gerbers/Drill_PTH_Through_Via.DRL",
+      "sha256": "243bea7f6f6fe15cde6bdd1e51c90763a18bbabe7f6c054cd8aff4d37546f612"
+    },
+    {
+      "path": "inputs/locked_rev/UI/gerbers/FlyingProbeTesting.json",
+      "sha256": "41ae00eb21a251d63f1f9e298fbdafe21466aaf98f67ec8e7c8bdc60e67da102"
+    },
+    {
+      "path": "inputs/locked_rev/UI/gerbers/Gerber_BoardOutlineLayer.GKO",
+      "sha256": "9f327fe49fb6645bec672d4cb2caecb4540be95b51a96b42cab070afea376175"
+    },
+    {
+      "path": "inputs/locked_rev/UI/gerbers/Gerber_BottomLayer.GBL",
+      "sha256": "2fe34577f756559b966b4478a6e6f58181bff9c58ae00ad31d61f96c2f2306bf"
+    },
+    {
+      "path": "inputs/locked_rev/UI/gerbers/Gerber_BottomPasteMaskLayer.GBP",
+      "sha256": "9882a1ef04a7cc4678a5cdc5565386f2cc049b33e4427049babcaabe65359c97"
+    },
+    {
+      "path": "inputs/locked_rev/UI/gerbers/Gerber_BottomSilkscreenLayer.GBO",
+      "sha256": "dd6b6715c848b4dfc836db43df70ed3c4e53076724bccb295543100949a8969f"
+    },
+    {
+      "path": "inputs/locked_rev/UI/gerbers/Gerber_BottomSolderMaskLayer.GBS",
+      "sha256": "048e130e4076b491cdea8048bc4bf331841891742e1c4a9061e0c7c2dbef0642"
+    },
+    {
+      "path": "inputs/locked_rev/UI/gerbers/Gerber_DocumentLayer.GDL",
+      "sha256": "1f8fb64dfe2daffbe94d67afecf2a4ce34cdc6b80e37c1bd91dde3708dfd26ad"
+    },
+    {
+      "path": "inputs/locked_rev/UI/gerbers/Gerber_DrillDrawingLayer.GDD",
+      "sha256": "8b978d08424f05298ac502b3d753bd39d0a041af23ff5f6edc1cfd10aeb4210c"
+    },
+    {
+      "path": "inputs/locked_rev/UI/gerbers/Gerber_TopLayer.GTL",
+      "sha256": "a89b5eaaa8ce3b76a5ab29750b2033d472eb94e59fe8de0e64469952464195c4"
+    },
+    {
+      "path": "inputs/locked_rev/UI/gerbers/Gerber_TopPasteMaskLayer.GTP",
+      "sha256": "20f2e3436e138e84dc6299339204321978a78629d95574d70ea36be49a0252b0"
+    },
+    {
+      "path": "inputs/locked_rev/UI/gerbers/Gerber_TopSilkscreenLayer.GTO",
+      "sha256": "a54b82cd5fbc155f1b3dc66fd0b8cf69f3477353bd54a2c066568b5389f7b80a"
+    },
+    {
+      "path": "inputs/locked_rev/UI/gerbers/Gerber_TopSolderMaskLayer.GTS",
+      "sha256": "d42548f84971aa71ed280d5ff5eda76238e71b742f0ce4d4562567c37df1e4e5"
+    },
+    {
+      "path": "inputs/locked_rev/UI/gerbers/How-to-order-PCB.txt",
+      "sha256": "047a8199f8f99f6493edae9d574d11c2e3d28e43ca20abc61c394e829668af28"
+    },
+    {
+      "path": "inputs/locked_rev/UI/Netlist.tel",
+      "sha256": "152beec8c843536d8fd2e2fea30f41839393edf58111956357270aebc8b97795"
+    },
+    {
+      "path": "inputs/locked_rev/UI/PCB_placement.pdf",
+      "sha256": "c28496d0b030ccd6652eb4e301a9db6424435350d1981e332f436071ae283a54"
+    },
+    {
+      "path": "inputs/locked_rev/UI/PickAndPlace.csv",
+      "sha256": "4bb33e546a3c2815a6359c352c9f98518604a7037bb24ed442ffb43828db05d5"
+    },
+    {
+      "path": "inputs/locked_rev/ProPrj_Smart_Plugs_2026-11-21.epro2",
+      "sha256": "1f57d59b3db1ab6c725c8940be11e027f7e76ec09d3c4824c9b711a509ed4246"
+    },
+    {
+      "path": "inputs/locked_rev/PCB_PCB_MAIN_OMRON_2026-11-21.pdf",
+      "sha256": "079150a1be71e5f69d09aa68bac89ac8929116bb7bf0ba3e107f40e22551913d"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/PCB_PCB_MAIN_OMRON_2026-11-21.png",
+      "sha256": "f18c0f9800dbab0d3301f518732789a477bd21b9f0a1b9c7537aafd086bb95d5"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/Candidate_CopperCrop_2026-11-19_L1_U1.png",
+      "sha256": "4bb4c828e8334f26a7be19a62af9b574b6bf475e167ce5befa131851e838f810"
+    },
+    {
+      "path": "inputs/locked_rev/MAIN_OMRON/Candidate_CopperCrop_2026-11-19_L1_U1.json",
+      "sha256": "357dc5d2167bd59342229ac46c50822297da3106d89c416dac71db1552613ab4"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "evidence_kind": "2D candidate Gerber geometry preview; no EM solver run",
+  "board": "MAIN_OMRON",
+  "source_revision": "UNCONFIRMED; live candidate exports dated 2026-11-19",
+  "crop_mm": [
+    15.0,
+    -110.0,
+    60.0,
+    -82.0
+  ],
+  "component_centers_mm_from_pnp": {
+    "L1": [
+      24.257,
+      -96.012
+    ],
+    "U1": [
+      47.371,
+      -95.123
+    ]
+  },
+  "layer_map": {
+    "top": "Gerber_TopLayer.GTL",
+    "bottom": "Gerber_BottomLayer.GBL",
+    "net_attributes_present": false
+  },
+  "display_only_geometry_parameters": {
+    "z_m": 0.0,
+    "copper_thickness_m": 1e-06,
+    "physical_stackup_claimed": false
+  },
+  "parser_diagnostics": {
+    "bottom_layer": "one self-touching G36/G37 region normalized with Shapely make_valid(linework); two zero-length outline edges removed"
+  },
+  "route_assessment": {
+    "pcb_netlist_mapping": "$L1_3 connects L1 pad 3 (e15) to U1 pad 2 (e18)",
+    "exact_route_geometry_identified": false,
+    "ground_coverage_confirmed": false,
+    "reason": "Gerbers contain no net attributes, and these Nov 19 exports are not linked to the Nov 21 archive revision."
+  },
+  "source_files": {
+    "top_gerber": {
+      "path": "MAIN_OMRON/MCP_LIVE_20261119_203444_Gerbers/Gerber_TopLayer.GTL",
+      "sha256": "3b29737062e0029d1b02afc72037e6fbc211efa0a762d697631d9a5496aa40d3"
+    },
+    "bottom_gerber": {
+      "path": "MAIN_OMRON/MCP_LIVE_20261119_203444_Gerbers/Gerber_BottomLayer.GBL",
+      "sha256": "f6517d7127e6e5bd32669cb0a7c87ee1f0dc121521c9015c6a1a3d40b7c77e39"
+    },
+    "pick_and_place": {
+      "path": "MAIN_OMRON/MCP_LIVE_20261119_203444_PnP.csv",
+      "sha256": "1ec9252b3c840f36dc7cb4203e4759794a0d89fa07d88a25420bc3f33476cbfe"
+    },
+    "pcb_netlist": {
+      "path": "MAIN_OMRON/MCP_LIVE_20261119_203444_Netlist.pads",
+      "sha256": "42e8add9ea3a6d6c6a0003c8527daf9a0cc83a31e23b3f6a6caa94ce8f549e50"
+    }
+  },
+  "image": {
+    "path": "Candidate_CopperCrop_2026-11-19_L1_U1.png",
+    "sha256": "4bb4c828e8334f26a7be19a62af9b574b6bf475e167ce5befa131851e838f810"
+  }
+}

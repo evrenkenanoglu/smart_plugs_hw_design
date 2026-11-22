@@ -1,0 +1,26 @@
+mode: candidate
+source_revision: MAIN_OMRON_MCP_CANDIDATE_20261121_1753
+candidate_dir: ../inputs/locked_rev/MAIN_OMRON/MCP_CANDIDATE_20261121_1753
+stackup_metadata: ../inputs/locked_rev/MAIN_OMRON/MCP_LIVE_20261119_203444_LayerStackup.json
+frequency_band_hz: [150000, 30000000]
+source:
+  status: assumed
+  provenance: Bounded synthetic HLK-5LS05 scenarios, not measured converter data
+  description: 1 uA DM or 1 uA per conductor CM with 100 kohm primary shunt
+measurement_network:
+  status: assumed
+  provenance: Candidate CISPR 16/32-style 50 uH and 50 ohm two-line network; applicability and impedance tolerance not verified
+  description: Each branch has 50 uH with 5 ohm series resistance, 8 uF supply-side capacitance and a 250 nF coupled 50 ohm receiver
+components:
+  L1: UU9.8-10mH, assumed 10 mH per winding and 0.5 ohm each
+  C2: 100 nF X2
+  CY1: 2.2 nF Y1, secondary-rail connection per candidate netlist
+  R6: 10D-7, assumed 2 ohm hot resistance
+  RV1: 14D431K, assumed 440 pF linear capacitance
+  coupling: Assumed k values 0.95, 0.99 and 0.999
+  parasitics: Assumed 100 pF primary-secondary and 100 pF secondary-reference, with 1 Mohm secondary leakage
+sweep:
+  - DM k 0.95
+  - DM k 0.99
+  - DM k 0.999
+  - CM k 0.99

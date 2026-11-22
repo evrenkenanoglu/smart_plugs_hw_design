@@ -1,0 +1,76 @@
+{
+  "source": {
+    "tool": "easyeda-mcp-pro",
+    "tool_version": "1.16.0",
+    "easyeda_version": "3.2.209",
+    "project_id": "887b44b44d5f8223bb08fd9db9aeef7f7255beccd56f645b2117cc3651d8d255",
+    "board_name": "MAIN_OMRON",
+    "board_document_uuid": "e05c8329c9f84495a1131d747d50aaf9",
+    "date": "2026-11-19"
+  },
+  "layers": {
+    "design_layer_count": 27,
+    "copper_layer_count": 2,
+    "copper": [
+      {
+        "name": "Top Layer",
+        "layer_id": 1,
+        "type": "SIGNAL",
+        "order": 0
+      },
+      {
+        "name": "Bottom Layer",
+        "layer_id": 2,
+        "type": "SIGNAL",
+        "order": 1
+      }
+    ]
+  },
+  "physical_stackup": {
+    "available": false,
+    "data_source": "copper_layer_count_only",
+    "finished_thickness_mm": null,
+    "copper_weight_oz_per_layer": null,
+    "dielectric_material": null,
+    "dielectric_thickness_mm": null,
+    "dielectric_constant": null,
+    "source_error": "Physical PCB stackup details are unavailable; only the copper-layer count was verified."
+  },
+  "board": {
+    "width_mm": 204.978,
+    "height_mm": 51.054,
+    "outline": "custom",
+    "drilled_pad_count": 86,
+    "plated_drill_pad_count": 86,
+    "unplated_drill_pad_count": 0,
+    "minimum_drill_mm": 0.3048,
+    "mounting_hole_count": null,
+    "npth_file_exported": false,
+    "npth_intent": "unconfirmed"
+  },
+  "pours": [
+    {
+      "net": "GND",
+      "layer_id": 2,
+      "copper_link_status": "present",
+      "fill_record_count": 19
+    }
+  ],
+  "return_path_observation": {
+    "net": "$L1_3",
+    "component_mapping": "L1 pad 3 (primitive e15) to U1 pad 2 (primitive e18)",
+    "route_layer_id": 1,
+    "canvas_crop_captured": true,
+    "canvas_crop_visually_reviewed": false,
+    "canvas_crop_shows_continuous_gnd_fill_beneath_route": null,
+    "exact_gerber_overlap_verified": false,
+    "note": "A live canvas crop was captured, but its image content was not available for visual review. The native pour response confirms a bottom-layer GND pour but does not expose its polygon geometry; exact local overlap remains unresolved."
+  },
+  "exports": {
+    "gerbers_and_drill": "MCP_LIVE_20261119_203444_Gerbers.zip",
+    "pick_and_place": "MCP_LIVE_20261119_203444_PnP.csv",
+    "netlist": "MCP_LIVE_20261119_203444_Netlist.pads",
+    "bom_csv": null,
+    "schematic_pdf": null
+  }
+}

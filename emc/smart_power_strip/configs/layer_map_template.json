@@ -1,0 +1,19 @@
+{
+  "verified": false,
+  "source_revision": "UNCONFIRMED",
+  "layers": [
+    {
+      "name": "TODO_LAYER_NAME",
+      "gerber_file": "TODO_MATCHED_GERBER_FILENAME"
+    }
+  ],
+  "drill_files": [
+    {
+      "name": "TODO_DRILL_SET_NAME",
+      "excellon_file": "TODO_MATCHED_EXCELLON_FILENAME",
+      "from_layer": "TODO_FIRST_AFFECTED_COPPER_LAYER",
+      "to_layer": "TODO_LAST_AFFECTED_COPPER_LAYER"
+    }
+  ],
+  "crop_mm": null
+}

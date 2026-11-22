@@ -1,0 +1,17 @@
+{
+  "verified": false,
+  "source_revision": "MAIN_OMRON_MCP_CANDIDATE_20261121_1753",
+  "source_file": "MAIN_OMRON/MCP_LIVE_20261119_203444_LayerStackup.json",
+  "assumptions": [
+    "The 2026-11-19 metadata confirms two copper layers only; linkage to the 2026-11-21 export is unverified.",
+    "1.6 mm board thickness, FR-4, relative permittivity 4.2, loss tangent 0.02 and 1 oz (0.035 mm) outer copper are exploratory assumptions, not fabricator-confirmed."
+  ],
+  "board_thickness_mm": 1.6,
+  "dielectrics": [
+    {"name": "FR-4", "epsilon_r": 4.2, "loss_tangent": 0.02}
+  ],
+  "copper_layers": [
+    {"name": "Top", "z_mm": 1.6, "thickness_mm": 0.035},
+    {"name": "Bottom", "z_mm": 0.0, "thickness_mm": 0.035}
+  ]
+}

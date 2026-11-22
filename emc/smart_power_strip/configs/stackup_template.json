@@ -1,0 +1,14 @@
+{
+  "verified": false,
+  "source_revision": "UNCONFIRMED",
+  "source_file": "TODO_MATCHED_STACKUP_EVIDENCE_FILENAME",
+  "board_thickness_mm": null,
+  "dielectrics": [],
+  "copper_layers": [
+    {
+      "name": "TODO_LAYER_NAME",
+      "z_mm": null,
+      "thickness_mm": null
+    }
+  ]
+}

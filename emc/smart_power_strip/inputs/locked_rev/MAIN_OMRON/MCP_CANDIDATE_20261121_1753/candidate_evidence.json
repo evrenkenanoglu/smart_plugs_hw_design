@@ -1,0 +1,42 @@
+{
+  "status": "candidate_only_not_revision_locked",
+  "designer_authorized_target": "MAIN_OMRON",
+  "observed_project_id": "887b44b44d5f8223bb08fd9db9aeef7f7255beccd56f645b2117cc3651d8d255",
+  "observed_focused_pcb_uuid": "e05c8329c9f84495a1131d747d50aaf9",
+  "native_archive_revision_linked": false,
+  "bom_export": "not_available",
+  "schematic_export": "not obtained",
+  "files": [
+    {
+      "path": "MCP_CANDIDATE_20261121_1753_MAIN_OMRON_Gerbers.zip",
+      "sha256": "b6dddaf2be7855431e044350a63596575af5b4ee48bbcb2ec1d888b43b297e88"
+    },
+    {
+      "path": "MCP_CANDIDATE_20261121_1753_MAIN_OMRON_Netlist.pads",
+      "sha256": "2258d3c24cb4964cf5eed88bb7dddddda13e12d7c0c0451c622ee99166d82f9f"
+    },
+    {
+      "path": "MCP_CANDIDATE_20261121_1753_MAIN_OMRON_PnP.csv",
+      "sha256": "b57e4de54f7c271e63a6741f8a26a4b491838c3462c17e8d8a88e09e5d5ffa6a"
+    },
+    {
+      "path": "J2_copper_only.png",
+      "sha256": "ba9241d5da77161b1c0fc60c4e76e90bbe5c06a35f85a4264c34a38f0032f1dc"
+    },
+    {
+      "path": "L1_U1_copper_only.png",
+      "sha256": "90d15dea7ef2f33f8bf82183cc1628e841ddd0324371c2cc3a3916176933d508"
+    }
+  ],
+  "plot_limitations": [
+    "Copper geometry previews only; no drill files, net assignment, J2 screw, head or hardware geometry are included.",
+    "Both layer elevations are display-only z=0 and thickness is display-only 1 micrometre, not the physical stackup.",
+    "Bottom copper importer normalized one self-touching region and removed two zero-length boundary edges.",
+    "The previews are not simulations, electrical clearance determinations, or safety approvals."
+  ],
+  "comparison_to_nov19_live_candidate": {
+    "copper_geometry": "Shapely equality true and symmetric-difference area zero on both imported copper layers at the importer tolerance; not proof of source/archive identity or all manufacturing layers.",
+    "pads_netlist": "Identical after removing the date/time remark line.",
+    "pick_and_place": "45 CSV rows and headers equal when row order is ignored."
+  }
+}

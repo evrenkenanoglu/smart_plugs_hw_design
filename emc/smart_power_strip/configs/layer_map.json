@@ -1,0 +1,33 @@
+{
+  "verified": false,
+  "source_revision": "MAIN_OMRON_MCP_CANDIDATE_20261121_1753",
+  "assumptions": [
+    "PTH and via drill exports span both copper layers; plating barrels are not represented by the 2D importer.",
+    "This candidate crop includes the L1 and U1 locations; missing net attributes prevent assigning a reference net to copper polygons."
+  ],
+  "layers": [
+    {
+      "name": "Top",
+      "gerber_file": "MAIN_OMRON/MCP_CANDIDATE_20261121_1753/gerbers/Gerber_TopLayer.GTL"
+    },
+    {
+      "name": "Bottom",
+      "gerber_file": "MAIN_OMRON/MCP_CANDIDATE_20261121_1753/gerbers/Gerber_BottomLayer.GBL"
+    }
+  ],
+  "drill_files": [
+    {
+      "name": "PTH",
+      "excellon_file": "MAIN_OMRON/MCP_CANDIDATE_20261121_1753/gerbers/Drill_PTH_Through.DRL",
+      "from_layer": "Top",
+      "to_layer": "Bottom"
+    },
+    {
+      "name": "PTH_vias",
+      "excellon_file": "MAIN_OMRON/MCP_CANDIDATE_20261121_1753/gerbers/Drill_PTH_Through_Via.DRL",
+      "from_layer": "Top",
+      "to_layer": "Bottom"
+    }
+  ],
+  "crop_mm": [16.0, -106.0, 62.0, -80.0]
+}
