@@ -166,7 +166,7 @@ saved state. Do not treat matching names or dates alone as revision linkage.
 ## Current local inspection (candidate evidence only)
 
 - The candidate source under inspection is
-  `PCB_DESIGN\Smart_Plugs_EasyEDA\Smart_Plugs.eprj2`, project name `Smart_Plugs`,
+  `ECAD\Smart_Plugs_EasyEDA\Smart_Plugs.eprj2`, project name `Smart_Plugs`,
   database project UUID
   `b0904c5e84060c537b3dc2b63eac7793f454a84d538ff657b90ce8a3616f8a5a`.
 - Its observed SHA-256 is
@@ -215,7 +215,7 @@ saved state. Do not treat matching names or dates alone as revision linkage.
 ## Historical exploratory coupon (not authoritative revision lock)
 
 The previous exploratory coupon read
-`PCB_DESIGN\Smart_Plugs_EasyEDA\Smart_Plugs_backup\Smart_Plugs_2026-11-15-00-26.epro2`,
+`ECAD\Smart_Plugs_EasyEDA\Smart_Plugs_backup\Smart_Plugs_2026-11-15-00-26.epro2`,
 PCB document UUID `819591c4247e455ea945fac5ca6e11c8`, source SHA-256
 `79a9632bd2eb1424217e0b6a11a2c2f328e8fec889fd9704b46c120066944ede`.
 These identify the file used by that run only; they do not establish that it is

@@ -25,7 +25,7 @@ for _stream in (sys.stdout, sys.stderr):
 ROOT = Path(__file__).resolve().parent
 ANALYSIS_DIR = ROOT / "analysis" / "power_calculations"
 NEW_PCB_SOURCE = ROOT / "pcb" / "smart_plug_v3_easyeda"
-LEGACY_PCB_SOURCE = ROOT / "PCB_DESIGN" / "Smart_Plugs_EasyEDA"
+LEGACY_PCB_SOURCE = ROOT / "ECAD" / "Smart_Plugs_EasyEDA"
 MECHANICAL_DIR = ROOT.parent / "MECHANICAL"
 GERBER_SUFFIXES = {".gbr", ".ger", ".gtl", ".gbl", ".gts", ".gbs", ".gto", ".gbo", ".gtp", ".gbp", ".gm1", ".gm2"}
 DRILL_SUFFIXES = {".drl", ".xln"}
@@ -148,21 +148,21 @@ def _run_uv(*arguments: str) -> None:
 
 def _calc_scripts() -> list[tuple[str, Path, str | None]]:
     return [
-        ("Power calculations", ANALYSIS_DIR / "Power_Calculations" / "scripts" / "main.py", None),
-        ("LED calculations", ANALYSIS_DIR / "Led_Calculations" / "scripts" / "led_calc.py", None),
+        ("Power calculations", ANALYSIS_DIR / "POWER_CALCULATIONS" / "scripts" / "main.py", None),
+        ("LED calculations", ANALYSIS_DIR / "LED_CALCULATIONS" / "scripts" / "led_calc.py", None),
         (
             "Relay transistor calculations",
-            ANALYSIS_DIR / "Relay_Transistor_Calculation" / "scripts" / "relay_transistor_report.py",
+            ANALYSIS_DIR / "RELAY_TRANSISTOR_CALCULATION" / "scripts" / "relay_transistor_report.py",
             None,
         ),
         (
             "Omron relay transistor calculations",
-            ANALYSIS_DIR / "Relay_Transistor_Calculation" / "scripts" / "relay_transistor_report_omron.py",
+            ANALYSIS_DIR / "RELAY_TRANSISTOR_CALCULATION" / "scripts" / "relay_transistor_report_omron.py",
             None,
         ),
         (
             "Flyback calculations",
-            ANALYSIS_DIR / "Flyback_Converter_Calculations" / "scripts" / "flyback_designer.py",
+            ANALYSIS_DIR / "FLYBACK_CONVERTER_CALCULATIONS" / "scripts" / "flyback_designer.py",
             "flyback_calculation.txt",
         ),
     ]
@@ -405,9 +405,9 @@ def emc_test(_):
 def path_integrity(_):
     """Verify calculation paths and the unchanged Mechanical PCB STEP inputs."""
     expected = [
-        ANALYSIS_DIR / "Power_Calculations" / "data" / "peak_data.json",
-        ANALYSIS_DIR / "Led_Calculations" / "data" / "led_data.json",
-        ANALYSIS_DIR / "Flyback_Converter_Calculations" / "data" / "specs.json",
+        ANALYSIS_DIR / "POWER_CALCULATIONS" / "data" / "peak_data.json",
+        ANALYSIS_DIR / "LED_CALCULATIONS" / "data" / "led_data.json",
+        ANALYSIS_DIR / "FLYBACK_CONVERTER_CALCULATIONS" / "data" / "specs.json",
         LEGACY_PCB_SOURCE / "Output" / "3D_PCB_MAIN_OMRON_2026-11-12.step",
         LEGACY_PCB_SOURCE / "Output" / "3D_PCB_UI_2026-11-12.step",
         MECHANICAL_DIR / "scripts" / "power_strip" / "build_assembly.py",
@@ -418,7 +418,7 @@ def path_integrity(_):
         print(f"{'MISSING' if path in missing else 'OK'} {path}")
     if missing:
         raise Exit(f"Path integrity failed for {len(missing)} required paths.", code=1)
-    print("Mechanical source paths remain unchanged because EasyEDA Pro had the active project open.")
+    print("Mechanical source inputs resolve under ECAD; Mechanical CAD logic remains unchanged.")
 
 
 @task

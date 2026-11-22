@@ -7,7 +7,7 @@ This repository contains the smart-plug ECAD inputs, manufacturing handoffs, eng
 | Path | Contents |
 | --- | --- |
 | `pcb/libraries/` | Altium component libraries |
-| `pcb/smart_plug_v3_easyeda/` | Target location for the intact EasyEDA project and its coupled outputs |
+| `ECAD/Smart_Plugs_EasyEDA/` | Current EasyEDA project and its coupled outputs |
 | `pcb/_archive/` | Target location for legacy Altium boards |
 | `releases/main_pcb/`, `releases/ui_pcb/` | Revision-tagged, board-specific release packages |
 | `docs/design_notes/` | PSU, ESP32, UI, and general design notes |
@@ -19,7 +19,7 @@ This repository contains the smart-plug ECAD inputs, manufacturing handoffs, eng
 
 ### Migration hold
 
-At the time of this reorganization, EasyEDA Pro had the `Smart_Plugs` project open. Its native `Smart_Plugs.eprj2` remained under `PCB_DESIGN/Smart_Plugs_EasyEDA`, so that source tree and its associated outputs/backups were left together and its Mechanical references were not changed. Close the project before moving the complete tree to `pcb/smart_plug_v3_easyeda` and updating the path-only references in `MECHANICAL`. The legacy Altium folder move to `pcb/_archive/Smart_Plugs` was also refused by Windows and remains at `PCB_DESIGN/Smart_Plugs`; it has not been deleted or force-moved.
+The EasyEDA project and coupled outputs remain together under `ECAD/Smart_Plugs_EasyEDA/`; backup archives are excluded from Git. Mechanical references point to this source tree. The legacy Altium project is under `ECAD/Smart_Plugs`.
 
 The existing `Releases/v0.3.0` content is a combined package dated 2026-03-11. It is not treated as separate main/UI releases or as revision-linked to the November 2026 STEP files and EasyEDA archives. Do not infer a production revision from filenames alone.
 

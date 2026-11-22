@@ -70,3 +70,16 @@ temp/
 # Keep generated, revision-tagged release packages visible to Git.
 !/releases/
 !/releases/**
+!/ECAD/Smart_Plugs_EasyEDA/Releases/
+!/ECAD/Smart_Plugs_EasyEDA/Releases/**
+
+# Keep EasyEDA project backup files local; commit the active project only.
+PCB_DESIGN/Smart_Plugs_EasyEDA/Smart_Plugs_backup/
+PCB_DESIGN/Smart_Plugs_EasyEDA/Smart_Plugs.eprj_backup
+ECAD/Smart_Plugs_EasyEDA/Smart_Plugs_backup/
+ECAD/Smart_Plugs_EasyEDA/Smart_Plugs.eprj_backup
+
+# Keep generated EMC runs and calculation reports local.
+emc/openems/experiments/runs/
+emc/smart_power_strip/runs/
+analysis/power_calculations/*/reports/generated/
