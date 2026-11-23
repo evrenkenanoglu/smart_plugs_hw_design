@@ -1,6 +1,6 @@
 # EDA and component-catalog MCP servers
 
-The workspace `.mcp.json` configures local stdio servers for Copilot CLI.
+The repository-root `.mcp.json` configures local stdio servers for Copilot CLI.
 The CLI reads workspace MCP configuration after the folder is trusted. The
 JLCPCB servers use `uvx` and EasyEDA Pro uses `npx`, keeping their dependencies
 outside the hardware project's Python virtual environment.
@@ -34,7 +34,7 @@ and builds its own local `parts.sqlite3`; it does not query the upstream
 `cache.sqlite3` in place.
 
 The local database must be built once before search tools can return results.
-From PowerShell in this directory:
+Run this command from PowerShell in any directory:
 
 ```powershell
 uvx --from "git+https://github.com/ititti-es/jlcparts-mcp.git@cc11adcfd8d39a53006318af19b0829dd2bdf352" jlcparts-mcp build
@@ -44,7 +44,8 @@ The build downloads catalog data from `yaqwsx/jlcparts` and stores the index in
 the user's default `~/.cache/jlcparts-mcp` directory. The configured MCP server
 sets `JLCPARTS_MCP_LIVE=0`, so normal searches use the local database without
 live JLCPCB requests. Its `update_database` tool is excluded from the exposed
-tool list.
+tool list. The initial local build and offline smoke-test results are recorded
+in `DOCS/reviews/JLCPARTS_MCP_SMOKE_TEST_2026-11-23.md`.
 
 ## Verify
 

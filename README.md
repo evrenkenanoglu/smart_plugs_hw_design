@@ -37,7 +37,7 @@ uv pip compile requirements.in -o requirements.txt --annotation-style line
 
 `requirements.in` declares Invoke, pytest, and the EMC package editable with its `all` extras. `inv compile` updates the pinned `requirements.txt`; `inv install` synchronizes the HW virtual environment from that file. `uv` must be available on PATH. openEMS is an external solver, not a Python dependency; the openEMS executable was not found during this audit. ngspice is available on the current system PATH.
 
-Workspace MCP servers are registered in `.mcp.json`; see `DOCS/MCP_SERVERS.md` for tool restrictions and local catalog database setup.
+Copilot CLI workspace MCP servers are registered in root `.mcp.json`; AI-specific policy and setup notes are under `.agents/mcp/`.
 
 Common tasks:
 
