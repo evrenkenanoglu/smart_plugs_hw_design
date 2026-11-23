@@ -1,10 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   assertBoardSignature, assertListedActiveProject, assertRequestedBoardFocus,
   ContextDriftError, ensureContext, maybeUpdateRevisionManifest, parseArgs,
+  resolvePackageRoot,
 } from '../tools/export_easyeda_board.mjs';
 
 const projectId = 'project-1';
@@ -62,6 +65,35 @@ test('default is strict and override permits only a complete unlisted project', 
   assert.throws(() => assertListedActiveProject({
     ...unlisted, projects: [{ projectId: 'other', name: 'Other', active: true }],
   }, projectId, true), /conflicting/);
+});
+
+test('package resolution accepts a portable override only for the pinned package layout', async (t) => {
+  const temporaryRoot = await mkdtemp(path.join(os.tmpdir(), 'easyeda-package-'));
+  t.after(() => rm(temporaryRoot, { recursive: true, force: true }));
+  const packageRoot = path.join(temporaryRoot, 'node_modules', 'easyeda-mcp-pro');
+  const sdkRoot = path.join(temporaryRoot, 'node_modules', '@modelcontextprotocol', 'client');
+  await mkdir(path.join(packageRoot, 'dist'), { recursive: true });
+  await mkdir(path.join(sdkRoot, 'dist'), { recursive: true });
+  await writeFile(
+    path.join(packageRoot, 'package.json'),
+    JSON.stringify({ name: 'easyeda-mcp-pro', version: '1.16.0' }),
+  );
+  await writeFile(path.join(packageRoot, 'dist', 'index.js'), '');
+  await writeFile(path.join(sdkRoot, 'dist', 'index.mjs'), '');
+  await writeFile(path.join(sdkRoot, 'dist', 'stdio.mjs'), '');
+
+  assert.equal(
+    await resolvePackageRoot({ EASYEDA_MCP_PRO_PACKAGE_ROOT: packageRoot }),
+    packageRoot,
+  );
+  await writeFile(
+    path.join(packageRoot, 'package.json'),
+    JSON.stringify({ name: 'easyeda-mcp-pro', version: '1.17.0' }),
+  );
+  await assert.rejects(
+    resolvePackageRoot({ EASYEDA_MCP_PRO_PACKAGE_ROOT: packageRoot }),
+    /Expected easyeda-mcp-pro@1\.16\.0/,
+  );
 });
 
 test('board name, native type, UUID, parent and complete signature are required', () => {

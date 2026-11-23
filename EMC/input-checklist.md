@@ -112,6 +112,10 @@ Use this checklist to record what is verified vs. assumed for each model. Strict
 
 ## Design identity and geometry
 
+- [ ] EasyEDA bridge health and single-owner readiness: on 2026-11-23,
+  `easyeda_health_check` returned `status=degraded` and
+  `bridge_connected=false`. No project-list or project-scoped calls were made;
+  active project and board identity remain unverified for a new export.
 - [ ] EasyEDA Pro project identity, board name, revision, export date, and source-file hash.
 - [ ] Complete current Gerber set: every copper layer, board outline, solder mask, and relevant fabrication layers.
 - [ ] Current PTH/NPTH drill files, with units and drill/plating information.

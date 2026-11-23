@@ -13,6 +13,14 @@ safety.
 - Database build: **2026-11-23 09:00:16 local time**
   (**08:00:16 UTC**); the MCP reported index version 2 and 646,202 in-stock
   parts.
+- Read-only verification: SQLite `integrity_check` returned `ok`; the database
+  SHA-256 is
+  `09a5d9135244c7fca0cbb37c12dd57b563758dc1ef0cb5431049854bd0f856f2`.
+- The successful build log reported the complete sequence `cache.z01` through
+  `cache.z06`, then `cache.zip` (7/7).
+- The new read-only verifier passed against this database. The non-destructive
+  refresh path was unit-tested, but not run; refreshing would redownload the
+  full catalog and replace the active cache after creating a backup.
 - The database is in the user's default cache and is not committed to this
   repository.
 

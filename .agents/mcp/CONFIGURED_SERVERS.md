@@ -47,6 +47,26 @@ live JLCPCB requests. Its `update_database` tool is excluded from the exposed
 tool list. The initial local build and offline smoke-test results are recorded
 in `DOCS/reviews/JLCPARTS_MCP_SMOKE_TEST_2026-11-23.md`.
 
+Verify the local index without changing it:
+
+```powershell
+python .agents\mcp\catalog_maintenance.py verify
+```
+
+For a future refresh, stop the JLC Parts MCP server first, then run:
+
+```powershell
+python .agents\mcp\catalog_maintenance.py refresh --confirm-server-stopped
+```
+
+Refresh builds into a separate temporary data directory, checks the reported
+shard sequence and SQLite integrity, and preserves the prior database under a
+unique backup name before an atomic replacement. It writes a per-build
+provenance manifest; failed or incomplete builds leave the active database
+untouched. The upstream archive does not provide an independent per-shard
+checksum manifest, so the recorded sequence and SQLite checks cannot prove the
+upstream shard set itself is complete beyond the server's archive validation.
+
 ## Verify
 
 Run `copilot mcp list` from this workspace to inspect the registered servers.

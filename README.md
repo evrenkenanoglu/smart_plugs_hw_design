@@ -19,7 +19,7 @@ This repository contains the smart-plug ECAD inputs, manufacturing handoffs, eng
 
 ### Migration hold
 
-The EasyEDA project and coupled outputs remain together under `ECAD/Smart_Plugs_EasyEDA/`; backup archives are excluded from Git. Mechanical references point to this source tree. The legacy Altium project is under `ECAD/Smart_Plugs`.
+The EasyEDA project and coupled outputs remain together under `ECAD/Smart_Plugs_EasyEDA/`; backup archives are excluded from Git. Mechanical references point to this source tree. The legacy Altium project is archived under `PCB/_archive/Smart_Plugs`.
 
 The existing `Releases/v0.3.0` content is a combined package dated 2026-03-11. It is not treated as separate main/UI releases or as revision-linked to the November 2026 STEP files and EasyEDA archives. Do not infer a production revision from filenames alone.
 
@@ -33,6 +33,7 @@ uv pip compile requirements.in -o requirements.txt --annotation-style line
 .\.venv\Scripts\inv.exe install
 .\.venv\Scripts\inv.exe --list
 .\.venv\Scripts\inv.exe info
+.\.venv\Scripts\python.exe -m invoke case-paths
 ```
 
 `requirements.in` declares Invoke, pytest, and the EMC package editable with its `all` extras. `inv compile` updates the pinned `requirements.txt`; `inv install` synchronizes the HW virtual environment from that file. `uv` must be available on PATH. openEMS is an external solver, not a Python dependency; the openEMS executable was not found during this audit. ngspice is available on the current system PATH.

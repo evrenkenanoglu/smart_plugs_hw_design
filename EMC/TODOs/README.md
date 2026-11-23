@@ -61,7 +61,9 @@ Only final manufacturing release sign-off requires a locked revision.
 ## Current execution status
 
 - **TODO 00:** Blocked; MAIN_OMRON/UI candidate exports are present, but their
-  link to the staged `.eprj2` revision is unconfirmed.
+  link to the staged `.eprj2` revision is unconfirmed. The 2026-11-23
+  EasyEDA health check returned `bridge_connected: false`; no project-scoped
+  calls or new exports were attempted.
 - **TODO 01:** Partial; candidate Gerbers/drills, BOMs, PCB netlists, and
   pick-and-place files are organized and hashed. Schematic PDFs and
   fabricator-confirmed stackup are missing.

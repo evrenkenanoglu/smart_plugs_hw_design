@@ -259,6 +259,11 @@ design evidence, not proof of safety, compliance, or certification readiness.
 - **The export service may restrict output paths to its artifact directory.**
   Export there, verify the returned file, then copy to the evidence folder
   using a unique name without overwriting existing files.
+- **A user-specific package path is not portable.** The standalone exporter
+  resolves `easyeda-mcp-pro@1.16.0` from Node module paths or the
+  `EASYEDA_MCP_PRO_PACKAGE_ROOT` override, and validates the package version and
+  SDK files before connecting. If resolution fails, stop; do not guess an
+  installation path or start a competing bridge.
 - **Layer configuration is not a fabrication stackup.** Do not infer
   laminate, copper weight, dielectric thickness, or board thickness from the
   layer list.

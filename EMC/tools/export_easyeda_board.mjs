@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
 import { access, mkdir, readFile, rename, rmdir, stat, writeFile } from 'node:fs/promises';
+import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -12,7 +13,8 @@ const MANIFEST_PATH = path.join(
   'configs',
   'revision_manifest.json',
 );
-const DEFAULT_PACKAGE_ROOT = String.raw`C:\Users\Evren\AppData\Local\Tools\easyeda-mcp-pro-1.16.0\node_modules\easyeda-mcp-pro`;
+const PACKAGE_NAME = 'easyeda-mcp-pro';
+const PACKAGE_VERSION = '1.16.0';
 const REQUIRED_TOOLS = [
   'easyeda_health_check',
   'easyeda_project_list',
@@ -60,6 +62,7 @@ function usage() {
     'The script refuses to export unless the active project and focused PCB',
     'can be matched to the requested board. It never sets locked=true.',
     'The unlisted-project override produces candidates only and never updates the revision manifest.',
+    'Resolve easyeda-mcp-pro from Node module paths or set EASYEDA_MCP_PRO_PACKAGE_ROOT.',
   ].join('\n');
 }
 
@@ -84,6 +87,61 @@ function parseArgs(argv) {
     throw new Error('--board must be MAIN_OMRON or UI');
   }
   return parsed;
+}
+
+async function findPackageRoot(entryPath) {
+  let directory = path.dirname(entryPath);
+  while (true) {
+    try {
+      const metadata = JSON.parse(await readFile(path.join(directory, 'package.json'), 'utf8'));
+      if (metadata.name === PACKAGE_NAME) return directory;
+    } catch (error) {
+      if (error.code !== 'ENOENT') throw error;
+    }
+    const parent = path.dirname(directory);
+    if (parent === directory) return null;
+    directory = parent;
+  }
+}
+
+async function validatePackageRoot(packageRoot) {
+  const root = path.resolve(packageRoot);
+  const metadata = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));
+  if (metadata.name !== PACKAGE_NAME || metadata.version !== PACKAGE_VERSION) {
+    throw new Error(
+      `Expected ${PACKAGE_NAME}@${PACKAGE_VERSION} at ${root}; found ${metadata.name ?? 'unknown'}@${metadata.version ?? 'unknown'}.`,
+    );
+  }
+  await access(path.join(root, 'dist', 'index.js'));
+  const sdkRoot = path.resolve(root, '..', '@modelcontextprotocol', 'client');
+  await access(path.join(sdkRoot, 'dist', 'index.mjs'));
+  await access(path.join(sdkRoot, 'dist', 'stdio.mjs'));
+  return root;
+}
+
+async function resolvePackageRoot(environment = process.env) {
+  if (environment.EASYEDA_MCP_PRO_PACKAGE_ROOT) {
+    return validatePackageRoot(environment.EASYEDA_MCP_PRO_PACKAGE_ROOT);
+  }
+
+  const resolvers = [
+    createRequire(import.meta.url),
+    createRequire(path.join(process.cwd(), '__easyeda_package_resolver__.cjs')),
+  ];
+  const failures = [];
+  for (const resolver of resolvers) {
+    try {
+      const entry = resolver.resolve(PACKAGE_NAME);
+      const root = await findPackageRoot(entry);
+      if (root) return validatePackageRoot(root);
+      failures.push(`Package root not found above ${entry}`);
+    } catch (error) {
+      failures.push(error.message);
+    }
+  }
+  throw new Error(
+    `Could not resolve ${PACKAGE_NAME}@${PACKAGE_VERSION}. Install it in a visible node_modules directory or set EASYEDA_MCP_PRO_PACKAGE_ROOT to its package directory. Attempts: ${failures.join(' | ')}`,
+  );
 }
 
 function isWithin(parent, candidate) {
@@ -380,12 +438,9 @@ async function main() {
     if (error.code !== 'ENOENT') throw error;
   }
 
-  const packageRoot =
-    process.env.EASYEDA_MCP_PRO_PACKAGE_ROOT ?? DEFAULT_PACKAGE_ROOT;
+  const packageRoot = await resolvePackageRoot();
   const serverEntry = path.join(packageRoot, 'dist', 'index.js');
   const sdkRoot = path.resolve(packageRoot, '..', '@modelcontextprotocol', 'client');
-  await access(serverEntry);
-  await access(path.join(sdkRoot, 'dist', 'index.mjs'));
   await mkdir(outputDirectory, { recursive: false });
 
   const baseManifestHash = await sha256File(MANIFEST_PATH);
@@ -725,6 +780,7 @@ async function main() {
 export {
   assertBoardSignature, assertListedActiveProject, assertRequestedBoardFocus,
   ContextDriftError, ensureContext, maybeUpdateRevisionManifest, parseArgs,
+  resolvePackageRoot,
 };
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

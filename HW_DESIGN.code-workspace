@@ -45,7 +45,7 @@
                 "label": "HW: Create Release PCB Gerber Package",
                 "type": "shell",
                 "windows": {
-                    "command": "Set-Location -LiteralPath \"${workspaceFolder}\\ECAD\\Smart_Plugs\\Scripts\"; & \"${workspaceFolder}\\.venv\\Scripts\\python.exe\" package_gerbers.py"
+                    "command": "Set-Location -LiteralPath \"${workspaceFolder}\\PCB\\_archive\\Smart_Plugs\\Scripts\"; & \"${workspaceFolder}\\.venv\\Scripts\\python.exe\" package_gerbers.py"
                 },
             }
         ]

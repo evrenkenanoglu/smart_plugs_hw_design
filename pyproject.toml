@@ -16,7 +16,7 @@ dependencies = [
 packages = []
 
 [tool.pytest.ini_options]
-testpaths = ["EMC/tests"]
+testpaths = ["EMC/tests", "tests"]
 addopts = "-ra"
 
 [tool.smart-plugs-hw]
