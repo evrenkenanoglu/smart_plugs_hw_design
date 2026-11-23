@@ -25,11 +25,12 @@ These are additional tasks beyond the current folder and MCP setup.
   resolution now uses Node resolution or `EASYEDA_MCP_PRO_PACKAGE_ROOT` and
   enforces the pinned version; exposure is blocked while EasyEDA health is
   degraded (`bridge_connected=false`).
-- [x] Extend `inv path-integrity` and CI with exact-case checks for tracked
+- [x] Add portable exact-case checks for tracked
   workspace paths. Existing `Path.is_file()` checks only verify existence and
   are case-insensitive on Windows; a Linux CI run would catch casing errors
-  that local Windows runs miss. The checker now scans tracked paths and key
-  task/config/documentation references.
+  that local Windows runs miss. `python check_case_paths.py` scans tracked
+  paths and key task/config/documentation references and can be run locally or
+  from any CI platform without a provider-specific workflow.
 - [x] Move the legacy Altium project from `ECAD/Smart_Plugs` into
   `PCB/_archive` after checking external CAD links and automation references.
   The full 1,141-file tree was preserved; 17 tracked files were moved with Git,

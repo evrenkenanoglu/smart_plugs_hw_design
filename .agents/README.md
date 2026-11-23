@@ -34,4 +34,4 @@ SolidWorks COM automation guidance is maintained in the sibling `MECHANICAL/.age
 
 MCP server policy and setup notes are in `.agents/mcp/`. The actual workspace configuration stays in root `.mcp.json` because Copilot CLI discovers workspace MCP configuration there (or in `.github/mcp.json`), not under `.agents/`. Keep server use task-scoped and review each server's publisher, permissions, and launch command before enabling it.
 
-The root `.github/workflows/` directory contains only GitHub Actions workflows; GitHub does not discover workflows under `.agents/`.
+Exact-case path validation is a standalone Python runner at `check_case_paths.py`; invoke it locally or from any CI platform without a provider-specific workflow.

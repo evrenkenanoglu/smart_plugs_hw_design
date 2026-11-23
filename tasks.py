@@ -14,6 +14,7 @@ import zipfile
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 
+from check_case_paths import validate_case_paths
 from invoke import Exit, task
 
 
@@ -42,80 +43,15 @@ BOARD_INFO = {
         "step_prefix": "3d_pcb_ui",
     },
 }
-CASE_SENSITIVE_REFERENCES = (
-    ROOT / "README.md",
-    ROOT / "AGENTS.md",
-    ROOT / "TODOs.md",
-    ROOT / ".mcp.json",
-    ROOT / "pyproject.toml",
-    ROOT / "tasks.py",
-    ROOT / "HW_DESIGN.code-workspace",
-    ROOT / ".agents" / "README.md",
-    ROOT / ".agents" / "mcp" / "README.md",
-    ROOT / ".agents" / "mcp" / "CONFIGURED_SERVERS.md",
-    ROOT / "ANALYSIS" / "power_calculations",
-    ROOT / "DOCS" / "design_notes",
-    ROOT / "DOCS" / "datasheets",
-    ROOT / "DOCS" / "reviews",
-    ROOT / "ECAD" / "Smart_Plugs_EasyEDA",
-    ROOT / "EMC",
-    ROOT / "PCB" / "libraries",
-    ROOT / "PCB" / "_archive",
-    ROOT / "PCB" / "_archive" / "Smart_Plugs",
-    ROOT / "PCB" / "_archive" / "README.md",
-    ROOT / "PCB" / "_archive" / "Smart_Plugs" / "Scripts" / "package_gerbers.py",
-    ROOT / "RELEASES" / "main_pcb",
-    ROOT / "RELEASES" / "ui_pcb",
-)
-
-
-def _case_path_error(path: Path) -> str | None:
-    absolute = Path(os.path.abspath(path))
-    current = Path(absolute.anchor)
-    for part in absolute.parts[1:]:
-        try:
-            with os.scandir(current) as entries:
-                names = {entry.name for entry in entries}
-        except OSError:
-            return f"missing parent directory: {current}"
-        if part in names:
-            current /= part
-            continue
-        actual = next((name for name in names if name.casefold() == part.casefold()), None)
-        if actual is not None:
-            return f"case mismatch beneath {current}: expected {part!r}, found {actual!r}"
-        return f"missing path segment beneath {current}: {part!r}"
-    return None
-
-
-def _tracked_case_path_errors(extra_paths: tuple[Path, ...] = ()) -> tuple[list[str], int]:
-    try:
-        result = subprocess.run(
-            ["git", "ls-files", "-z"],
-            cwd=ROOT,
-            check=False,
-            capture_output=True,
-        )
-    except OSError as error:
-        raise Exit(f"Unable to list tracked paths: {error}", code=1) from error
-    if result.returncode:
-        details = result.stderr.decode(errors="replace").strip()
-        raise Exit(f"Unable to list tracked paths: {details}", code=result.returncode)
-
-    paths = [ROOT / os.fsdecode(item) for item in result.stdout.split(b"\0") if item]
-    paths.extend(CASE_SENSITIVE_REFERENCES)
-    paths.extend(extra_paths)
-    seen: set[str] = set()
-    errors = []
-    for path in paths:
-        key = os.fspath(path)
-        if key in seen:
-            continue
-        seen.add(key)
-        error = _case_path_error(path)
-        if error:
-            errors.append(f"{path}: {error}")
-    return errors, len(seen)
+def _check_exact_case_paths() -> None:
+    errors, checked, warning = validate_case_paths(ROOT)
+    if warning:
+        print(f"WARNING: {warning}")
+    for error in errors:
+        print(f"PATH ERROR {error}")
+    if errors:
+        raise Exit(f"Exact-case path check failed for {len(errors)} paths.", code=1)
+    print(f"Exact-case path check passed for {checked} tracked/reference paths.")
 
 
 def _pcb_source(source_dir: str | None = None) -> Path:
@@ -488,12 +424,7 @@ def path_integrity(_):
         MECHANICAL_DIR / "scripts" / "power_strip" / "build_assembly.py",
         MECHANICAL_DIR / "scripts" / "power_strip" / "build_ui_mounts.py",
     ]
-    errors, checked = _tracked_case_path_errors(tuple(expected))
-    for error in errors:
-        print(f"PATH ERROR {error}")
-    if errors:
-        raise Exit(f"Exact-case path integrity failed for {len(errors)} paths.", code=1)
-    print(f"Exact-case check passed for {checked} tracked/reference paths.")
+    _check_exact_case_paths()
     missing = [path for path in expected if not path.is_file()]
     for path in expected:
         print(f"{'MISSING' if path in missing else 'OK'} {path}")
@@ -505,12 +436,7 @@ def path_integrity(_):
 @task
 def case_paths(_):
     """Verify exact casing of tracked workspace, configuration, and documentation paths."""
-    errors, checked = _tracked_case_path_errors()
-    for error in errors:
-        print(f"PATH ERROR {error}")
-    if errors:
-        raise Exit(f"Exact-case path check failed for {len(errors)} paths.", code=1)
-    print(f"Exact-case path check passed for {checked} tracked/reference paths.")
+    _check_exact_case_paths()
 
 
 @task

@@ -33,7 +33,7 @@ uv pip compile requirements.in -o requirements.txt --annotation-style line
 .\.venv\Scripts\inv.exe install
 .\.venv\Scripts\inv.exe --list
 .\.venv\Scripts\inv.exe info
-.\.venv\Scripts\python.exe -m invoke case-paths
+.\.venv\Scripts\python.exe check_case_paths.py
 ```
 
 `requirements.in` declares Invoke, pytest, and the EMC package editable with its `all` extras. `inv compile` updates the pinned `requirements.txt`; `inv install` synchronizes the HW virtual environment from that file. `uv` must be available on PATH. openEMS is an external solver, not a Python dependency; the openEMS executable was not found during this audit. ngspice is available on the current system PATH.
